@@ -229,4 +229,22 @@ This simulation can be further enhanced by:
 
 By developing this computational model, we bridge the gap between **theory and application**, enabling dynamic analysis of projectile motion in various conditions.
 
+<details>
+  <summary>Generating Graphical Representations</summary>
+  To explore the relationship between **range and launch angle**, we generate **graphs** using **Matplotlib**:
+  - **Plot 1**: The **trajectory of the projectile** for different angles.
+  - **Plot 2**: A **Range vs. Angle** curve to show the optimal launch angle for maximum range.
 
+  These visualizations help in understanding how different initial conditions affect projectile motion.
+</details>
+
+<details>
+  <summary>Future Extensions</summary>
+  This simulation can be further enhanced by:
+  - **Including air resistance**: Accounting for drag force to improve real-world accuracy.
+  - **Simulating motion on uneven terrain**: Adjusting equations to consider variable landing heights.
+  - **Interactive elements**: Implementing sliders or input fields in a **Jupyter Notebook** for real-time parameter tuning.
+
+  ---
+  By developing this computational model, we bridge the gap between **theory and application**, enabling dynamic analysis of projectile motion in various conditions.
+</details>
