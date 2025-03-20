@@ -231,13 +231,9 @@ This simulation can be further enhanced by:
 
 By developing this computational model, we bridge the gap between **theory and application**, enabling dynamic analysis of projectile motion in various conditions.
 
-<style>
-  details summary {
-    display: inline;
-    cursor: pointer;
-  }
+
 <details>
-  <summary><h3>Generating Graphical Representations</h3></summary>
+  <summary><strong>Generating Graphical Representations</strong></summary>
   <p>To explore the relationship between <strong>range and launch angle</strong>, we generate <strong>graphs</strong> using <strong>Matplotlib</strong>:</p>
   <ul>
     <li><strong>Plot 1</strong>: The <strong>trajectory of the projectile</strong> for different angles.</li>
@@ -256,5 +252,4 @@ By developing this computational model, we bridge the gap between **theory and a
     <li><strong>Interactive elements</strong>: Implementing sliders or input fields in a <strong>Jupyter Notebook</strong> for real-time parameter tuning.</li>
   </ul>
 </details>
-</style>
 
