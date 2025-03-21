@@ -125,43 +125,35 @@ Studying projectile motion has a wide range of applications across different fie
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fixed Key Parameters Section</title>
+    <title>Key Parameters Section</title>
     <style>
         body {
             font-family: Arial, sans-serif;
         }
 
-        /* Общий стиль для обеих секций */
-        .static-section, details {
+        /* Стиль секции */
+        details {
             margin-top: 10px;
             border-left: 4px solid #2979ff;
-            background-color: #f8f9fa; /* Совпадает с Practical Applications */
+            background-color: #f8f9fa;
             border-radius: 5px;
             padding: 12px 15px;
             box-shadow: none;
             transition: all 0.3s ease-in-out;
         }
 
-        /* Заголовок в статической секции (как в Practical Applications) */
-        .static-section h2 {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #222;
-            margin: 0;
-        }
-
-        /* Заголовок в раскрывающейся секции */
+        /* Заголовок */
         summary {
             font-size: 1.2em;
             font-weight: bold;
             cursor: pointer;
             display: flex;
             align-items: center;
-            background-color: #f8f9fa; /* Сделал такой же, как Practical Applications */
+            background-color: #f8f9fa;
             border-radius: 5px;
             transition: background-color 0.3s ease;
             padding: 12px 15px;
-            border-left: none; /* Убираем двойной бордер */
+            border-left: none;
             margin: -12px -15px 0 -15px;
         }
 
@@ -169,7 +161,7 @@ Studying projectile motion has a wide range of applications across different fie
             background-color: #e0e0e0;
         }
 
-        /* Контент внутри секции */
+        /* Внутренний контент */
         details div {
             padding: 10px 0;
         }
@@ -186,24 +178,22 @@ Studying projectile motion has a wide range of applications across different fie
 </head>
 <body>
 
-    <!-- Practical Applications (статическая секция) -->
-    <div class="static-section">
-        <h2>Practical Applications</h2>
-    </div>
-
-    <p>Studying projectile motion has a wide range of applications across different fields, including:</p>
-    <ul>
-        <li><strong>Sports:</strong> Understanding projectile motion helps athletes optimize their performance in sports like soccer, basketball, and javelin throwing.</li>
-        <li><strong>Engineering:</strong> Used for designing ballistic trajectories, optimizing water fountains, and vehicle safety systems.</li>
-        <li><strong>Astrophysics & Space Exploration:</strong> The motion of rockets and space probes follows projectile motion principles.</li>
-        <li><strong>Military & Defense:</strong> Missiles, artillery shells, and drones rely on projectile motion calculations.</li>
-    </ul>
-
-    <!-- Key Parameters Affecting Projectile Motion (раскрывающаяся секция) -->
-    <details>
+    <!-- Key Parameters Affecting Projectile Motion -->
+    <details open>
         <summary>Key Parameters Affecting Projectile Motion</summary>
         <div>
             <p>Several parameters influence the behavior of a projectile:</p>
             <ul>
                 <li><strong>Initial velocity (v₀):</strong> Determines the overall motion, affecting both range and maximum height.</li>
-                <li><strong>Angle of projection (θ):</strong> The launch angle plays a crucial role in optimizing the range and trajectory
+                <li><strong>Angle of projection (θ):</strong> The launch angle plays a crucial role in optimizing the range and trajectory shape.</li>
+                <li><strong>Gravitational acceleration (g):</strong> The constant acceleration due to gravity affects the motion, typically taken as 9.81 m/s² on Earth.</li>
+                <li><strong>Launch height (h):</strong> If the projectile is launched from a height, it alters the flight time and final landing position.</li>
+                <li><strong>Air resistance (optional consideration):</strong> In real-world scenarios, drag affects the motion but is often neglected in basic models.</li>
+            </ul>
+            <p>By analyzing how these parameters interact, we can develop accurate models to describe and predict projectile trajectories in different conditions.</p>
+        </div>
+    </details>
+
+</body>
+</html>
+
