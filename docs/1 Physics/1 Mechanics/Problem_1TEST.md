@@ -236,64 +236,34 @@ By developing this computational model, we bridge the gap between **theory and a
 </body>
 </html>
 
-# 🚀 Projectile Motion Simulation (Interactive)
-
-This page contains an **interactive simulation** of projectile motion with air resistance.
-
-## 📊 Interactive Graph
-
-Below is an interactive graph showing projectile motion with adjustable parameters.
-
-```python
 import numpy as np
-import plotly.graph_objects as go
+import matplotlib.pyplot as plt
 
-# Constants
-g = 9.81  # Gravity (m/s²)
-air_resistance = 0.02  # Air resistance coefficient
+def r(t):
+    return np.array([t, -t**2 + t])
 
-# Initial conditions
-v0 = 50  # Initial velocity (m/s)
-angle = 45  # Launch angle (degrees)
-theta = np.radians(angle)  # Convert to radians
+def v(t):
+    return np.array([1, -2*t + 1])
 
-# Initial velocity components
-vx = v0 * np.cos(theta)
-vy = v0 * np.sin(theta)
+t = np.linspace(0, 10, 100)
 
-# Time settings
-dt = 0.05
-t_max = 2 * vy / g  # Approximate max time
-time = np.arange(0, t_max * 2, dt)
+fig, ax = plt.subplots(figsize=(8, 6))
 
-# Lists to store positions
-x_positions, y_positions = [], []
-x, y = 0, 0
+# Whole curve
+ax.plot(r(t)[0], r(t)[1], label='r(t)', color='black')
 
-# Simulating projectile motion with air resistance
-for t in time:
-    if y < 0:
-        break
-    vx *= (1 - air_resistance)
-    vy -= g * dt
-    x += vx * dt
-    y += vy * dt
-    x_positions.append(x)
-    y_positions.append(y)
+# Velocity vector at t=3
+ax.quiver(r(3)[0], r(3)[1], v(3)[0], v(3)[1], angles='xy', scale_units='xy', scale=1, color='red', label='v(3)')
+ax.text(r(3)[0] + v(3)[0], r(3)[1] + v(3)[1], 'v(3)', color='red')
 
-# Create an interactive plot with Plotly
-fig = go.Figure()
-fig.add_trace(go.Scatter(x=x_positions, y=y_positions, mode="lines", name="Projectile Path", line=dict(color='red')))
+# Velocity vector at t=6
+ax.quiver(r(6)[0], r(6)[1], v(6)[0], v(6)[1], angles='xy', scale_units='xy', scale=1, color='blue', label='v(6)')
+ax.text(r(6)[0] + v(6)[0], r(6)[1] + v(6)[1], 'v(6)', color='blue')
 
-# Layout settings
-fig.update_layout(
-    title="Projectile Motion with Air Resistance",
-    xaxis_title="Distance (m)",
-    yaxis_title="Height (m)",
-    template="plotly_white"
-)
+# Labels and legend
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+ax.legend()
+ax.grid(True)
 
-fig.show()
-yaml
-Копировать
-Редактировать
+plt.show()
