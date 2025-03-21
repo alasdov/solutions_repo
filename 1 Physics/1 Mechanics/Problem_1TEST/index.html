@@ -187,31 +187,50 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Styled Section</title>
+<title>Styled Section Fix</title>
 <style>
+        /* Исправленный стиль */
         .static-section {
-            background-color: #f1f1f1; /* Более мягкий серый фон */
-            padding: 12px;
-            border-left: 4px solid #5a9bff; /* Светло-синий бордер */
-            border-radius: 5px;
-            margin-bottom: 10px;
+            background-color: #f9f9f9; /* Светло-серый, но не слишком контрастный */
+            padding: 10px 15px;
+            border-left: 4px solid #5a9bff; /* Умеренно-синий бордер */
+            border-radius: 4px;
+            margin-bottom: 15px;
+            box-shadow: none; /* Убираем тень, если она ломает макет */
+            display: flex; /* Гарантия, что размер блока соответствует контенту */
+            align-items: center;
         }
 
         .static-section h2 {
-            font-size: 1.3em; /* Уменьшен размер шрифта */
+            font-size: 1.2em; /* Уменьшенный размер для соответствия другим заголовкам */
             font-weight: bold;
-            color: #333;
+            color: #222; /* Чуть темнее для лучшего контраста */
             margin: 0;
+        }
+
+        /* Общие стили для остальных секций (если они сбились) */
+        details {
+            background-color: #f8f8f8;
+            border-left: 3px solid #d1d1d1;
+            padding: 8px;
+            margin-bottom: 8px;
+            border-radius: 4px;
+        }
+
+        summary {
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
+<!-- Исправленная секция -->
 <div class="static-section">
 <h2>Significance of Studying Projectile Motion</h2>
 </div>
 </body>
 </html>
-</div></div></div></div></section></div></body></html>
 <p>Projectile motion is a fundamental concept in physics that describes the motion of an object launched into the air, subject only to the force of gravity. Understanding projectile motion is crucial because it provides insights into:</p>
 <ul>
 <li>The behavior of objects in free-fall and how they travel through space.</li>
@@ -414,8 +433,8 @@
 </details>
 </body>
 </html>
-
-<footer>
+</div>
+</div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
 <a class="btn btn-neutral float-left" href="../Problem_1/" title="Problem 1"><span class="icon icon-circle-arrow-left"></span> Previous</a>
 <a class="btn btn-neutral float-right" href="../Problem_2/" title="Problem 2">Next <span class="icon icon-circle-arrow-right"></span></a>
@@ -427,10 +446,10 @@
 
   Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-
-
-
-
+</div>
+</div>
+</section>
+</div>
 <div aria-label="Versions" class="rst-versions" role="note">
 <span class="rst-current-version" data-toggle="rst-current-version">
 <span><a href="../Problem_1/" style="color: #fcfcfc">« Previous</a></span>
@@ -449,5 +468,5 @@
             SphinxRtdTheme.Navigation.enable(true);
         });
     </script>
-
-
+</body>
+</html>
