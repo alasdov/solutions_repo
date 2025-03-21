@@ -1,9 +1,40 @@
 # Problem 1
 ## Introduction and Motivation
 
-<div class="static-section">
-    <h2>Significance of Studying Projectile Motion</h2>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Section</title>
+    <style>
+        .static-section {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #2979ff; /* Синий бордер */
+            border-radius: 5px;
+            margin-bottom: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .static-section h2 {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+            margin: 0;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #2979ff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="static-section">
+        <h2>Significance of Studying Projectile Motion</h2>
+    </div>
+
+</body>
+</html>
 
 Projectile motion is a fundamental concept in physics that describes the motion of an object launched into the air, subject only to the force of gravity. Understanding projectile motion is crucial because it provides insights into:
 
