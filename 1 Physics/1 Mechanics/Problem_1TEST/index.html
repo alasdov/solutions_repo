@@ -56,10 +56,6 @@
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#practical-applications">Practical Applications</a>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#generating-graphical-representations">Generating Graphical Representations</a>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="#future-extensions">Future Extensions</a>
-</li>
 </ul>
 </li>
 </ul>
@@ -313,17 +309,6 @@
 </details>
 </body>
 </html>
-<h3 id="generating-graphical-representations"><strong>Generating Graphical Representations</strong></h3>
-<p>To explore the relationship between <strong>range and launch angle</strong>, we generate <strong>graphs</strong> using <strong>Matplotlib</strong>:
-- <strong>Plot 1</strong>: The <strong>trajectory of the projectile</strong> for different angles.
-- <strong>Plot 2</strong>: A <strong>Range vs. Angle</strong> curve to show the optimal launch angle for maximum range.</p>
-<p>These visualizations help in understanding how different initial conditions affect projectile motion.</p>
-<p><img alt="Projectile Motion Trajectory" src="path/to/graph.png"/></p>
-<h3 id="future-extensions"><strong>Future Extensions</strong></h3>
-<p>This simulation can be further enhanced by:
-- <strong>Including air resistance</strong>: Accounting for drag force to improve real-world accuracy.
-- <strong>Simulating motion on uneven terrain</strong>: Adjusting equations to consider variable landing heights.
-- <strong>Interactive elements</strong>: Implementing sliders or input fields in a <strong>Jupyter Notebook</strong> for real-time parameter tuning.</p>
 <hr/>
 <p>By developing this computational model, we bridge the gap between <strong>theory and application</strong>, enabling dynamic analysis of projectile motion in various conditions.</p>
 <!DOCTYPE html>
@@ -380,10 +365,6 @@
     </style>
 </head>
 <body>
-<div class="title-container">
-<span>Escape</span> <span style="font-weight: bold;">Velocity</span>
-<a href="#">🔗</a>
-</div>
 <details>
 <summary><strong>Generating Graphical Representations</strong></summary>
 <p>To explore the relationship between <strong>range and launch angle</strong>, we generate <strong>graphs</strong> using <strong>Matplotlib</strong>:</p>
@@ -405,28 +386,6 @@
 </details>
 </body>
 </html>
-<p>import numpy as np
-import matplotlib.pyplot as plt</p>
-<p>def r(t):
-    return np.array([t, -t**2 + t])</p>
-<p>def v(t):
-    return np.array([1, -2*t + 1])</p>
-<p>t = np.linspace(0, 10, 100)</p>
-<p>fig, ax = plt.subplots(figsize=(8, 6))</p>
-<h1 id="whole-curve">Whole curve</h1>
-<p>ax.plot(r(t)[0], r(t)[1], label='r(t)', color='black')</p>
-<h1 id="velocity-vector-at-t3">Velocity vector at t=3</h1>
-<p>ax.quiver(r(3)[0], r(3)[1], v(3)[0], v(3)[1], angles='xy', scale_units='xy', scale=1, color='red', label='v(3)')
-ax.text(r(3)[0] + v(3)[0], r(3)[1] + v(3)[1], 'v(3)', color='red')</p>
-<h1 id="velocity-vector-at-t6">Velocity vector at t=6</h1>
-<p>ax.quiver(r(6)[0], r(6)[1], v(6)[0], v(6)[1], angles='xy', scale_units='xy', scale=1, color='blue', label='v(6)')
-ax.text(r(6)[0] + v(6)[0], r(6)[1] + v(6)[1], 'v(6)', color='blue')</p>
-<h1 id="labels-and-legend">Labels and legend</h1>
-<p>ax.set_xlabel('x')
-ax.set_ylabel('y')
-ax.legend()
-ax.grid(True)</p>
-<p>plt.show()</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
