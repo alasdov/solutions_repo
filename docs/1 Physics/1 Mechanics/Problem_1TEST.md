@@ -131,27 +131,28 @@ Studying projectile motion has a wide range of applications across different fie
             font-family: Arial, sans-serif;
         }
 
-        /* Стилизуем раскрывающуюся секцию */
+        /* Основной стиль секции */
         details {
             margin-top: 10px;
             border-left: 4px solid #2979ff;
-            background-color: #f8f9fa;
+            background-color: #ffffff;
             border-radius: 5px;
             transition: all 0.3s ease-in-out;
-            box-shadow: none;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
             padding: 0;
+            overflow: hidden;
         }
 
         details[open] {
-            background-color: #ffffff;
+            background-color: #f8f9fa;
         }
 
-        /* Стиль заголовка секции */
+        /* Стиль заголовка (делаем как в образце) */
         summary {
             font-size: 1.2em;
             font-weight: bold;
             cursor: pointer;
-            padding: 10px 15px;
+            padding: 12px 15px;
             display: flex;
             align-items: center;
             background-color: #ffffff;
@@ -165,23 +166,24 @@ Studying projectile motion has a wide range of applications across different fie
             background-color: #f1f1f1;
         }
 
-        /* Внутреннее содержимое */
+        /* Контент внутри */
         details div {
-            padding: 10px 15px;
+            padding: 12px 20px;
         }
 
         details ul {
-            padding-left: 30px;
+            padding-left: 25px;
         }
 
         details li {
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
+
     </style>
 </head>
 <body>
 
-    <details>
+    <details open>
         <summary>Key Parameters Affecting Projectile Motion</summary>
         <div>
             <p>Several parameters influence the behavior of a projectile:</p>
@@ -198,3 +200,4 @@ Studying projectile motion has a wide range of applications across different fie
 
 </body>
 </html>
+
