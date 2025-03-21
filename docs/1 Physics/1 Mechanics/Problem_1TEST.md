@@ -131,13 +131,13 @@ Studying projectile motion has a wide range of applications across different fie
             font-family: Arial, sans-serif;
         }
 
-        /* Стиль секции */
+        /* Основной стиль секции */
         details {
             margin-top: 10px;
             border-left: 4px solid #2979ff;
             background-color: #f8f9fa;
             border-radius: 5px;
-            padding: 12px 15px;
+            padding: 0;
             box-shadow: none;
             transition: all 0.3s ease-in-out;
         }
@@ -154,20 +154,20 @@ Studying projectile motion has a wide range of applications across different fie
             transition: background-color 0.3s ease;
             padding: 12px 15px;
             border-left: none;
-            margin: -12px -15px 0 -15px;
+            margin: 0;
         }
 
         summary:hover {
             background-color: #e0e0e0;
         }
 
-        /* Внутренний контент */
+        /* Исправление отступов внутри */
         details div {
-            padding: 10px 0;
+            padding: 12px 15px;
         }
 
         details ul {
-            padding-left: 25px;
+            padding-left: 20px;
         }
 
         details li {
@@ -196,4 +196,5 @@ Studying projectile motion has a wide range of applications across different fie
 
 </body>
 </html>
+
 
