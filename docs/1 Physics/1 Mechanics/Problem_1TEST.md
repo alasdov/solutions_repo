@@ -9,20 +9,18 @@
     <title>Styled Section</title>
     <style>
         .static-section {
-            background-color: #f8f9fa;
-            padding: 15px;
-            border-left: 4px solid #2979ff; /* Синий бордер */
+            background-color: #f1f1f1; /* Более мягкий серый фон */
+            padding: 12px;
+            border-left: 4px solid #5a9bff; /* Светло-синий бордер */
             border-radius: 5px;
             margin-bottom: 10px;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .static-section h2 {
-            font-size: 1.5em;
+            font-size: 1.3em; /* Уменьшен размер шрифта */
             font-weight: bold;
             color: #333;
             margin: 0;
-            padding-bottom: 5px;
         }
     </style>
 </head>
@@ -33,6 +31,8 @@
     </div>
 
 </body>
+</html>
+
 </html>
 
 Projectile motion is a fundamental concept in physics that describes the motion of an object launched into the air, subject only to the force of gravity. Understanding projectile motion is crucial because it provides insights into:
