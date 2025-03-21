@@ -240,5 +240,13 @@ Studying projectile motion has a wide range of applications across different fie
 </body>
 </html>
 
+# Projectile Motion Simulation
+
+## Introduction
+Projectile motion describes the motion of an object launched into the air under the influence of gravity, assuming no air resistance. This simulation models the trajectory based on initial velocity and launch angle.
+
+## Equations of Motion
+The following equations define projectile motion:
+
 ![Projectile Motion Diagram](https://i.imgur.com/cz9jqWb.png)
 
