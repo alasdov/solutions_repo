@@ -1,13 +1,54 @@
 # Problem 1
 ## Introduction and Motivation
-### Significance of Studying Projectile Motion
-Projectile motion is a fundamental concept in physics that describes the motion of an object launched into the air, subject only to the force of gravity. Understanding projectile motion is crucial because it provides insights into:
 
-- The behavior of objects in free-fall and how they travel through space.
-- The effects of different forces, such as gravity and air resistance, on moving bodies.
-- Predicting the trajectory of objects in various real-world scenarios.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Section</title>
+    <style>
+        .static-section {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #2979ff; /* Синий бордер */
+            border-radius: 5px;
+            margin-bottom: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
 
-Projectile motion is not just a theoretical concept but a practical tool for engineers, scientists, and athletes who need to optimize performance in various applications.
+        .static-section h2 {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+            margin: 0;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #2979ff;
+        }
+
+        .static-section p {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="static-section">
+        <h2>Significance of Studying Projectile Motion</h2>
+        <p>Projectile motion is a fundamental concept in physics that describes the motion of an object launched into the air, subject only to the force of gravity.</p>
+        <p>Understanding projectile motion is crucial because it provides insights into:</p>
+        <ul>
+            <li>The behavior of objects in free-fall and how they travel through space.</li>
+            <li>The effects of different forces, such as gravity and air resistance, on moving bodies.</li>
+            <li>Predicting the trajectory of objects in various real-world scenarios.</li>
+        </ul>
+        <p>Projectile motion is not just a theoretical concept but a practical tool for engineers, scientists, and athletes who need to optimize performance in various applications.</p>
+    </div>
+
+</body>
+</html>
 
 ### Practical Applications
 Studying projectile motion has a wide range of applications across different fields, including:
