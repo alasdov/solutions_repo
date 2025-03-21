@@ -61,7 +61,36 @@ Projectile motion is a fundamental concept in physics that describes the motion 
 
 Projectile motion is not just a theoretical concept but a practical tool for engineers, scientists, and athletes who need to optimize performance in various applications.
 
-### Practical Applications
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Section Fix</title>
+    <style>
+        /* Исправленный стиль */
+        .static-section {
+            background-color: #f9f9f9; /* Светло-серый, но не слишком контрастный */
+            padding: 10px 15px;
+            border-left: 4px solid #5a9bff; /* Умеренно-синий бордер */
+            border-radius: 4px;
+            margin-bottom: 15px;
+            box-shadow: none; /* Убираем тень, если она ломает макет */
+            display: flex; /* Гарантия, что размер блока соответствует контенту */
+            align-items: center;
+        }
+
+        .static-section h2 {
+            font-size: 1.2em; /* Уменьшенный размер для соответствия другим заголовкам */
+            font-weight: bold;
+            color: #222; /* Чуть темнее для лучшего контраста */
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+
 Studying projectile motion has a wide range of applications across different fields, including:
 
 - Sports: Understanding projectile motion helps athletes optimize their performance in sports like soccer, basketball, and javelin throwing by adjusting angles and forces to achieve maximum range or accuracy.
