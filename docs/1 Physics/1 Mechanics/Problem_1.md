@@ -213,13 +213,13 @@ The projectile's motion is governed by the following equations:
    $$
 
 ### **Generating Graphical Representations**
-To explore the relationship between **range and launch angle**, we generate **graphs** using **Matplotlib**:
+To explore the relationship between **range and launch angle**, we generate **interactive graphs** using **Plotly**:
 - **Plot 1**: The **trajectory of the projectile** for different angles.
 - **Plot 2**: A **Range vs. Angle** curve to show the optimal launch angle for maximum range.
 
 These visualizations help in understanding how different initial conditions affect projectile motion.
 
-![Projectile Motion Trajectory](path/to/graph.png)
+<iframe src="path/to/graph.html" width="100%" height="600"></iframe>
 
 ### **Future Extensions**
 This simulation can be further enhanced by:
