@@ -86,10 +86,32 @@ Projectile motion is not just a theoretical concept but a practical tool for eng
             color: #222; /* Чуть темнее для лучшего контраста */
             margin: 0;
         }
+
+        /* Общие стили для остальных секций (если они сбились) */
+        details {
+            background-color: #f8f8f8;
+            border-left: 3px solid #d1d1d1;
+            padding: 8px;
+            margin-bottom: 8px;
+            border-radius: 4px;
+        }
+
+        summary {
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
 
+    <!-- Исправленная секция -->
+    <div class="static-section">
+        <h2>Practical Applications</h2>
+    </div>
+
+</body>
+</html>
 
 Studying projectile motion has a wide range of applications across different fields, including:
 
