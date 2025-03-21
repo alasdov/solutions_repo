@@ -134,21 +134,6 @@ Studying projectile motion has a wide range of applications across different fie
 </body>
 </html>
 
-### **Generating Graphical Representations**
-To explore the relationship between **range and launch angle**, we generate **graphs** using **Matplotlib**:
-- **Plot 1**: The **trajectory of the projectile** for different angles.
-- **Plot 2**: A **Range vs. Angle** curve to show the optimal launch angle for maximum range.
-
-These visualizations help in understanding how different initial conditions affect projectile motion.
-
-![Projectile Motion Trajectory](path/to/graph.png)
-
-### **Future Extensions**
-This simulation can be further enhanced by:
-- **Including air resistance**: Accounting for drag force to improve real-world accuracy.
-- **Simulating motion on uneven terrain**: Adjusting equations to consider variable landing heights.
-- **Interactive elements**: Implementing sliders or input fields in a **Jupyter Notebook** for real-time parameter tuning.
-
 ---
 
 By developing this computational model, we bridge the gap between **theory and application**, enabling dynamic analysis of projectile motion in various conditions.
@@ -207,11 +192,6 @@ By developing this computational model, we bridge the gap between **theory and a
 </head>
 <body>
 
-    <div class="title-container">
-        <span>Escape</span> <span style="font-weight: bold;">Velocity</span>
-        <a href="#">🔗</a>
-    </div>
-
     <details>
       <summary><strong>Generating Graphical Representations</strong></summary>
       <p>To explore the relationship between <strong>range and launch angle</strong>, we generate <strong>graphs</strong> using <strong>Matplotlib</strong>:</p>
@@ -236,34 +216,4 @@ By developing this computational model, we bridge the gap between **theory and a
 </body>
 </html>
 
-import numpy as np
-import matplotlib.pyplot as plt
-
-def r(t):
-    return np.array([t, -t**2 + t])
-
-def v(t):
-    return np.array([1, -2*t + 1])
-
-t = np.linspace(0, 10, 100)
-
-fig, ax = plt.subplots(figsize=(8, 6))
-
-# Whole curve
-ax.plot(r(t)[0], r(t)[1], label='r(t)', color='black')
-
-# Velocity vector at t=3
-ax.quiver(r(3)[0], r(3)[1], v(3)[0], v(3)[1], angles='xy', scale_units='xy', scale=1, color='red', label='v(3)')
-ax.text(r(3)[0] + v(3)[0], r(3)[1] + v(3)[1], 'v(3)', color='red')
-
-# Velocity vector at t=6
-ax.quiver(r(6)[0], r(6)[1], v(6)[0], v(6)[1], angles='xy', scale_units='xy', scale=1, color='blue', label='v(6)')
-ax.text(r(6)[0] + v(6)[0], r(6)[1] + v(6)[1], 'v(6)', color='blue')
-
-# Labels and legend
-ax.set_xlabel('x')
-ax.set_ylabel('y')
-ax.legend()
-ax.grid(True)
-
-plt.show()
+ 
