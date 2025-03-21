@@ -13,7 +13,7 @@
 <script>
         // Current page data
         var mkdocs_page_name = "Problem 1";
-        var mkdocs_page_input_path = "1 Physics/1 Mechanics/Problem_1.md";
+        var mkdocs_page_input_path = "1 Physics/1 Mechanics/Problem_1TEST.md";
         var mkdocs_page_url = null;
       </script>
 <!--[if lt IE 9]>
@@ -46,6 +46,8 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal current">1 Mechanics</a>
 <ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Problem_1/">Problem 1</a>
+</li>
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
 <ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="#introduction-and-motivation">Introduction and Motivation</a>
@@ -54,13 +56,13 @@
 </li>
 <li class="toctree-l4"><a class="reference internal" href="#practical-applications">Practical Applications</a>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#key-parameters-affecting-projectile-motion">Key Parameters Affecting Projectile Motion</a>
+<li class="toctree-l4"><a class="reference internal" href="#generating-graphical-representations">Generating Graphical Representations</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#future-extensions">Future Extensions</a>
 </li>
 </ul>
 </li>
 </ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../Problem_1TEST/">Problem 1</a>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Problem_2/">Problem 2</a>
 </li>
@@ -201,189 +203,116 @@
 <li>Astrophysics and Space Exploration: The motion of rockets and space probes follows projectile motion principles, taking into account gravity and external forces.</li>
 <li>Military and Defense: The trajectory of missiles, artillery shells, and even drones is based on the principles of projectile motion.</li>
 </ul>
-<h3 id="key-parameters-affecting-projectile-motion">Key Parameters Affecting Projectile Motion</h3>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projectile Motion Analysis</title>
+<style>
+        /* Стили для секций details */
+        details {
+            margin-top: 10px;
+            padding: 10px;
+            border-left: 4px solid #2979ff; /* Синий бордер */
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        summary {
+            font-size: 1.3em;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        details img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<details>
+<summary><strong>Key Parameters Affecting Projectile Motion</strong></summary>
 <p>Several parameters influence the behavior of a projectile:</p>
 <ul>
-<li>Initial velocity (v₀): Determines the overall motion, affecting both range and maximum height.</li>
-<li>Angle of projection (θ): The launch angle plays a crucial role in optimizing the range and trajectory shape.</li>
-<li>Gravitational acceleration (g): The constant acceleration due to gravity affects the motion, typically taken as 9.81 m/s² on Earth.</li>
-<li>Launch height (h): If the projectile is launched from a height, it alters the flight time and final landing position.</li>
-<li>Air resistance (optional consideration): In real-world scenarios, drag affects the motion but is often neglected in basic models.</li>
+<li><strong>Initial velocity (v₀):</strong> Determines the overall motion, affecting both range and maximum height.</li>
+<li><strong>Angle of projection (θ):</strong> The launch angle plays a crucial role in optimizing the range and trajectory shape.</li>
+<li><strong>Gravitational acceleration (g):</strong> The constant acceleration due to gravity affects the motion, typically taken as 9.81 m/s² on Earth.</li>
+<li><strong>Launch height (h):</strong> If the projectile is launched from a height, it alters the flight time and final landing position.</li>
+<li><strong>Air resistance (optional consideration):</strong> In real-world scenarios, drag affects the motion but is often neglected in basic models.</li>
 </ul>
 <p>By analyzing how these parameters interact, we can develop accurate models to describe and predict projectile trajectories in different conditions.</p>
-<h1 id="task-list-for-investigating-the-range-as-a-function-of-the-angle-of-projection">Task List for Investigating the Range as a Function of the Angle of Projection</h1>
-<ol>
-<li><strong>Theoretical Foundation</strong></li>
-<li>Derive the governing equations of projectile motion from fundamental principles.</li>
-<li>Solve the basic differential equation to establish the general form of the motion.</li>
-<li>Explain how variations in initial conditions (initial velocity, gravitational acceleration, launch height) lead to a family of solutions.</li>
-</ol>
-<h2 id="theoretical-foundation">Theoretical Foundation</h2>
-<h3 id="governing-equations-of-projectile-motion">Governing Equations of Projectile Motion</h3>
-<p>Projectile motion can be described using fundamental principles of kinematics and Newtonian mechanics. The motion is typically analyzed in two independent components:
-- <strong>Horizontal motion</strong> (constant velocity motion)
-- <strong>Vertical motion</strong> (accelerated motion due to gravity)</p>
-<h4 id="equations-of-motion"><strong>Equations of Motion</strong></h4>
-<p>The equations governing projectile motion are derived from the basic kinematic equations:
-1. <strong>Horizontal Motion:</strong>
-   - Displacement:<br/>
-<span class="arithmatex">\(<span class="arithmatex">\(x = v_0 \cos(\theta) t\)</span>\)</span>
-   - Velocity remains constant:   $$
-     v_x = v_0 \cos(\theta)  $$
-2. <strong>Vertical Motion:</strong>
-   - Displacement:<br/>
-     $$ y = h_0 + v_0 \sin(\theta) t - \frac{1}{2} g t^2$$
-   - Velocity:<br/>
-     $$ v_y = v_0 \sin(\theta) - g t $$
-   - Time of flight (solving for <span class="arithmatex">\( t \)</span> when <span class="arithmatex">\( y = 0 \)</span>):<br/>
-     $$  t_f = \frac{v_0 \sin(\theta) + \sqrt{(v_0 \sin(\theta))^2 + 2 g h_0}}{g}  $$
-3. <strong>Range (Horizontal Distance Traveled):</strong>
-   - The total horizontal distance covered before hitting the ground:
-     $$ R = v_0 \cos(\theta) t_f $$
-4. <strong>Maximum Height:</strong>
-   - The peak height reached by the projectile:
-     $$  H_{\text{max}} = h_0 + \frac{(v_0 \sin(\theta))^2}{2g} $$</p>
-<h3 id="solving-the-basic-differential-equation"><strong>Solving the Basic Differential Equation</strong></h3>
-<p>To derive the motion equations, consider Newton’s Second Law:
-$$ F = m a$$
-For horizontal motion:
-- Since no force acts in the horizontal direction (assuming no air resistance), acceleration is zero, and velocity remains constant.
-For vertical motion:
-- The only force acting is gravity<span class="arithmatex">\(<span class="arithmatex">\((mg)\)</span>\)</span>leading to a constant acceleration of <span class="arithmatex">\( g \)</span>.
-By integrating the acceleration function, we obtain velocity, and integrating velocity yields displacement equations.</p>
-<h3 id="effect-of-initial-conditions-on-motion"><strong>Effect of Initial Conditions on Motion</strong></h3>
-<p>The trajectory of the projectile is determined by the initial conditions:
-- <strong>Higher initial velocity <span class="arithmatex">(<span class="arithmatex">\((v_0)\)</span>\)</span></strong> → Increases both range and maximum height.
-- <strong>Larger angle <span class="arithmatex">(<span class="arithmatex">\(( \theta )\)</span>\)</span></strong> → Increases height but reduces range beyond the optimal <span class="arithmatex">\( 45^\circ \)</span>.
-- <strong>Greater launch height <span class="arithmatex">(<span class="arithmatex">\(( h_0 )\)</span>\)</span></strong> → Extends time of flight and increases range.
-- <strong>Higher gravitational acceleration <span class="arithmatex">(<span class="arithmatex">\(( g )\)</span>\)</span></strong> → Reduces range and maximum height.</p>
-<h2 id="these-factors-contribute-to-a-variety-of-projectile-behaviors-observed-in-sports-engineering-and-nature">These factors contribute to a variety of projectile behaviors observed in sports, engineering, and nature.</h2>
+</details>
+<details>
+<summary><strong>Theoretical Foundation</strong></summary>
+<p>Projectile motion can be described using fundamental principles of kinematics and Newtonian mechanics.</p>
+<ul>
+<li><strong>Horizontal motion:</strong> Constant velocity motion.</li>
+<li><strong>Vertical motion:</strong> Accelerated motion due to gravity.</li>
+</ul>
+<h3>Equations of Motion</h3>
+<ul>
+<li><strong>Horizontal Motion:</strong> $$x = v_0 \cos(\theta) t$$</li>
+<li><strong>Velocity remains constant:</strong> $$v_x = v_0 \cos(\theta)$$</li>
+<li><strong>Vertical Displacement:</strong> $$ y = h_0 + v_0 \sin(\theta) t - \frac{1}{2} g t^2$$</li>
+<li><strong>Time of flight:</strong> $$ t_f = \frac{v_0 \sin(\theta) + \sqrt{(v_0 \sin(\theta))^2 + 2 g h_0}}{g} $$</li>
+</ul>
 <p>This theoretical foundation establishes the fundamental relationships governing projectile motion and sets the stage for computational modeling.</p>
-<h2 id="2-analysis-of-the-range">2. <strong>Analysis of the Range</strong></h2>
-<h3 id="dependence-of-horizontal-range-on-the-angle-of-projection"><strong>Dependence of Horizontal Range on the Angle of Projection</strong></h3>
-<p>The horizontal range (<span class="arithmatex">\( R \)</span>) of a projectile is determined by the launch angle and other key parameters. The general formula for the range of a projectile launched from ground level (<span class="arithmatex">\( h_0 = 0 \)</span>) is given by:</p>
-<div class="arithmatex">\[
-R = \frac{v_0^2 \sin(2\theta)}{g}
-\]</div>
-<p>where:
-- <span class="arithmatex">\( v_0 \)</span> is the initial velocity,
-- <span class="arithmatex">\( \theta \)</span> is the launch angle,
-- <span class="arithmatex">\( g \)</span> is the acceleration due to gravity (<span class="arithmatex">\( 9.81 \, \text{m/s}^2 \)</span>).</p>
-<p>From this equation, it is evident that the range is maximized when <span class="arithmatex">\( \sin(2\theta) \)</span> reaches its peak value of 1, which occurs at <strong><span class="arithmatex">\( \theta = 45^\circ \)</span></strong>.</p>
-<h3 id="influence-of-key-parameters-on-range"><strong>Influence of Key Parameters on Range</strong></h3>
-<p>Several factors influence the projectile’s horizontal range:</p>
+</details>
+<details>
+<summary><strong>Analysis of the Range</strong></summary>
+<h3>Dependence of Horizontal Range on the Angle of Projection</h3>
+<p>The horizontal range (\( R \)) of a projectile is determined by the launch angle and other key parameters.</p>
+<p>General formula for the range:</p>
+<p>$$R = \frac{v_0^2 \sin(2\theta)}{g}$$</p>
+<p>From this equation, the range is maximized when \( \theta = 45^\circ \).</p>
+</details>
+<details>
+<summary><strong>Practical Applications</strong></summary>
+<h3>Real-World Scenarios of Projectile Motion</h3>
 <ul>
-<li><strong>Initial Velocity (<span class="arithmatex">\( v_0 \)</span>)</strong>: Since range is proportional to <span class="arithmatex">\( v_0^2 \)</span>, increasing the initial speed significantly extends the range.</li>
-<li><strong>Launch Angle (<span class="arithmatex">\( \theta \)</span>)</strong>: The range depends on <span class="arithmatex">\( \sin(2\theta) \)</span>, meaning it is symmetrical about <span class="arithmatex">\( 45^\circ \)</span>. Angles lower or higher than <span class="arithmatex">\( 45^\circ \)</span> result in shorter distances.</li>
-<li><strong>Gravitational Acceleration (<span class="arithmatex">\( g \)</span>)</strong>: Since </li>
+<li><strong>Sports Science:</strong> Understanding projectile motion helps athletes optimize performance in disciplines such as basketball, soccer, and javelin throw.</li>
+<li><strong>Engineering and Ballistics:</strong> Used for designing missiles, fluid mechanics, and vehicle safety systems.</li>
+<li><strong>Astrophysics and Space Exploration:</strong> Applications include rocket launch dynamics and celestial mechanics.</li>
 </ul>
-<div class="arithmatex">\[
-R \propto \frac{1}{g}
-\]</div>
-<p>higher gravity (e.g., on Jupiter) reduces the range, while lower gravity (e.g., on the Moon) increases it.
-- <strong>Launch Height (<span class="arithmatex">\( h_0 \)</span>)</strong>: If the projectile is launched from an elevated position, the flight time increases, and consequently, the range extends beyond the standard formula.</p>
-<p>For a projectile launched from height <span class="arithmatex">\( h_0 \)</span>, the modified range equation is:</p>
-<div class="arithmatex">\[
-R = v_0 \cos(\theta) \left( \frac{v_0 \sin(\theta) + \sqrt{(v_0 \sin(\theta))^2 + 2 g h_0}}{g} \right)
-\]</div>
-<h3 id="mathematical-and-physical-relationships"><strong>Mathematical and Physical Relationships</strong></h3>
-<p>The range equation assumes <strong>no air resistance</strong>, making it an idealized case. In real-world scenarios:
-- <strong>Air resistance decreases range</strong> by introducing drag forces.
-- <strong>Wind conditions alter trajectories</strong>, either increasing or decreasing range depending on direction.
-- <strong>Surface variations (e.g., launching from a hill)</strong> influence the effective horizontal displacement.</p>
-<p>These factors highlight the importance of computational models that incorporate <strong>numerical simulations</strong> to achieve precise predictions.</p>
-<hr/>
-<p>This section explores the fundamental relationships governing projectile range and lays the foundation for <strong>graphical simulations and experimental validation</strong>.</p>
-<h2 id="practical-applications_1"><strong>Practical Applications</strong></h2>
-<h3 id="real-world-scenarios-of-projectile-motion"><strong>Real-World Scenarios of Projectile Motion</strong></h3>
-<p>The study of projectile motion extends far beyond theoretical physics and is crucial in multiple real-world applications. The fundamental principles governing projectiles allow for precise trajectory predictions and optimization across various domains:</p>
+</details>
+<details>
+<summary><strong>Extending the Model to More Complex Cases</strong></summary>
 <ul>
-<li><strong>Sports Science</strong>: Understanding projectile motion helps athletes and coaches optimize performance in disciplines such as:</li>
-<li><strong>Basketball</strong> – Calculating the ideal arc for a free throw.</li>
-<li><strong>Soccer</strong> – Maximizing shot accuracy and power.</li>
-<li>
-<p><strong>Javelin Throw</strong> – Determining the optimal release angle for maximum range.</p>
-</li>
-<li>
-<p><strong>Engineering and Ballistics</strong>: Engineers and defense analysts rely on projectile motion principles in:</p>
-</li>
-<li><strong>Ballistic Trajectories</strong> – Designing missiles and artillery shells for maximum accuracy.</li>
-<li><strong>Fluid Mechanics</strong> – Optimizing the arc of water fountains and irrigation systems.</li>
-<li>
-<p><strong>Vehicle Safety Systems</strong> – Airbag deployment and crash simulations often involve projectile motion concepts.</p>
-</li>
-<li>
-<p><strong>Astrophysics and Space Exploration</strong>: The equations of projectile motion extend to large-scale applications such as:</p>
-</li>
-<li><strong>Rocket Launch Dynamics</strong> – Modeling spacecraft trajectories when escaping Earth's gravity.</li>
-<li><strong>Celestial Mechanics</strong> – Calculating the motion of space probes and interplanetary missions.</li>
-<li><strong>Lunar and Martian Landings</strong> – Simulating descent paths under different gravitational conditions.</li>
+<li><strong>Effects of Air Resistance:</strong> Drag forces slow down the projectile, reducing range and altering trajectory.</li>
+<li><strong>Projectile Motion Over Uneven Terrain:</strong> Simulations must factor in variable elevations to determine precise landing coordinates.</li>
+<li><strong>External Forces (e.g., Wind Influence):</strong> Crosswinds and headwinds affect projectile motion asymmetrically.</li>
 </ul>
-<h3 id="extending-the-model-to-more-complex-cases"><strong>Extending the Model to More Complex Cases</strong></h3>
-<p>The basic projectile motion model assumes ideal conditions, such as <strong>uniform gravity</strong> and <strong>no air resistance</strong>. However, real-world applications often require modifications:</p>
+</details>
+<details>
+<summary><strong>Implementation</strong></summary>
+<h3>Developing a Computational Model</h3>
+<p>To accurately analyze projectile motion, we develop a computational tool that simulates the trajectory based on key governing equations.</p>
 <ul>
-<li><strong>Effects of Air Resistance</strong>:</li>
-<li>Drag forces slow down the projectile, reducing range and altering trajectory.</li>
-<li>
-<p>The equations must incorporate <strong>fluid dynamics</strong> for a more accurate model.</p>
-</li>
-<li>
-<p><strong>Projectile Motion Over Uneven Terrain</strong>:</p>
-</li>
-<li>In reality, landing surfaces are rarely flat.</li>
-<li>The final impact point depends on the <strong>topography of the terrain</strong>.</li>
-<li>
-<p>Simulations must factor in variable elevations to determine precise landing coordinates.</p>
-</li>
-<li>
-<p><strong>External Forces (e.g., Wind Influence)</strong>:</p>
-</li>
-<li>Crosswinds and headwinds affect projectile motion asymmetrically.</li>
-<li>Predicting motion under wind conditions requires computational methods, such as <strong>numerical integration</strong>.</li>
+<li>Numerically compute the projectile's trajectory over time.</li>
+<li>Visualize how the <strong>range depends on the launch angle</strong>.</li>
+<li>Allow users to modify initial conditions and observe changes dynamically.</li>
 </ul>
-<p>These extensions highlight the importance of <strong>advanced modeling techniques</strong>, including computational physics and experimental validation, to achieve precise real-world predictions.</p>
-<hr/>
-<p>This section demonstrates the <strong>versatility of projectile motion principles</strong>, showing how they apply to fields ranging from <strong>sports and engineering to space exploration</strong>. The next steps involve computational simulations and graphical representations to further validate the theoretical models.</p>
-<h2 id="implementation"><strong>Implementation</strong></h2>
-<h3 id="developing-a-computational-model"><strong>Developing a Computational Model</strong></h3>
-<p>To accurately analyze projectile motion, we develop a computational tool that simulates the trajectory based on key governing equations. The simulation provides insights into how <strong>initial velocity</strong>, <strong>launch angle</strong>, <strong>gravitational acceleration</strong>, and other factors influence the motion of a projectile.</p>
-<p>This implementation will:
-- Numerically compute the projectile's trajectory over time.
-- Visualize how the <strong>range depends on the launch angle</strong>.
-- Allow users to modify initial conditions and observe changes dynamically.</p>
-<h3 id="python-based-simulation-in-a-jupyter-notebook"><strong>Python-Based Simulation in a Jupyter Notebook</strong></h3>
-<p>The implementation involves writing a <strong>Python script</strong> or a <strong>Jupyter Notebook</strong> that:
-- Uses <strong>kinematic equations</strong> to compute projectile displacement at each time step.
-- Integrates <strong>Matplotlib</strong> for visualizing projectile motion.
-- Supports varying parameters such as <strong>air resistance</strong>, <strong>uneven terrain</strong>, and <strong>changing gravity</strong>.</p>
-<h4 id="core-equations-for-the-simulation"><strong>Core Equations for the Simulation</strong></h4>
-<p>The projectile's motion is governed by the following equations:</p>
-<ol>
-<li>
-<p><strong>Horizontal Position Over Time</strong>:
-   $$
-   x = v_0 \cos(\theta) t
-   $$</p>
-</li>
-<li>
-<p><strong>Vertical Position Over Time</strong>:
-   $$
-   y = h_0 + v_0 \sin(\theta) t - \frac{1}{2} g t^2
-   $$</p>
-</li>
-<li>
-<p><strong>Time of Flight</strong>:
-   $$
-   t_f = \frac{v_0 \sin(\theta) + \sqrt{(v_0 \sin(\theta))^2 + 2 g h_0}}{g}
-   $$</p>
-</li>
-<li>
-<p><strong>Range (Total Horizontal Distance)</strong>:
-   $$
-   R = v_0 \cos(\theta) t_f
-   $$</p>
-</li>
-</ol>
+<h3>Python-Based Simulation in a Jupyter Notebook</h3>
+<p>The implementation involves writing a <strong>Python script</strong> or a <strong>Jupyter Notebook</strong> that:</p>
+<ul>
+<li>Uses <strong>kinematic equations</strong> to compute projectile displacement at each time step.</li>
+<li>Integrates <strong>Matplotlib</strong> for visualizing projectile motion.</li>
+<li>Supports varying parameters such as <strong>air resistance</strong>, <strong>uneven terrain</strong>, and <strong>changing gravity</strong>.</li>
+</ul>
+<h3>Core Equations for the Simulation</h3>
+<ul>
+<li><strong>Horizontal Position Over Time:</strong> $$x = v_0 \cos(\theta) t$$</li>
+<li><strong>Vertical Position Over Time:</strong> $$y = h_0 + v_0 \sin(\theta) t - \frac{1}{2} g t^2$$</li>
+<li><strong>Time of Flight:</strong> $$t_f = \frac{v_0 \sin(\theta) + \sqrt{(v_0 \sin(\theta))^2 + 2 g h_0}}{g}$$</li>
+<li><strong>Range (Total Horizontal Distance):</strong> $$R = v_0 \cos(\theta) t_f$$</li>
+</ul>
+</details>
+</body>
+</html>
 <h3 id="generating-graphical-representations"><strong>Generating Graphical Representations</strong></h3>
 <p>To explore the relationship between <strong>range and launch angle</strong>, we generate <strong>graphs</strong> using <strong>Matplotlib</strong>:
 - <strong>Plot 1</strong>: The <strong>trajectory of the projectile</strong> for different angles.
@@ -479,8 +408,8 @@ R = v_0 \cos(\theta) \left( \frac{v_0 \sin(\theta) + \sqrt{(v_0 \sin(\theta))^2 
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
-<a class="btn btn-neutral float-left" href="../../.." title="Introduction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-<a class="btn btn-neutral float-right" href="../Problem_1TEST/" title="Problem 1">Next <span class="icon icon-circle-arrow-right"></span></a>
+<a class="btn btn-neutral float-left" href="../Problem_1/" title="Problem 1"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../Problem_2/" title="Problem 2">Next <span class="icon icon-circle-arrow-right"></span></a>
 </div>
 <hr/>
 <div role="contentinfo">
@@ -495,8 +424,8 @@ R = v_0 \cos(\theta) \left( \frac{v_0 \sin(\theta) + \sqrt{(v_0 \sin(\theta))^2 
 </div>
 <div aria-label="Versions" class="rst-versions" role="note">
 <span class="rst-current-version" data-toggle="rst-current-version">
-<span><a href="../../.." style="color: #fcfcfc">« Previous</a></span>
-<span><a href="../Problem_1TEST/" style="color: #fcfcfc">Next »</a></span>
+<span><a href="../Problem_1/" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../Problem_2/" style="color: #fcfcfc">Next »</a></span>
 </span>
 </div>
 <script src="../../../js/jquery-3.6.0.min.js"></script>
