@@ -23,7 +23,6 @@
             color: #333;
             margin: 0;
             padding-bottom: 5px;
-            border-bottom: 2px solid #2979ff;
         }
     </style>
 </head>
