@@ -234,10 +234,11 @@ Studying projectile motion has a wide range of applications across different fie
             <li><strong>Vertical Position Over Time:</strong> $$y = h_0 + v_0 \sin(\theta) t - \frac{1}{2} g t^2$$</li>
             <li><strong>Time of Flight:</strong> $$t_f = \frac{v_0 \sin(\theta) + \sqrt{(v_0 \sin(\theta))^2 + 2 g h_0}}{g}$$</li>
             <li><strong>Range (Total Horizontal Distance):</strong> $$R = v_0 \cos(\theta) t_f$$</li>
-            ![Projectile Motion Diagram](https://i.imgur.com/cz9jqWb.png)
         </ul>
     </details>
 
 </body>
 </html>
+
+![Projectile Motion Diagram](https://i.imgur.com/cz9jqWb.png)
 
