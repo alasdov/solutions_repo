@@ -236,3 +236,53 @@ By developing this computational model, we bridge the gap between **theory and a
 </body>
 </html>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projectile Motion Simulation</title>
+    <style>
+        body { text-align: center; font-family: Arial, sans-serif; }
+        canvas { border: 1px solid black; display: block; margin: auto; }
+    </style>
+</head>
+<body>
+    <h2>Projectile Motion Simulation</h2>
+    <canvas id="canvas" width="800" height="400"></canvas>
+    <script>
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+
+        const g = 9.81; // Gravity
+        const airResistance = 0.02; // Air resistance coefficient
+
+        let velocity = 50; 
+        let angle = 45; 
+        let x = 50, y = canvas.height - 50; 
+
+        let vx = velocity * Math.cos(angle * Math.PI / 180);
+        let vy = -velocity * Math.sin(angle * Math.PI / 180);
+        let dt = 0.05; 
+
+        function simulateProjectile() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+            ctx.arc(x, y, 5, 0, Math.PI * 2);
+            ctx.fillStyle = "red";
+            ctx.fill();
+
+            if (y < canvas.height - 50) {
+                vx *= (1 - airResistance);
+                vy += g * dt;
+                x += vx * dt * 10;
+                y += vy * dt * 10;
+                requestAnimationFrame(simulateProjectile);
+            }
+        }
+
+        simulateProjectile();
+    </script>
+</body>
+</html>
+
