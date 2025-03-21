@@ -236,53 +236,64 @@ By developing this computational model, we bridge the gap between **theory and a
 </body>
 </html>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projectile Motion Simulation</title>
-    <style>
-        body { text-align: center; font-family: Arial, sans-serif; }
-        canvas { border: 1px solid black; display: block; margin: auto; }
-    </style>
-</head>
-<body>
-    <h2>Projectile Motion Simulation</h2>
-    <canvas id="canvas" width="800" height="400"></canvas>
-    <script>
-        const canvas = document.getElementById("canvas");
-        const ctx = canvas.getContext("2d");
+# 🚀 Projectile Motion Simulation (Interactive)
 
-        const g = 9.81; // Gravity
-        const airResistance = 0.02; // Air resistance coefficient
+This page contains an **interactive simulation** of projectile motion with air resistance.
 
-        let velocity = 50; 
-        let angle = 45; 
-        let x = 50, y = canvas.height - 50; 
+## 📊 Interactive Graph
 
-        let vx = velocity * Math.cos(angle * Math.PI / 180);
-        let vy = -velocity * Math.sin(angle * Math.PI / 180);
-        let dt = 0.05; 
+Below is an interactive graph showing projectile motion with adjustable parameters.
 
-        function simulateProjectile() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.beginPath();
-            ctx.arc(x, y, 5, 0, Math.PI * 2);
-            ctx.fillStyle = "red";
-            ctx.fill();
+```python
+import numpy as np
+import plotly.graph_objects as go
 
-            if (y < canvas.height - 50) {
-                vx *= (1 - airResistance);
-                vy += g * dt;
-                x += vx * dt * 10;
-                y += vy * dt * 10;
-                requestAnimationFrame(simulateProjectile);
-            }
-        }
+# Constants
+g = 9.81  # Gravity (m/s²)
+air_resistance = 0.02  # Air resistance coefficient
 
-        simulateProjectile();
-    </script>
-</body>
-</html>
+# Initial conditions
+v0 = 50  # Initial velocity (m/s)
+angle = 45  # Launch angle (degrees)
+theta = np.radians(angle)  # Convert to radians
 
+# Initial velocity components
+vx = v0 * np.cos(theta)
+vy = v0 * np.sin(theta)
+
+# Time settings
+dt = 0.05
+t_max = 2 * vy / g  # Approximate max time
+time = np.arange(0, t_max * 2, dt)
+
+# Lists to store positions
+x_positions, y_positions = [], []
+x, y = 0, 0
+
+# Simulating projectile motion with air resistance
+for t in time:
+    if y < 0:
+        break
+    vx *= (1 - air_resistance)
+    vy -= g * dt
+    x += vx * dt
+    y += vy * dt
+    x_positions.append(x)
+    y_positions.append(y)
+
+# Create an interactive plot with Plotly
+fig = go.Figure()
+fig.add_trace(go.Scatter(x=x_positions, y=y_positions, mode="lines", name="Projectile Path", line=dict(color='red')))
+
+# Layout settings
+fig.update_layout(
+    title="Projectile Motion with Air Resistance",
+    xaxis_title="Distance (m)",
+    yaxis_title="Height (m)",
+    template="plotly_white"
+)
+
+fig.show()
+yaml
+Копировать
+Редактировать
