@@ -406,12 +406,122 @@
 </details>
 </body>
 </html>
-<h1 id="projectile-motion-simulation">Projectile Motion Simulation</h1>
-<h2 id="introduction">Introduction</h2>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projectile Motion Simulation</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .static-section {
+            background-color: #f9f9f9;
+            padding: 10px 15px;
+            border-left: 4px solid #2979ff;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .static-section h2 {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #222;
+            margin: 0;
+        }
+
+        details {
+            background-color: #f8f8f8;
+            border-left: 3px solid #d1d1d1;
+            padding: 8px;
+            margin-bottom: 8px;
+            border-radius: 4px;
+        }
+
+        summary {
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<!-- Static section for Introduction -->
+<div class="static-section">
+<h2>Projectile Motion Simulation</h2>
+</div>
+<div class="static-section">
+<h2>Introduction</h2>
+</div>
 <p>Projectile motion describes the motion of an object launched into the air under the influence of gravity, assuming no air resistance. This simulation models the trajectory based on initial velocity and launch angle.</p>
-<h2 id="equations-of-motion">Equations of Motion</h2>
+<!-- Collapsible section for Equations -->
+<details>
+<summary><strong>Equations of Motion</strong></summary>
 <p>The following equations define projectile motion:</p>
-<p><img alt="Projectile Motion Diagram" src="https://i.imgur.com/cz9jqWb.png"/></p>
+<ul>
+<li><strong>Horizontal displacement:</strong> \( x = v_0 \cos(\theta) t \)</li>
+<li><strong>Vertical displacement:</strong> \( y = v_0 \sin(\theta) t - \frac{1}{2} g t^2 \)</li>
+<li><strong>Time of flight:</strong> \( t_f = \frac{2 v_0 \sin(\theta)}{g} \)</li>
+<li><strong>Maximum height:</strong> \( H_{\text{max}} = \frac{(v_0 \sin(\theta))^2}{2g} \)</li>
+<li><strong>Range:</strong> \( R = \frac{v_0^2 \sin(2\theta)}{g} \)</li>
+</ul>
+</details>
+<!-- Collapsible section for Python Simulation -->
+<details>
+<summary><strong>Python Simulation</strong></summary>
+<p>Below is a Python script that simulates projectile motion and plots the trajectory using <strong>Matplotlib</strong>.</p>
+<pre>
+import numpy as np
+import matplotlib.pyplot as plt
+
+g = 9.81  # Gravity (m/s^2)
+v0 = 30   # Initial velocity (m/s)
+theta = 45  # Launch angle (degrees)
+timestep = 0.1  # Time step (s)
+
+theta_rad = np.radians(theta)
+vx = v0 * np.cos(theta_rad)
+vy = v0 * np.sin(theta_rad)
+
+t_flight = (2 * vy) / g
+t_values = np.arange(0, t_flight, timestep)
+
+x_values = vx * t_values
+y_values = vy * t_values - 0.5 * g * t_values**2
+
+plt.figure(figsize=(8, 6))
+plt.plot(x_values, y_values, label="Projectile Trajectory", color='b')
+plt.xlabel("Distance (m)")
+plt.ylabel("Height (m)")
+plt.title("Projectile Motion")
+plt.legend()
+plt.grid(True)
+plt.show()
+        </pre>
+</details>
+<!-- Collapsible section for Simulation Output -->
+<details>
+<summary><strong>Simulation Output</strong></summary>
+<p>The expected output of the simulation is a <strong>parabolic trajectory</strong>, showing how the projectile moves through space over time.</p>
+<img alt="Projectile Motion Simulation" src="https://i.imgur.com/cz9jqWb.png" style="max-width: 100%; height: auto;"/>
+</details>
+<!-- Collapsible section for Key Insights -->
+<details>
+<summary><strong>Key Insights</strong></summary>
+<ul>
+<li>The projectile follows a <strong>parabolic path</strong> due to constant gravitational acceleration.</li>
+<li><strong>Maximum range</strong> is achieved at <strong>45° launch angle</strong> (in an ideal case without air resistance).</li>
+<li><strong>Higher initial velocity</strong> increases both range and maximum height.</li>
+<li><strong>Time of flight</strong> is determined by the vertical velocity component.</li>
+</ul>
+</details>
+</body>
+</html>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
