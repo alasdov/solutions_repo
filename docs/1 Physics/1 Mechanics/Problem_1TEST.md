@@ -125,66 +125,12 @@ Studying projectile motion has a wide range of applications across different fie
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Key Parameters Section</title>
+    <title>Projectile Motion Analysis</title>
     <style>
         body {
             font-family: Arial, sans-serif;
         }
 
-        /* Основной стиль секции */
-        details {
-            margin-top: 10px;
-            border-left: 4px solid #2979ff;
-            background-color: #f8f9fa;
-            border-radius: 5px;
-            padding: 0;
-            box-shadow: none;
-            transition: all 0.3s ease-in-out;
-        }
-
-        /* Заголовок */
-        summary {
-            font-size: 1.2em;
-            font-weight: bold;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            background-color: #f8f9fa;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            padding: 12px 15px;
-            border-left: none;
-            margin: 0;
-        }
-
-        summary:hover {
-            background-color: #e0e0e0;
-        }
-
-        /* Исправление отступов внутри */
-        details div {
-            padding: 12px 15px;
-        }
-
-        details ul {
-            padding-left: 20px;
-        }
-
-        details li {
-            margin-bottom: 8px;
-        }
-
-    </style>
-</head>
-<body>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projectile Motion Analysis</title>
-    <style>
         /* Стили для секций details */
         details {
             margin-top: 10px;
@@ -236,7 +182,6 @@ Studying projectile motion has a wide range of applications across different fie
             <li><strong>Vertical Displacement:</strong> $$ y = h_0 + v_0 \sin(\theta) t - \frac{1}{2} g t^2$$</li>
             <li><strong>Time of flight:</strong> $$ t_f = \frac{v_0 \sin(\theta) + \sqrt{(v_0 \sin(\theta))^2 + 2 g h_0}}{g} $$</li>
         </ul>
-        <p>This theoretical foundation establishes the fundamental relationships governing projectile motion and sets the stage for computational modeling.</p>
     </details>
 
     <details>
@@ -289,6 +234,7 @@ Studying projectile motion has a wide range of applications across different fie
             <li><strong>Vertical Position Over Time:</strong> $$y = h_0 + v_0 \sin(\theta) t - \frac{1}{2} g t^2$$</li>
             <li><strong>Time of Flight:</strong> $$t_f = \frac{v_0 \sin(\theta) + \sqrt{(v_0 \sin(\theta))^2 + 2 g h_0}}{g}$$</li>
             <li><strong>Range (Total Horizontal Distance):</strong> $$R = v_0 \cos(\theta) t_f$$</li>
+            ![Projectile Motion Diagram](https://i.imgur.com/cz9jqWb.png)
         </ul>
     </details>
 
