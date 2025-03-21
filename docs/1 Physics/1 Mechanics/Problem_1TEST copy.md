@@ -3,41 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Key Parameters Section</title>
+    <title>Expandable Section</title>
     <style>
         body {
             font-family: Arial, sans-serif;
         }
 
-        .section-container {
-            background-color: #f9f9f9;
-            padding: 15px;
+        details {
+            margin-top: 10px;
             border-left: 4px solid #2979ff;
+            background-color: #f9f9f9;
             border-radius: 5px;
-            margin-bottom: 15px;
+            transition: all 0.3s ease-in-out;
             box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
-        .section-container h2 {
-            font-size: 1.3em;
+        details[open] {
+            background-color: #ffffff;
+        }
+
+        summary {
+            font-size: 1.2em;
             font-weight: bold;
-            color: #222;
-            margin-top: 0;
+            cursor: pointer;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
 
-        .section-container ul {
-            padding-left: 20px;
+        summary:hover {
+            background-color: #e0e0e0;
         }
 
-        .section-container li {
+        details p,
+        details ul {
+            padding: 0 15px;
+            margin-bottom: 10px;
+        }
+
+        details ul {
+            padding-left: 30px;
+        }
+
+        details li {
             margin-bottom: 5px;
         }
     </style>
 </head>
 <body>
 
-    <div class="section-container">
-        <h2>Key Parameters Affecting Projectile Motion</h2>
+    <details>
+        <summary>Key Parameters Affecting Projectile Motion</summary>
         <p>Several parameters influence the behavior of a projectile:</p>
         <ul>
             <li><strong>Initial velocity (v₀):</strong> Determines the overall motion, affecting both range and maximum height.</li>
@@ -47,7 +66,7 @@
             <li><strong>Air resistance (optional consideration):</strong> In real-world scenarios, drag affects the motion but is often neglected in basic models.</li>
         </ul>
         <p>By analyzing how these parameters interact, we can develop accurate models to describe and predict projectile trajectories in different conditions.</p>
-    </div>
+    </details>
 
 </body>
 </html>
