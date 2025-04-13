@@ -213,13 +213,13 @@ The projectile's motion is governed by the following equations:
    $$
 
 ### **Generating Graphical Representations**
-To explore the relationship between **range and launch angle**, we generate **interactive graphs** using **Plotly**:
+To explore the relationship between **range and launch angle**, we generate **graphs** using **Matplotlib**:
 - **Plot 1**: The **trajectory of the projectile** for different angles.
 - **Plot 2**: A **Range vs. Angle** curve to show the optimal launch angle for maximum range.
 
 These visualizations help in understanding how different initial conditions affect projectile motion.
 
-<iframe src="path/to/graph.html" width="100%" height="600"></iframe>
+![Projectile Motion Trajectory](path/to/graph.png)
 
 ### **Future Extensions**
 This simulation can be further enhanced by:
@@ -229,88 +229,4 @@ This simulation can be further enhanced by:
 
 ---
 
-By developing this computational model, we bridge the gap between **theory and application**, enabling dynamic analysis of projectile motion in various conditions.
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Styled Sections</title>
-    <style>
-        /* Стили для заголовка */
-        .title-container {
-            display: flex;
-            align-items: center;
-            border-left: 4px solid #2979ff; /* Синий бордер */
-            padding-left: 10px;
-            font-size: 1.8em;
-            font-weight: bold;
-            font-family: "Arial", sans-serif;
-        }
-        
-        .title-container a {
-            margin-left: 8px;
-            text-decoration: none;
-            color: #2979ff; /* Цвет ссылки */
-            font-size: 0.8em;
-        }
-
-        .title-container a:hover {
-            text-decoration: underline;
-        }
-
-        /* Стили для секций details */
-        details {
-            margin-top: 10px;
-            padding: 10px;
-            border-left: 4px solid #2979ff;
-            background-color: #f9f9f9;
-            border-radius: 5px;
-        }
-
-        summary {
-            font-size: 1.3em;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        details img {
-            max-width: 100%;
-            height: auto;
-            margin-top: 10px;
-        }
-
-    </style>
-</head>
-<body>
-
-    <div class="title-container">
-        <span>Escape</span> <span style="font-weight: bold;">Velocity</span>
-        <a href="#">🔗</a>
-    </div>
-
-    <details>
-      <summary><strong>Generating Graphical Representations</strong></summary>
-      <p>To explore the relationship between <strong>range and launch angle</strong>, we generate <strong>graphs</strong> using <strong>Matplotlib</strong>:</p>
-      <ul>
-        <li><strong>Plot 1</strong>: The <strong>trajectory of the projectile</strong> for different angles.</li>
-        <li><strong>Plot 2</strong>: A <strong>Range vs. Angle</strong> curve to show the optimal launch angle for maximum range.</li>
-      </ul>
-      <p>These visualizations help in understanding how different initial conditions affect projectile motion.</p>
-      <img src="path/to/graph.png" alt="Projectile Motion Trajectory">
-    </details>
-
-    <details>
-      <summary><strong>Future Extensions</strong></summary>
-      <p>This simulation can be further enhanced by:</p>
-      <ul>
-        <li><strong>Including air resistance</strong>: Accounting for drag force to improve real-world accuracy.</li>
-        <li><strong>Simulating motion on uneven terrain</strong>: Adjusting equations to consider variable landing heights.</li>
-        <li><strong>Interactive elements</strong>: Implementing sliders or input fields in a <strong>Jupyter Notebook</strong> for real-time parameter tuning.</li>
-      </ul>
-    </details>
-
-</body>
-</html>
 
