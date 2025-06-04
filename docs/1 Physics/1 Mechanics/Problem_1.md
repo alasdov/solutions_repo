@@ -45,7 +45,7 @@ Projectile motion can be described using fundamental principles of kinematics an
 - **Horizontal motion** (constant velocity motion)
 - **Vertical motion** (accelerated motion due to gravity)
 #### **Equations of Motion**
-The equations governing projectile motion are derived from the basic kinematic equations:
+The equations governing projectile motion are derived from the basic kinematic equations:DHDHDH
 1. **Horizontal Motion:**
    - Displacement:  
      $$x = v_0 \cos(\theta) t$$
