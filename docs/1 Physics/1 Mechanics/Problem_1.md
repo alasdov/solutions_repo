@@ -97,15 +97,15 @@ Below is a compact, reusable script. Paste into a Jupyter notebook or `.py` file
 
 ### 💻 Code ‒ Range vs Launch Angle (Earth, h = 0 m)
 
-<details>
-<summary>Click to view Python snippet</summary>
+### 💻 Code — Range vs Launch Angle (Earth, h = 0 m)
 
+```python
 import numpy as np
 import matplotlib.pyplot as plt
 
 def time_of_flight(theta, v0, g=9.81, h=0.0):
     """Return total flight time for given θ (rad), v0, g, h."""
-    vy = v0 * np.sin(theta)
+    vy   = v0 * np.sin(theta)
     disc = vy**2 + 2 * g * h
     return (vy + np.sqrt(disc)) / g
 
@@ -115,16 +115,16 @@ def range_flat(theta, v0, g=9.81, h=0.0):
     return v0 * np.cos(theta) * t
 
 # --- Parameters ------------------------------------------------------------
-v0_list = [20, 30, 40]        # m/s
-g_values = {"Earth": 9.81, "Moon": 1.62}
-h = 0.0                       # launch height
-theta = np.linspace(0, np.pi/2, 500)
+v0_list = [20, 30, 40]          # m/s
+g       = 9.81                  # m/s² (Earth)
+h       = 0.0                   # launch height (m)
+theta   = np.linspace(0, np.pi/2, 500)
 
 # --- Plotting --------------------------------------------------------------
-plt.figure(figsize=(8,5))
+plt.figure(figsize=(8, 5))
 for v0 in v0_list:
-    R = range_flat(theta, v0, g_values["Earth"], h)
-    plt.plot(np.degrees(theta), R, label=f"v₀ = {v0} m/s")
+    R = range_flat(theta, v0, g, h)
+    plt.plot(np.degrees(theta), R, label=fr"$v_0 = {v0}\,\mathrm{{m/s}}$")
 
 plt.title("Range vs Launch Angle (Earth, h = 0 m)")
 plt.xlabel("Launch angle θ (degrees)")
@@ -132,36 +132,3 @@ plt.ylabel("Range R (m)")
 plt.legend()
 plt.grid(True)
 plt.show()
-import matplotlib.pyplot as plt
-
-def time_of_flight(theta, v0, g=9.81, h=0.0):
-    """Return total flight time for given θ (rad), v0, g, h."""
-    vy = v0 * np.sin(theta)
-    disc = vy**2 + 2 * g * h
-    return (vy + np.sqrt(disc)) / g
-
-def range_flat(theta, v0, g=9.81, h=0.0):
-    """Horizontal range R(θ) for given parameters."""
-    t = time_of_flight(theta, v0, g, h)
-    return v0 * np.cos(theta) * t
-
-# --- Parameters ------------------------------------------------------------
-v0_list = [20, 30, 40]        # m/s
-g_values = {"Earth": 9.81, "Moon": 1.62}
-h = 0.0                       # launch height
-theta = np.linspace(0, np.pi/2, 500)
-
-# --- Plotting --------------------------------------------------------------
-plt.figure(figsize=(8,5))
-for v0 in v0_list:
-    R = range_flat(theta, v0, g_values["Earth"], h)
-    plt.plot(np.degrees(theta), R, label=f"v₀ = {v0} m/s")
-
-plt.title("Range vs Launch Angle (Earth, h = 0 m)")
-plt.xlabel("Launch angle θ (degrees)")
-plt.ylabel("Range R (m)")
-plt.legend()
-plt.grid(True)
-plt.show()
-
-</details> 
