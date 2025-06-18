@@ -44,14 +44,17 @@ By timing a simple pendulum’s oscillations, we can determine \(g\) experimenta
 <a name="calculations"></a>
 ## 4 · Calculations & Code 💻
 We use:
-\[
+
+$$
 T = \frac{\overline{T_{10}}}{10}, \quad
 \Delta T = \frac{\Delta T_{10}}{10},
-\]
-\[
+$$
+
+$$
 g = \frac{4\pi^2\,L}{T^2}, \quad
-\Delta g = g \sqrt{\Bigl(\frac{\Delta L}{L}\Bigr)^2 + \Bigl(\frac{2\,\Delta T}{T}\Bigr)^2}.
-\]
+\Delta g = g \sqrt{\left(\frac{\Delta L}{L}\right)^2 + \left(\frac{2\,\Delta T}{T}\right)^2}.
+$$
+
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/14llQqLeZ3t0sTuTs3A1MNlcq8qcf0jnn?usp=sharing)
 **Results:**  
