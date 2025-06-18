@@ -78,6 +78,28 @@
 <ul class="current">
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#table-of-contents">📋 Table of Contents</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#1-motivation">1 · Motivation 🎯</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-graph-representation">2 · Graph Representation 🔗</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3-algorithm-overview">3 · Algorithm Overview 🔍</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#4-implementation">4 Implementation 💻</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#5-worked-examples-tests">5 · Worked Examples &amp; Tests 🧪</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#example-1-simple-series-chain">Example 1: Simple Series Chain</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#6-performance-extensions">6 · Performance &amp; Extensions ⚙️</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#7-wrap-up">7 · Wrap-Up 📝</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#8-further-reading">8 · Further Reading 📚</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -171,7 +193,100 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-1">Problem 1</h1>
+<!-- ╭────────────────────────────────────────────────────────╮
+     │   ⚡ Circuits · Problem 1 — Equivalent Resistance via Graph Theory   │
+     ╰────────────────────────────────────────────────────────╯ -->
+<h1 id="problem-1-equivalent-resistance-using-graph-theory">⚡ <strong>Problem 1: Equivalent Resistance Using Graph Theory</strong></h1>
+<blockquote>
+<p><em>“Turn tangled resistor webs into a simple number—graph theory is the key.”</em> </p>
+</blockquote>
+<hr/>
+<h2 id="table-of-contents">📋 Table of Contents</h2>
+<ol>
+<li><a href="#motivation">Motivation 🎯</a> </li>
+<li><a href="#representation">Graph Representation 🔗</a> </li>
+<li><a href="#overview">Algorithm Overview 🔍</a> </li>
+<li><a href="#options">Options: Pseudocode vs Implementation 💻</a> </li>
+<li><a href="#examples">Worked Examples &amp; Tests 🧪</a> </li>
+<li><a href="#complexity">Complexity &amp; Extensions ⚙️</a> </li>
+<li><a href="#conclusions">Wrap-Up 📝</a> </li>
+<li><a href="#references">Further Reading 📚</a> </li>
+</ol>
+<hr/>
+<p><a name="motivation"></a></p>
+<h2 id="1-motivation">1 · Motivation 🎯</h2>
+<p>Calculating equivalent resistance by hand (series/parallel rules) becomes error-prone for large circuits.<br/>
+<strong>Graph theory</strong> offers:</p>
+<ul>
+<li>A unified view: nodes = junctions, edges = resistors (weight = resistance).  </li>
+<li>Automated reduction: detect series chains &amp; parallel branches.  </li>
+<li>Scalability: handle nested combos and loops.  </li>
+</ul>
+<p>This method underpins modern circuit simulators and network optimizers.</p>
+<hr/>
+<p><a name="representation"></a></p>
+<h2 id="2-graph-representation">2 · Graph Representation 🔗</h2>
+<ol>
+<li><strong>Nodes</strong> ↔ circuit junctions (wire intersections).  </li>
+<li><strong>Edges</strong> ↔ resistors; each edge carries a weight <span class="arithmatex">\(R_{ij}\)</span>.  </li>
+<li><strong>Goal</strong>: reduce the graph to a single edge between the two terminals (source &amp; sink) with weight <span class="arithmatex">\(R_{\mathrm{eq}}\)</span>.</li>
+</ol>
+<hr/>
+<p><a name="overview"></a></p>
+<h2 id="3-algorithm-overview">3 · Algorithm Overview 🔍</h2>
+<blockquote>
+<p><strong>Core idea</strong>:<br/>
+✓ <strong>Series reduction</strong> when a node has degree 2 (excluding terminals).<br/>
+✓ <strong>Parallel reduction</strong> when multiple edges connect the same two nodes.</p>
+</blockquote>
+<p><img src="https://i.imgur.com/muiULaP.png" width="400"/></p>
+<h2 id="4-implementation">4  Implementation 💻</h2>
+<p><a href="https://colab.research.google.com/drive/1zZMETYf2R7h9i8Gxi4_nMZSkjdMu_LIy?usp=sharing"><img alt="Open in Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
+<p>Equivalent resistance A→D = 6.200 Ω</p>
+<p><a name="examples"></a></p>
+<h2 id="5-worked-examples-tests">5 · Worked Examples &amp; Tests 🧪</h2>
+<hr/>
+<h3 id="example-1-simple-series-chain">Example 1: Simple Series Chain</h3>
+<p><strong>Circuit:</strong> A — 1 Ω — B — 2 Ω — C — 3 Ω — D<br/>
+<strong>Analytical:</strong><br/>
+[
+R_{\rm eq} = 1 + 2 + 3 = 6\;\Omega
+]<br/>
+<strong>Code Verify:</strong></p>
+<p><a href="https://colab.research.google.com/drive/1_G7BLZLi6sFVG969m2lMs-Hz7gMtXsVB?usp=sharing"><img alt="Open in Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
+<p><a name="complexity"></a></p>
+<h2 id="6-performance-extensions">6 · Performance &amp; Extensions ⚙️</h2>
+<ul>
+<li><strong>Time Complexity</strong> </li>
+<li>Series &amp; parallel scans: each pass is <span class="arithmatex">\(O(V + E)\)</span>.  </li>
+<li>Up to <span class="arithmatex">\(O(E)\)</span> passes in worst case ⇒ total ~<span class="arithmatex">\(O(E^2)\)</span>.  </li>
+<li><strong>Space Complexity</strong> </li>
+<li>Stores a graph copy and occasional temporary structures ⇒ <span class="arithmatex">\(O(V + E)\)</span>.  </li>
+<li><strong>Practical Optimizations</strong> </li>
+<li><strong>Degree-2 queue</strong>: maintain a queue of nodes with degree 2 to eliminate series candidates in <span class="arithmatex">\(O(1)\)</span>.  </li>
+<li><strong>Edge index</strong>: group parallel edges with a map for constant-time lookup and reduction.  </li>
+<li><strong>Δ–Y transforms</strong>: extend to networks that aren’t series-parallel by applying star-delta conversions.  </li>
+<li><strong>Parallel processing</strong>: partition large graphs and reduce subgraphs concurrently.</li>
+</ul>
+<hr/>
+<p><a name="conclusions"></a></p>
+<h2 id="7-wrap-up">7 · Wrap-Up 📝</h2>
+<ul>
+<li><strong>Graph-based reductions</strong> automate collapsing of series and parallel resistors.  </li>
+<li><strong>NetworkX’s MultiGraph</strong> API makes implementation straightforward and extensible.  </li>
+<li>The algorithm handles nested and complex topologies with predictable performance.  </li>
+<li><strong>Next steps</strong>: integrate delta-wye, support voltage/current sources, and generalize to complex impedances.</li>
+</ul>
+<hr/>
+<p><a name="references"></a></p>
+<h2 id="8-further-reading">8 · Further Reading 📚</h2>
+<ol>
+<li>Van Valkenburg — <em>Network Analysis</em>, Ch. 4: Graph Methods for Circuits  </li>
+<li>Diestel — <em>Graph Theory</em>, §1.5: Reductions in Weighted Graphs  </li>
+<li>NetworkX Documentation — “Series–Parallel Graph Reduction” example  </li>
+<li>Dorogovtsev &amp; Mendes — <em>Evolution of Networks</em>, §2.3: Electrical Network Models  </li>
+<li>Ghosh et al. — “Graph-Theoretic Methods in Circuit Analysis,” <em>IEEE Transactions on Circuits and Systems</em> (2020)  </li>
+</ol>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
