@@ -82,7 +82,7 @@ For each population and each \(n\):
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1qtuoE05v44tcGhbwzsDE3kAASEYv_lUU?usp=sharing)
 
-<img src="https://i.imgur.com/Nec5baF.gif" width="800">
+<img src="https://i.imgur.com/Nec5baF.gif" width="1100">
 
 <a name="interpretation"></a>
 ## 8 · Results & Interpretation 🧩
