@@ -68,6 +68,14 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#3-conic-classifier">3 · Conic Classifier 🔍</a>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#4-code-playground">4 · Code Playground 💻</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#5-pro-tips-limits">5 · Pro Tips &amp; Limits ⚙️</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#6-wrap-up">6 · Wrap-up 📝</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#7-dive-deeper">7 · Dive Deeper 📚</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -249,11 +257,50 @@ Its path isn’t just a simple parabola but a showcase of gravitational dynamics
 <hr/>
 <p><a name="classifier"></a></p>
 <h2 id="3-conic-classifier">3 · Conic Classifier 🔍</h2>
-<p>```mermaid
-flowchart LR
-    A["ε &lt; 0"] --&gt;|e &lt; 1| Elliptical
-    B["ε = 0"] --&gt;|e = 1| Parabolic
-    C["ε &gt; 0"] --&gt;|e &gt; 1| Hyperbolic</p>
+<p><a name="implementation"></a></p>
+<h2 id="4-code-playground">4 · Code Playground 💻</h2>
+<p><a href="https://colab.research.google.com/drive/1gnPgdtP5c-d5Qyq4MSk7X2K-EFL1byAn?usp=sharing"><img alt="Open in Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
+<p><img src="https://i.imgur.com/8s36wPD.png" width="600"/></p>
+<p><a name="limitations"></a></p>
+<p><a name="limitations"></a></p>
+<h2 id="5-pro-tips-limits">5 · Pro Tips &amp; Limits ⚙️</h2>
+<p><strong>Build complexity step-by-step:</strong>
+1. <strong>Atmospheric Drag &amp; Heating</strong><br/>
+   - Add a quadratic drag force<br/>
+<span class="arithmatex">\(\displaystyle F_{d} = \tfrac12\,\rho\,C_{d}\,A\,v^{2}\)</span><br/>
+   - Model thermal ablation to estimate reentry heating  </p>
+<ol>
+<li><strong>3D Motion &amp; Earth’s Rotation</strong> </li>
+<li>Include Coriolis acceleration and <span class="arithmatex">\(J_{2}\)</span> oblateness terms  </li>
+<li>
+<p>Simulate inclined release trajectories  </p>
+</li>
+<li>
+<p><strong>Multi-Body Perturbations</strong> </p>
+</li>
+<li>Add the Moon’s and Sun’s gravity  </li>
+<li>Switch to patched-conic or full N-body integration  </li>
+</ol>
+<hr/>
+<p><a name="conclusions"></a></p>
+<h2 id="6-wrap-up">6 · Wrap-up 📝</h2>
+<ul>
+<li><strong>Specific energy</strong> <span class="arithmatex">\(\varepsilon\)</span> and <strong>eccentricity</strong> <span class="arithmatex">\(e\)</span> dictate the trajectory type:<br/>
+<span class="arithmatex">\(\varepsilon&lt;0\)</span> → ellipse, <span class="arithmatex">\(\varepsilon=0\)</span> → parabola, <span class="arithmatex">\(\varepsilon&gt;0\)</span> → hyperbola.  </li>
+<li><strong>Small changes</strong> in release velocity or angle can flip between bound orbit, reentry, or escape.  </li>
+<li><strong>Numerical integration</strong> unifies all conic sections in one simulation framework.  </li>
+<li><strong>Next steps:</strong> layer in drag, rotation, and third-body forces for mission-grade realism.  </li>
+</ul>
+<hr/>
+<p><a name="references"></a></p>
+<h2 id="7-dive-deeper">7 · Dive Deeper 📚</h2>
+<ol>
+<li>Bate, Mueller &amp; White — <em>Fundamentals of Astrodynamics</em>, Ch. 2 (Conic Sections).  </li>
+<li>Vallado — <em>Fundamentals of Astrodynamics and Applications</em>, §3 (Orbit Propagation).  </li>
+<li>Montenbruck &amp; Gill — <em>Satellite Orbits: Models, Methods and Applications</em>, Ch. 4.  </li>
+<li>Wertz — <em>Space Mission Analysis and Design</em>, Vol. 1, Ch. 5 (Trajectory Theory).  </li>
+<li>NASA TP-2006-214224 — “Reentry Aerodynamics and Heat Transfer.”  </li>
+</ol>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
