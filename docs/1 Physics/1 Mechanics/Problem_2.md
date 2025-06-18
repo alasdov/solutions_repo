@@ -56,13 +56,19 @@ Replace \(\sin\theta \approx \theta\):
 
 This linear ODE has steady-state solution
 
-\[
-\theta_{\text{ss}}(t)=
- \frac{A}{\sqrt{(\omega_0^{2}-\omega_d^{2})^{2}+4\gamma^{2}\omega_d^{2}}}
- \cos\!\bigl(\omega_d t-\phi\bigr),
-\]
-with phase lag  
-\(\tan\phi=\dfrac{2\gamma\omega_d}{\omega_0^{2}-\omega_d^{2}}\).
+$$
+\ddot\theta + 2\gamma\,\dot\theta + \omega_0^2\,\theta = A\cos(\omega_d t)
+$$
+
+$$
+\theta_{\mathrm{ss}}(t)
+= \frac{A}{\sqrt{\bigl(\omega_0^{2}-\omega_d^{2}\bigr)^{2} + 4\,\gamma^{2}\,\omega_d^{2}}}
+\;\cos\!\bigl(\omega_d t - \phi\bigr)
+$$
+
+$$
+\tan\phi = \frac{2\,\gamma\,\omega_d}{\omega_0^{2} - \omega_d^{2}}
+$$
 
 ### 2.3 Resonance
 * **Amplitude peak** at  
