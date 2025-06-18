@@ -133,8 +133,8 @@ Run or tweak the full code interactively in Google Colab:
 [Google Books](https://books.google.com/books?id=HOqLQgAACAAJ)
 
 **2. D. Halliday, R. Resnick & J. Walker — Fundamentals of Physics, 11th ed., §§ 4–5.**  
-
 [Wikipedia](https://en.wikipedia.org/wiki/Fundamentals_of_Physics)
+
 **3. NASA Glenn Research Center — “Projectile Motion with Drag” (interactive tutorial).**  
 [NASA Glenn – Projectile Motion with Drag](https://www.grc.nasa.gov/www/k-12/airplane/projdrag.html)
 

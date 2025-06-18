@@ -137,14 +137,17 @@ The flowchart below then shows this decision process at a glance:
 <a name="references"></a>
 ## 7 · Dive Deeper 📚
 
-1. **Bate, Mueller & White** — *Fundamentals of Astrodynamics*, Ch. 2 (Conic Sections).  
-   [PDF (Academia)](https://cmp.felk.cvut.cz/~kukelova/pajdla/Bate%2C%20Mueller%2C%20and%20White%20-%20Fundamentals%20of%20Astrodynamics.pdf) :contentReference[oaicite:0]{index=0}
-2. **Vallado** — *Fundamentals of Astrodynamics and Applications*, § 3 (Orbit Propagation).  
-   [Google Books](https://books.google.com/books/about/Fundamentals_of_Astrodynamics_and_Applic.html?id=PJLlWzMBKjkC) :contentReference[oaicite:1]{index=1}
-3. **Montenbruck & Gill** — *Satellite Orbits: Models, Methods and Applications*, Ch. 4.  
-   [SpringerLink](https://link.springer.com/book/10.1007/978-3-642-58351-3) :contentReference[oaicite:2]{index=2}
-4. **Wertz** — *Space Mission Analysis and Design*, Vol. 1, Ch. 5 (Trajectory Theory).  
-   [Google Books](https://books.google.com/books/about/Space_Mission_Analysis_and_Design.html?id=d0aoPwAACAAJ) :contentReference[oaicite:3]{index=3}
-5. **NASA TP-2006-214224** — “Reentry Aerodynamics and Heat Transfer.”  
-   [NASA Technical Reports Server (search)](https://ntrs.nasa.gov/search.jsp?query=TP-2006-214224) :contentReference[oaicite:4]{index=4}
+**1. R. R. Bate, D. D. Mueller & J. E. White — Fundamentals of Astrodynamics, Ch. 2 (Conic Sections).**  
+[Google Books](https://books.google.com/books?id=UtJK8cetqGkC)
 
+**2. D. A. Vallado — Fundamentals of Astrodynamics and Applications, § 3 (Orbit Propagation).**  
+[Microcosm Press](https://www.microcosmpress.com/shop/fundamentals-of-astrodynamics-and-applications/)
+
+**3. F. Montenbruck & E. Gill — Satellite Orbits: Models, Methods and Applications, Ch. 4.**  
+[SpringerLink](https://link.springer.com/book/10.1007/978-3-642-58351-3)
+
+**4. W. Wertz — Space Mission Analysis and Design, Vol. 1, Ch. 5 (Trajectory Theory).**  
+[SpringerLink](https://link.springer.com/book/10.1007/0-387-22441-1)
+
+**5. NASA TP-2006-214224 — “Reentry Aerodynamics and Heat Transfer.”**  
+[NTRS](https://ntrs.nasa.gov/citations/20070015472)

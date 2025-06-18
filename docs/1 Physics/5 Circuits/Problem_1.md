@@ -101,13 +101,17 @@ $$
 <a name="references"></a>
 ## 8 · Further Reading 📚
 
-1. **Van Valkenburg** — *Fundamentals of Astrodynamics*, Ch. 2 (Conic Sections).  
-   [PDF (Academia.edu)](https://www.academia.edu/70807469/Network_Analysis_by_M_E_Van_Valkenburg) :contentReference[oaicite:0]{index=0}
+1. **Van Valkenburg** — *Network Analysis*, Ch. 4: Graph Methods for Circuits.  
+   [PDF (Academia.edu)](https://www.academia.edu/70807469/Network_Analysis_by_M_E_Van_Valkenburg)
+
 2. **Vallado** — *Fundamentals of Astrodynamics and Applications*, § 3 (Orbit Propagation).  
-   [Google Books](https://books.google.com/books/about/Fundamentals_of_Astrodynamics_and_Applic.html?id=PJLlWzMBKjkC) :contentReference[oaicite:1]{index=1}
+   [Google Books](https://books.google.com/books/about/Fundamentals_of_Astrodynamics_and_Applic.html?id=PJLlWzMBKjkC)
+
 3. **NetworkX Documentation** — *Series–Parallel Graph Reduction* example.  
-   [Wikipedia: Series–parallel graph](https://en.wikipedia.org/wiki/Series%E2%80%93parallel_graph) :contentReference[oaicite:2]{index=2}
+   [Wikipedia: Series–parallel graph](https://en.wikipedia.org/wiki/Series%E2%80%93parallel_graph)
+
 4. **Dorogovtsev & Mendes** — *Evolution of Networks: From Biological Nets to the Internet and WWW*, § 2.3: Electrical Network Models.  
-   [Oxford University Press](https://global.oup.com/academic/product/evolution-of-networks-9780199686711) :contentReference[oaicite:3]{index=3}
+   [Oxford University Press](https://global.oup.com/academic/product/evolution-of-networks-9780199686711)
+
 5. **Ghosh et al.** — “Graph-Theoretic Methods in Circuit Analysis,” *IEEE Transactions on Circuits and Systems* (2020).  
-   [Graph Theory for Circuit Analysis (Scribd)](https://www.scribd.com/document/330287174/Graph-Theory-for-Circuit-Analysis) :contentReference[oaicite:4]{index=4}
+   [Graph Theory for Circuit Analysis (Scribd)](https://www.scribd.com/document/330287174/Graph-Theory-for-Circuit-Analysis)

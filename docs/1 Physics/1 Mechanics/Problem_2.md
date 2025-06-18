@@ -145,13 +145,17 @@ Run or tweak the full simulation in Google Colab:
 <a name="references"></a>
 ## 8 · Further Reading
 
-1. **S. H. Strogatz**, *Nonlinear Dynamics and Chaos*, Ch. 5.  
-   [Steven Strogatz: Nonlinear Dynamics and Chaos](https://www.stevenstrogatz.com/books/nonlinear-dynamics-and-chaos-with-applications-to-physics-biology-chemistry-and-engineering) :contentReference[oaicite:0]{index=0}
-2. **P. Holmes & J. Guckenheimer**, *Nonlinear Oscillations, Dynamical Systems, and Bifurcations*.  
-   [Springer Link](https://link.springer.com/book/10.1007/978-1-4612-1140-2) :contentReference[oaicite:1]{index=1}
-3. **L. D. Landau & E. M. Lifshitz**, *Mechanics*, § 27 “Oscillations with Damping and Forcing”.  
-   [Google Books](https://books.google.com/books/about/Mechanics.html?id=e-xASAehg1sC) :contentReference[oaicite:2]{index=2}
-4. **S. Lepri**, *Thermodynamics of Driven Systems*, § 2.  
-   [ResearchGate](https://www.researchgate.net/publication/13327977_Thermodynamics_of_driven_systems) :contentReference[oaicite:3]{index=3}
-5. **M. J. Feigenbaum**, “Quantitative Universality for a Class of Nonlinear Transformations,” *J. Stat. Phys.* 19 (1978) 25–52.  
-   [Springer Link](https://link.springer.com/article/10.1007/BF01020332) :contentReference[oaicite:4]{index=4}
+**1. S. H. Strogatz — Nonlinear Dynamics and Chaos, Ch. 5.**  
+[Google Books](https://www.stevenstrogatz.com/books/nonlinear-dynamics-and-chaos-with-applications-to-physics-biology-chemistry-and-engineering)
+
+**2. P. Holmes & J. Guckenheimer — Nonlinear Oscillations, Dynamical Systems, and Bifurcations.**  
+[SpringerLink](https://link.springer.com/book/10.1007/978-1-4612-1140-2)
+
+**3. L. D. Landau & E. M. Lifshitz — Mechanics, § 27 “Oscillations with Damping and Forcing.”**  
+[Google Books](https://books.google.com/books?id=e-xASAehg1sC)
+
+**4. S. Lepri — Thermodynamics of Driven Systems, § 2.**  
+[World Scientific](https://www.worldscientific.com/worldscibooks/10.1142/5060)
+
+**5. M. J. Feigenbaum — “Quantitative Universality for a Class of Nonlinear Transformations,” J. Stat. Phys. 19 (1978) 25–52.**  
+[SpringerLink](https://link.springer.com/article/10.1007/BF01020332)

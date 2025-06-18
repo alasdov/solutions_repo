@@ -118,11 +118,15 @@ For each population and each \(n\):
 ## 10 · Further Reading 📚
 
 1. **W. Feller** — *An Introduction to Probability Theory and Its Applications*, Vol. 2, Ch. 8–10.  
-   [Google Books](https://books.google.com/books/about/An_Introduction_to_Probability_Theory_an.html?id=1Y6IzgEACAAJ) :contentReference[oaicite:0]{index=0}
+   [Google Books](https://books.google.com/books/about/An_Introduction_to_Probability_Theory_an.html?id=1Y6IzgEACAAJ)
+
 2. **L. Wasserman** — *All of Statistics: A Concise Course in Statistical Inference*, § 2.3.  
-   [Google Books](https://books.google.com/books/about/All_of_Statistics.html?id=th3fbFI1DaMC) :contentReference[oaicite:1]{index=1}
+   [Google Books](https://books.google.com/books/about/All_of_Statistics.html?id=th3fbFI1DaMC)
+
 3. **G. Casella & R. L. Berger** — *Statistical Inference*, § 7.1–7.2.  
-   [Google Books](https://books.google.com/books/about/Statistical_Inference.html?id=ZpkPPwAACAAJ) :contentReference[oaicite:2]{index=2}
+   [Google Books](https://books.google.com/books/about/Statistical_Inference.html?id=ZpkPPwAACAAJ)
+
 4. **D. S. Sivia & J. Skilling** — *Data Analysis: A Bayesian Tutorial*, Appendix on sampling distributions.  
-   [Google Books](https://books.google.com/books/about/Data_Analysis.html?id=Kxx8CwAAQBAJ) :contentReference[oaicite:3]{index=3}
-5. SciPy Documentation — [`scipy.stats.norm`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.norm.html) (Normal distribution utilities).  
+   [Google Books](https://books.google.com/books/about/Data_Analysis.html?id=Kxx8CwAAQBAJ)
+
+5. **SciPy Documentation** — [`scipy.stats.norm`](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.norm.html) (Normal distribution utilities).  
