@@ -131,15 +131,11 @@ Run or tweak the full code interactively in Google Colab:
 
 **1. J. B. Marion & S. T. Thornton — Classical Dynamics of Particles and Systems, Ch. 2.**  
 [Google Books](https://books.google.com/books?id=HOqLQgAACAAJ)
-
 **2. D. Halliday, R. Resnick & J. Walker — Fundamentals of Physics, 11th ed., §§ 4–5.**  
 [Wikipedia](https://en.wikipedia.org/wiki/Fundamentals_of_Physics)
-
 **3. NASA Glenn Research Center — “Projectile Motion with Drag” (interactive tutorial).**  
 [NASA Glenn – Projectile Motion with Drag](https://www.grc.nasa.gov/www/k-12/airplane/projdrag.html)
-
 **4. S. Brennen — Fundamentals of Multiphase Flow, § 0.6 “Motion with Quadratic Resistance.”**  
 [Cambridge University Press](https://www.cambridge.org/core/books/fundamentals-of-multiphase-flow/FC7E6D7E54AC9D1C178EDF88D6A75FFF)
-
 **5. R. Cross & A. M. Nathan — “Dynamics of Baseball: Influence of Air Drag and Magnus Effect,” Am. J. Phys. 76(10), 2008.**  
 [AIP Publishing](https://pubs.aip.org/aapt/ajp/article/76/10/910/1057185)
