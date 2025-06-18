@@ -91,44 +91,11 @@ On level ground:
 ---
 
 <a name="implementation"></a>
-## 5 · Python Implementation
 
-Below is a compact, reusable script. Paste into a Jupyter notebook or `.py` file:
+## 5 · Python Implementation — Interactive Notebook
 
-### 💻 Code ‒ Range vs Launch Angle (Earth, h = 0 m)
+Run or tweak the full code interactively in Google Colab:
 
-### 💻 Code — Range vs Launch Angle (Earth, h = 0 m)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1uAEP93nZ4RhJKgKYPPJQxNHYy_3Xo81w?usp=sharing)
 
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-
-def time_of_flight(theta, v0, g=9.81, h=0.0):
-    """Return total flight time for given θ (rad), v0, g, h."""
-    vy   = v0 * np.sin(theta)
-    disc = vy**2 + 2 * g * h
-    return (vy + np.sqrt(disc)) / g
-
-def range_flat(theta, v0, g=9.81, h=0.0):
-    """Horizontal range R(θ) for given parameters."""
-    t = time_of_flight(theta, v0, g, h)
-    return v0 * np.cos(theta) * t
-
-# --- Parameters ------------------------------------------------------------
-v0_list = [20, 30, 40]          # m/s
-g       = 9.81                  # m/s² (Earth)
-h       = 0.0                   # launch height (m)
-theta   = np.linspace(0, np.pi/2, 500)
-
-# --- Plotting --------------------------------------------------------------
-plt.figure(figsize=(8, 5))
-for v0 in v0_list:
-    R = range_flat(theta, v0, g, h)
-    plt.plot(np.degrees(theta), R, label=fr"$v_0 = {v0}\,\mathrm{{m/s}}$")
-
-plt.title("Range vs Launch Angle (Earth, h = 0 m)")
-plt.xlabel("Launch angle θ (degrees)")
-plt.ylabel("Range R (m)")
-plt.legend()
-plt.grid(True)
-plt.show()
+<https://colab.research.google.com/drive/1uAEP93nZ4RhJKgKYPPJQxNHYy_3Xo81w?usp=sharing>
