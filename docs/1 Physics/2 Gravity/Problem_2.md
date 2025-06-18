@@ -7,6 +7,22 @@
 > *“To break free, you only need to reach a speed—then gravity’s leash is cut.”*  
 > — adapted from Arthur C. Clarke
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Default Audio Player</title>
+</head>
+<body>
+
+<audio controls>
+  <source src="https://files.catbox.moe/7t2ksc.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
+</body>
+</html>
+
 ---
 
 ## ✨ Table of Contents

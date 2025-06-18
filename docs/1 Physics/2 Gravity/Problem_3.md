@@ -6,6 +6,22 @@
 
 > *“What path will a payload carve once released from its rocket under Earth's pull?”*  
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Default Audio Player</title>
+</head>
+<body>
+
+<audio controls>
+  <source src="https://files.catbox.moe/r0wpu3.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
+</body>
+</html>
+
 ---
 
 ## 📋 Quick Navigation

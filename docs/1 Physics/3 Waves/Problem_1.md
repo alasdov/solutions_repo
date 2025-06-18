@@ -6,6 +6,22 @@
 
 > *“When ripples collide, they weave a tapestry of peaks and troughs.”*  
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Default Audio Player</title>
+</head>
+<body>
+
+<audio controls>
+  <source src="https://files.catbox.moe/bx8u30.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
+</body>
+</html>
+
 ---
 
 ## 💥 Table of Contents
