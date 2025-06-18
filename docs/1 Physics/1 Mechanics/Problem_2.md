@@ -3,6 +3,22 @@
 > *“Chaos often breeds life, when order breeds habit.”*  
 > — Henry Adams  
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Default Audio Player</title>
+</head>
+<body>
+
+<audio controls>
+  <source src="https://files.catbox.moe/nko6or.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
+</body>
+</html>
+
 ---
 
 ## Table of Contents
