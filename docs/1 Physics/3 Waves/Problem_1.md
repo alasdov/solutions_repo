@@ -77,9 +77,6 @@ Applications:
 <a name="implementation"></a>
 ## 5 · Python Simulation 💻
 
-<details open style="border:1px solid #ccc; padding:10px; background:#fafafa;">
-<summary><strong>Click to view simulation code</strong></summary>
-
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/15RYnexR7yrr13lTq7UTNdHPru4jkckyQ?usp=sharing)
 
 <img src="https://i.imgur.com/4ZelPE8.png" width="600">
