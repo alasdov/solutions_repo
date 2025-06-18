@@ -32,14 +32,19 @@ Simulations make this abstract theorem tangible, showing how quickly “normal�
 
 <a name="theory"></a>
 ## 2 · Theoretical Background 🔭  
-- For i.i.d. random variables \(X_1,\dots,X_n\) with mean \(\mu\) and variance \(\sigma^2\),  
-  \[
-    \bar X = \frac1n\sum_{i=1}^n X_i
-    \quad\Longrightarrow\quad
-    \frac{\bar X - \mu}{\sigma/\sqrt{n}}
-    \xrightarrow{d} \mathcal{N}(0,1)\quad\text{as }n\to\infty.
-  \]  
-- **Implication:** even a highly skewed or discrete population yields an approximately Gaussian \(\bar X\) for moderate \(n\).
+
+- For i.i.d. random variables \(X_1,\dots,X_n\) with mean \(\mu\) and variance \(\sigma^2\):  
+  $$
+  \bar X = \frac{1}{n}\sum_{i=1}^n X_i,
+  $$
+  $$
+  \frac{\bar X - \mu}{\sigma/\sqrt{n}}
+    \;\xrightarrow{d}\;
+    \mathcal{N}(0,1)
+    \quad\text{as }n\to\infty.
+  $$
+
+- **Implication:** even a highly skewed or discrete population yields an approximately Gaussian \(\bar X\) for moderate \(n\).  
 
 ---
 
@@ -77,7 +82,7 @@ For each population and each \(n\):
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1qtuoE05v44tcGhbwzsDE3kAASEYv_lUU?usp=sharing)
 
-<img src="https://i.imgur.com/Nec5baF.gif" width="600">
+<img src="https://i.imgur.com/Nec5baF.gif" width="800">
 
 <a name="interpretation"></a>
 ## 8 · Results & Interpretation 🧩
