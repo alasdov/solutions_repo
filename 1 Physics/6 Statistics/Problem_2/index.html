@@ -104,7 +104,19 @@
 <ul>
 <li class="toctree-l4"><a class="reference internal" href="#41-circle-method-code">4.1 Circle Method Code</a>
 </li>
+<li class="toctree-l4"><a class="reference internal" href="#visualization-of-points-for-n-5000">Visualization of points (for N = 5000)</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#42-buffons-needle-code">4.2 Buffon’s Needle Code</a>
+</li>
 </ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#5-model-limitations-extensions">5 · Model Limitations &amp; Extensions ⚙️</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#6-results-interpretation">6 · Results &amp; Interpretation 🧩</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#7-conclusions">7 · Conclusions 📝</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#8-further-reading">8 · Further Reading 📚</a>
 </li>
 </ul>
 </li>
@@ -278,24 +290,74 @@ $$</p>
 <h2 id="4-python-implementation">4 · Python Implementation 💻</h2>
 <p><a name="circle-code"></a></p>
 <h3 id="41-circle-method-code">4.1 Circle Method Code</h3>
-<p>```python
-import numpy as np
-import matplotlib.pyplot as plt</p>
-<p>def estimate_pi_circle(N):
-    x = np.random.uniform(-1, 1, N)
-    y = np.random.uniform(-1, 1, N)
-    inside = (x<em>x + y</em>y) &lt;= 1
-    return 4 * inside.sum() / N</p>
-<h1 id="run-for-increasing-n">run for increasing N</h1>
-<p>Ns = [10<strong>3, 10</strong>4, 10<strong>5, 10</strong>6]
-pi_est = [estimate_pi_circle(N) for N in Ns]</p>
-<p>plt.figure(figsize=(6,4))
-plt.loglog(Ns, np.abs(np.array(pi_est) - np.pi), 'o-', basex=10, basey=10)
-plt.xlabel('Number of samples N')
-plt.ylabel('|π_est − π|')
-plt.title('Circle Method Convergence')
-plt.grid(True, which='both', ls=':')
-plt.show()</p>
+<p><a href="https://colab.research.google.com/drive/16ojbD2UqaF1AYzHL1bXiqGTjtT-Qkez9?usp=sharing"><img alt="Open in Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
+<p><img src="https://i.imgur.com/KUiB4ND.png" width="1100"/></p>
+<h3 id="visualization-of-points-for-n-5000">Visualization of points (for N = 5000)</h3>
+<p>Below is a scatter plot of 5 000 uniformly distributed points in the square <span class="arithmatex">\([-1,1]^2\)</span>.<br/>
+- <strong>Blue dots</strong> lie inside the unit circle <span class="arithmatex">\(x^2 + y^2 \le 1\)</span>.<br/>
+- <strong>Red dots</strong> lie outside.  </p>
+<p>This visual shows why the fraction of blue points <span class="arithmatex">\(\approx \pi/4\)</span>, and hence <span class="arithmatex">\(\pi \approx 4\times(\text{blue}/\text{total})\)</span>.</p>
+<p><a href="https://colab.research.google.com/drive/1PGlkydYWFW6sKodH___m4eGnBinE6jgF?usp=sharing"><img alt="Open in Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
+<p><img src="https://i.imgur.com/A7IWBXR.png" width="1100"/></p>
+<p><a name="buffon-code"></a></p>
+<h3 id="42-buffons-needle-code">4.2 Buffon’s Needle Code</h3>
+<p>Below is a Python implementation of Buffon’s Needle experiment. We drop needles of length <span class="arithmatex">\(L=1\)</span> onto a plane with parallel lines spaced <span class="arithmatex">\(d=2\)</span> apart and count the fraction that cross a line to estimate π via</p>
+<p><a href="https://colab.research.google.com/drive/1DK-rE7nJ60-pl5KPTfysorc9fc7IYYQN?usp=sharing"><img alt="Open in Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
+<p><img src="https://i.imgur.com/XKlpNM9.png" width="1100"/></p>
+<h4 id="visualization-of-needle-drops-for-n-200">Visualization of needle drops (for N = 200)</h4>
+<p>The plot below shows 200 random needle drops on a plane ruled by horizontal lines spaced at distance <span class="arithmatex">\(d=2\)</span>.<br/>
+- <strong>Red needles</strong> cross one of the lines.<br/>
+- <strong>Blue needles</strong> do not cross.  </p>
+<p>This illustrates how the fraction of crossings relates to the theoretical probability <span class="arithmatex">\(P = \tfrac{2L}{\pi d}\)</span>.</p>
+<p><a href="https://colab.research.google.com/drive/15FWyZj728dCV547V_PAjE8CQeavfa1An?usp=sharing"><img alt="Open in Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
+<p><img src="https://i.imgur.com/6hOK11f.png" width="1100"/></p>
+<p><a name="limitations"></a></p>
+<h2 id="5-model-limitations-extensions">5 · Model Limitations &amp; Extensions ⚙️</h2>
+<ul>
+<li><strong>Convergence rate</strong>: both estimators have Monte Carlo error ∝ 1/√N, so achieving one more decimal of accuracy requires 100× more samples.  </li>
+<li><strong>Circle method</strong> </li>
+<li>Edge‐bias: points near the circle boundary may cluster, but uniform sampling in the square keeps bias negligible.  </li>
+<li>Extension: use stratified sampling or low‐discrepancy sequences (Sobol, Halton) for faster convergence.  </li>
+<li><strong>Buffon’s Needle</strong> </li>
+<li>High variance when needle length L is much smaller than line spacing d.  </li>
+<li>Extension: choose L≈d for minimal variance; apply antithetic variates to pair drops with complementary angles.  </li>
+<li><strong>Computational cost</strong>: for N≥10⁶, pure‐Python loops (Buffon) and random draws can become slow.  </li>
+<li>Extension: vectorize fully in NumPy or leverage Numba/Cython for inner loops.  </li>
+</ul>
+<hr/>
+<p><a name="interpretation"></a></p>
+<h2 id="6-results-interpretation">6 · Results &amp; Interpretation 🧩</h2>
+<ul>
+<li><strong>Error vs N (log–log)</strong> </li>
+<li>Slopes for both methods ≈–0.5, confirming O(1/√N) behavior.  </li>
+<li>The circle method’s error curve lies below Buffon’s for equal N, showing lower variance.  </li>
+<li><strong>Visual checks</strong> </li>
+<li>Circle scatter shows uniform coverage; fraction inside closely matches π/4.  </li>
+<li>Buffon needle plot reveals roughly half needles cross when L=d, matching theory P=2L/(πd).  </li>
+<li><strong>Efficiency comparison</strong> </li>
+<li>At N=10⁵, circle error ~10⁻³, Buffon error ~2×10⁻³ (roughly twice as noisy).  </li>
+<li><strong>Takeaway</strong>: geometric‐area sampling is more efficient here; Buffon’s method is conceptually interesting but less practical for high‐precision π.  </li>
+</ul>
+<hr/>
+<p><a name="conclusions"></a></p>
+<h2 id="7-conclusions">7 · Conclusions 📝</h2>
+<ol>
+<li>Both Monte Carlo techniques converge to π with error ∝ 1/√N, but prefactors differ.  </li>
+<li>The circle‐based estimator is straightforward, low‐variance, and vectorizable—ideal for bulk sampling.  </li>
+<li>Buffon’s Needle provides historical insight into geometric probability, yet yields higher variance per trial.  </li>
+<li>Variance reduction (stratification, antithetic sampling, quasi‐MC) can dramatically speed convergence.  </li>
+<li>Monte Carlo paradigms generalize to multidimensional integrals and complex domains beyond π.  </li>
+</ol>
+<hr/>
+<p><a name="references"></a></p>
+<h2 id="8-further-reading">8 · Further Reading 📚</h2>
+<ol>
+<li>Hammersley &amp; Handscomb — <em>Monte Carlo Methods</em>, Ch. 1–2.  </li>
+<li>Owen — <em>Monte Carlo Theory, Methods and Examples</em>, §3.4 (variance reduction).  </li>
+<li>Robert &amp; Casella — <em>Monte Carlo Statistical Methods</em>, Ch. 5 (Buffon’s Needle).  </li>
+<li>Glasserman — <em>Monte Carlo Methods in Financial Engineering</em>, Ch. 2 (convergence analysis).  </li>
+<li>Niederreiter — <em>Random Number Generation and Quasi-Monte Carlo Methods</em>, for low‐discrepancy sequences.  </li>
+</ol>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
