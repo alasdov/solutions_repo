@@ -84,6 +84,12 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#5-python-simulation">5 · Python Simulation 💻</a>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#6-model-limits-extensions">6 · Model Limits &amp; Extensions ⚙️</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#7-conclusions-insights">7 · Conclusions &amp; Insights 📝</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#8-further-reading">8 · Further Reading 📚</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -258,46 +264,62 @@ $$</p>
 <hr/>
 <p><a name="implementation"></a></p>
 <h2 id="5-python-simulation">5 · Python Simulation 💻</h2>
-<details open="" style="border:1px solid #ccc; padding:10px; background:#fafafa;">
-<summary><strong>Click to view simulation code</strong></summary>
-
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/15RYnexR7yrr13lTq7UTNdHPru4jkckyQ?usp=sharing)
-
-<img src="https://i.imgur.com/4ZelPE8.png" width="600"/>
-<a name="limitations"></a>
-
-## 6 · Model Limits &amp; Extensions ⚙️
-
-| Assumption            | Limitation                              | Possible Extension                             |
-|:----------------------|:----------------------------------------|:-----------------------------------------------|
-| **Equal source amplitude** | Real emitters may vary in strength      | Assign each source its own amplitude \(A_i\)   |
-| **No damping**        | Ignores energy loss over distance       | Multiply each wave by \(e^{-\alpha r_i}\)      |
-| **Static snapshot**   | Omits time evolution of interference    | Animate over \(t\) to see wave propagation     |
-| **Infinite 2D plane** | Boundaries and depth effects neglected  | Solve shallow‐water equations on a bounded domain |
-
----
-
-<a name="conclusions"></a>
-## 7 · Conclusions &amp; Insights 📝
-
-- A regular \(N\)-gon of coherent sources yields an \(N\)-fold symmetric interference pattern.  
-- Constructive lobes (“petals”) occur where path-length differences are integer multiples of the wavelength.  
-- Destructive nodal lines trace loci of half-wavelength cancellation.  
-- Contour plots reveal both spatial symmetry and the underlying physics of superposition.  
-- Extending to time-series animations deepens insight into wave propagation and energy transfer.
-
----
-
-<a name="references"></a>
-## 8 · Further Reading 📚
-
-1. Lord Rayleigh — *The Theory of Sound*, Vol. I, Ch. 4: Wave Interference.  
-2. Max Born &amp; Emil Wolf — *Principles of Optics*, 7th ed., §1.4: Interference and Diffraction.  
-3. Lawrence E. Kinsler et al. — *Fundamentals of Acoustics*, 4th ed., Ch. 9: Surface Waves.  
-4. Henrik Jensen et al. — *Computational Ocean Acoustics*, Ch. 6: Numerical Simulation of Surface Waves.  
-5. Tethys Research — “Wave Energy Converter Interference Study,” NASA Tech. Report (2018).
-              
-            </details></div>
+<p><a href="https://colab.research.google.com/drive/15RYnexR7yrr13lTq7UTNdHPru4jkckyQ?usp=sharing"><img alt="Open in Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
+<p><img src="https://i.imgur.com/4ZelPE8.png" width="600"/></p>
+<p><a name="limitations"></a></p>
+<h2 id="6-model-limits-extensions">6 · Model Limits &amp; Extensions ⚙️</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Assumption</th>
+<th style="text-align: left;">Limitation</th>
+<th style="text-align: left;">Possible Extension</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Equal source amplitude</strong></td>
+<td style="text-align: left;">Real emitters may vary in strength</td>
+<td style="text-align: left;">Assign each source its own amplitude <span class="arithmatex">\(A_i\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>No damping</strong></td>
+<td style="text-align: left;">Ignores energy loss over distance</td>
+<td style="text-align: left;">Multiply each wave by <span class="arithmatex">\(e^{-\alpha r_i}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Static snapshot</strong></td>
+<td style="text-align: left;">Omits time evolution of interference</td>
+<td style="text-align: left;">Animate over <span class="arithmatex">\(t\)</span> to see wave propagation</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Infinite 2D plane</strong></td>
+<td style="text-align: left;">Boundaries and depth effects neglected</td>
+<td style="text-align: left;">Solve shallow‐water equations on a bounded domain</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<p><a name="conclusions"></a></p>
+<h2 id="7-conclusions-insights">7 · Conclusions &amp; Insights 📝</h2>
+<ul>
+<li>A regular <span class="arithmatex">\(N\)</span>-gon of coherent sources yields an <span class="arithmatex">\(N\)</span>-fold symmetric interference pattern.  </li>
+<li>Constructive lobes (“petals”) occur where path-length differences are integer multiples of the wavelength.  </li>
+<li>Destructive nodal lines trace loci of half-wavelength cancellation.  </li>
+<li>Contour plots reveal both spatial symmetry and the underlying physics of superposition.  </li>
+<li>Extending to time-series animations deepens insight into wave propagation and energy transfer.</li>
+</ul>
+<hr/>
+<p><a name="references"></a></p>
+<h2 id="8-further-reading">8 · Further Reading 📚</h2>
+<ol>
+<li>Lord Rayleigh — <em>The Theory of Sound</em>, Vol. I, Ch. 4: Wave Interference.  </li>
+<li>Max Born &amp; Emil Wolf — <em>Principles of Optics</em>, 7th ed., §1.4: Interference and Diffraction.  </li>
+<li>Lawrence E. Kinsler et al. — <em>Fundamentals of Acoustics</em>, 4th ed., Ch. 9: Surface Waves.  </li>
+<li>Henrik Jensen et al. — <em>Computational Ocean Acoustics</em>, Ch. 6: Numerical Simulation of Surface Waves.  </li>
+<li>Tethys Research — “Wave Energy Converter Interference Study,” NASA Tech. Report (2018).  </li>
+</ol>
+</div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
 <a class="btn btn-neutral float-left" href="../../2%20Gravity/Problem_3/" title="Problem 3"><span class="icon icon-circle-arrow-left"></span> Previous</a>
