@@ -107,8 +107,40 @@ Beyond small angles, non-linearity shifts and bends the resonance curve (“back
 
 Run or tweak the full simulation in Google Colab:
 
-[![Open in Colab](https://colab.research.google.com/drive/17Yx0rQYcFZwqm67f8Gf-BKdRw7pbXefR?usp=sharing)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/17Yx0rQYcFZwqm67f8Gf-BKdRw7pbXefR?usp=sharing)
+<img src="https://i.imgur.com/TwQpBJR.png" width="700">
 
-<img src="https://i.imgur.com/TwQpBJR.png" width="350">
+<a name="limitations"></a>
+## 6 · Model Limitations & Possible Extensions
 
+| Assumption | Why It Matters | How to Relax / Extend |
+| :--- | :--- | :--- |
+| **Viscous damping** \(F_d \propto \dot\theta\) | Real friction can be dry (Coulomb) or turbulent \( \propto \dot\theta^{2} \). | Replace damping term with \( -k_1\dot\theta - k_2|\dot\theta|\dot\theta \). |
+| **Pure sinusoidal drive** | Many systems experience broadband or stochastic forcing. | Use composite signals or add noise: \( A[\cos(\omega_d t)+\xi(t)] \). |
+| **Rigid rod, point mass** | Large-angle motion may stretch or bend the rod. | Model elastic rod or add torsional spring DOF. |
+| **Constant parameters** | Temperature, wear, or control feedback can change γ, A, ω<sub>d</sub> in time. | Let parameters be time-dependent or governed by another ODE. |
+| **Planar motion** | Real pendula can precess (spherical pendulum). | Extend to 3-D: two angles (θ, φ) and coupled equations. |
 
+> **Tip:** start by adding only quadratic air drag; once that works, introduce further complexity step-by-step.
+
+---
+
+<a name="conclusions"></a>
+## 7 · Conclusions
+
+1. **Linear regime** reproduces the textbook resonance curve of an RLC circuit.  
+2. **Non-linear sine term** triggers frequency locking, period-doubling, and deterministic chaos.  
+3. **Parameter sweeps** (A, ω<sub>d</sub>, γ) reveal rich structures: Arnold tongues, Feigenbaum cascade.  
+4. **Engineering leverage:** designers tune damping (γ) to suppress vibrations, or driving amplitude (A) to harvest energy.  
+5. **Numerical tools** make once-intractable chaotic dynamics tangible and measurable.
+
+---
+
+<a name="references"></a>
+## 8 · Further Reading
+
+1. S. H. Strogatz — *Nonlinear Dynamics and Chaos*, Ch. 5.  
+2. P. Holmes & J. Guckenheimer — *Nonlinear Oscillations, Dynamical Systems, and Bifurcations*.  
+3. L. D. Landau & E. M. Lifshitz — *Mechanics*, §27 “Oscillations with Damping and Forcing”.  
+4. S. Lepri — *Thermodynamics of Driven Systems*, §2.  
+5. M. J. Feigenbaum — “Quantitative Universality for a Class of Nonlinear Transformations,” *J. Stat. Phys.* 19 (1978) 25–52.
