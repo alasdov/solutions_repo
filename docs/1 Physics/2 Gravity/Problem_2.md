@@ -38,28 +38,28 @@ Understanding these speeds is critical for satellite deployment, interplanetary 
 
 For a body of mass \(M\) and radius \(R\):
 
-$$
-\boxed{
-\begin{aligned}
-v_{1} &= \sqrt{\frac{G\,M}{R}}
-       &&\text{(circular orbit speed)} \\[6pt]
-v_{2} &= \sqrt{\frac{2\,G\,M}{R}}
-       &&\text{(escape speed to infinity)} \\[6pt]
-v_{3} &= \sqrt{\,v_{2}^{2} \;+\; v_{\mathrm{orb}}^{2}\,}
-       = \sqrt{\frac{2\,G\,M}{R} + \frac{G\,M_{\odot}}{r_{\mathrm{orb}}}}
-       &&\text{(escape Sun from surface)}
-\end{aligned}
-}
-$$
+- **First cosmic velocity** \(v_{1}\) (circular orbit speed):
+  $$
+  v_{1} = \sqrt{\frac{G\,M}{R}}
+  $$
 
-where
+- **Second cosmic velocity** \(v_{2}\) (escape speed to infinity):
+  $$
+  v_{2} = \sqrt{\frac{2\,G\,M}{R}}
+  $$
 
+- **Third cosmic velocity** \(v_{3}\) (escape Sun from surface):
+  $$
+  v_{3}
+    = \sqrt{\,v_{2}^{2} + v_{\mathrm{orb}}^{2}\,}
+    = \sqrt{\frac{2\,G\,M}{R} \;+\;\frac{G\,M_{\odot}}{r_{\mathrm{orb}}}}
+  $$
+
+where the planet’s **orbital speed** around its star is
 $$
-v_{\mathrm{orb}} = \sqrt{\frac{G\,M_{\odot}}{r_{\mathrm{orb}}}}
+v_{\mathrm{orb}}
+  = \sqrt{\frac{G\,M_{\odot}}{r_{\mathrm{orb}}}}.
 $$
-
-is the orbital speed of the planet around its star (e.g., Earth around the Sun).  
-
 
 ### 2.2 Physical Meaning
 - **v₁**: minimum speed for a circular orbit just above the surface.  
