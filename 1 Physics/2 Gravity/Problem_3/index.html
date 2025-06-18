@@ -60,6 +60,14 @@
 </li>
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 3</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#quick-navigation">📋 Quick Navigation</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#1-motivation">1 · Motivation 🎯</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-equations-insights">2 · Equations &amp; Insights 🔭</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3-conic-classifier">3 · Conic Classifier 🔍</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -171,7 +179,81 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-3">Problem 3</h1>
+<!-- ╭────────────────────────────────────────────────╮
+     │   🚀  Gravity · Problem 3 — Payload Trajectories Near Earth   │
+     ╰────────────────────────────────────────────────╯ -->
+<h1 id="problem-3-payload-trajectories-near-earth">🚀 <strong>Problem 3: Payload Trajectories Near Earth</strong></h1>
+<blockquote>
+<p><em>“What path will a payload carve once released from its rocket under Earth's pull?”</em> </p>
+</blockquote>
+<hr/>
+<h2 id="quick-navigation">📋 Quick Navigation</h2>
+<ol>
+<li><a href="#motivation">Motivation 🎯</a> </li>
+<li><a href="#theory">Equations &amp; Insights 🔭</a> </li>
+<li><a href="#classifier">Conic Classifier 🔍</a> </li>
+<li><a href="#implementation">Code Playground 💻</a> </li>
+<li><a href="#limitations">Pro Tips &amp; Limits ⚙️</a> </li>
+<li><a href="#conclusions">Wrap-up 📝</a> </li>
+<li><a href="#references">Dive Deeper 📚</a> </li>
+</ol>
+<hr/>
+<p><a name="motivation"></a></p>
+<h2 id="1-motivation">1 · Motivation 🎯</h2>
+<blockquote>
+<p><strong>Imagine</strong> releasing a payload mid-flight from a rocket…<br/>
+Its path isn’t just a simple parabola but a showcase of gravitational dynamics.</p>
+</blockquote>
+<ul>
+<li><strong>Why it matters:</strong> </li>
+<li>Controlled reentry of cargo capsules  </li>
+<li>Deployment of scientific probes  </li>
+<li>Safe return of samples  </li>
+</ul>
+<hr/>
+<p><a name="theory"></a></p>
+<h2 id="2-equations-insights">2 · Equations &amp; Insights 🔭</h2>
+<details>
+<summary>Show governing equations</summary>
+
+1. **Newton’s law of gravitation**  
+   \[
+     \mathbf{F} = -\frac{G\,M\,m}{r^{2}}\,\hat{\mathbf{r}}
+   \]
+
+2. **Equation of motion**  
+   \[
+     \ddot{\mathbf{r}} = -\frac{GM}{r^{3}}\,\mathbf{r}
+   \]
+
+3. **Specific mechanical energy**  
+   \[
+     \varepsilon = \frac{v^{2}}{2} \;-\; \frac{GM}{r}
+   \]
+
+4. **Eccentricity vector**  
+   \[
+     \mathbf{e}
+     = \frac{\mathbf{v}\times(\mathbf{r}\times\mathbf{v})}{GM}
+       - \frac{\mathbf{r}}{r},
+     \quad
+     e = \|\mathbf{e}\|.
+   \]
+</details>
+<blockquote>
+<p><strong>🔑 Key insight:</strong><br/>
+- <span class="arithmatex">\(\varepsilon&lt;0\)</span> ⇒ bound (ellipse)<br/>
+- <span class="arithmatex">\(\varepsilon=0\)</span> ⇒ parabolic (escape)<br/>
+- <span class="arithmatex">\(\varepsilon&gt;0\)</span> ⇒ hyperbolic (escape)</p>
+</blockquote>
+<hr/>
+<p><a name="classifier"></a></p>
+<h2 id="3-conic-classifier">3 · Conic Classifier 🔍</h2>
+<p>```mermaid
+flowchart LR
+    A["ε &lt; 0"] --&gt;|e &lt; 1| Elliptical
+    B["ε = 0"] --&gt;|e = 1| Parabolic
+    C["ε &gt; 0"] --&gt;|e &gt; 1| Hyperbolic</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
