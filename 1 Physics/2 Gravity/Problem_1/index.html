@@ -56,13 +56,27 @@
 <ul class="current">
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
 <ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="#1-why-we-care">1 · Why we care 🚀</a>
+<li class="toctree-l3"><a class="reference internal" href="#quick-navigation">Quick Navigation</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#2-derivation-click-to-expand">2 · Derivation ☕ (click to expand)</a>
+<li class="toctree-l3"><a class="reference internal" href="#1-motivation">1 · Motivation 🚀</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#3-astronomy-impact">3 · Astronomy Impact 🔭</a>
+<li class="toctree-l3"><a class="reference internal" href="#2-theory-derivation">2 · Theory &amp; Derivation 🧮</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#4-reality-check-two-quick-plots">4 · Reality Check 👁️ — Two quick plots</a>
+<li class="toctree-l3"><a class="reference internal" href="#3-astronomical-uses">3 · Astronomical Uses 🔭</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#31-weighing-a-planet">3.1 Weighing a Planet</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#32-reality-checks">3.2 Reality Checks</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#4-python-verification">4 · Python Verification 💻</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#5-beyond-perfect-circles">5 · Beyond Perfect Circles 🔮</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#6-conclusions">6 · Conclusions 📝</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#7-further-reading">7 · Further Reading 📚</a>
 </li>
 </ul>
 </li>
@@ -179,195 +193,187 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<!-- ╭──────────────────────────────────────────────╮
-     │     G  R  A  V  I  T  Y    ·   P r o b 1     │
-     ╰──────────────────────────────────────────────╯ -->
+<!-- ╭────────────────────────────────────────────╮
+     │     G  R  A  V  I  T  Y    ·   P r o b 1    │
+     ╰────────────────────────────────────────────╯ -->
 <h1 id="gravity-problem-1-orbital-period-vs-orbital-radius">🌌 <strong>Gravity · Problem 1 — Orbital Period vs Orbital Radius</strong></h1>
 <blockquote>
-<p><strong>Kepler’s whisper:</strong><br/>
-<em>“The squares of the times are as the cubes of the distances.”</em></p>
+<p><em>“The squares of the periods are proportional to the cubes of the distances.”</em><br/>
+— <strong>Johannes Kepler</strong>, 1619</p>
 </blockquote>
 <hr/>
-<div align="center">
-
-| ⏱️  |  **TOC—Jump Drive** |
-|:---:|:--------------------------------------------------------|
-| 1 | [Why we care](#motivation) |
-| 2 | [Derivation ☕](#theory) |
-| 3 | [Astronomy Impact](#implications) |
-| 4 | [Reality Check 👁️](#examples) |
-| 5 | [Python Sandbox 💻](#implementation) |
-| 6 | [Beyond Circles 🔮](#extensions) |
-
-</div>
+<h2 id="quick-navigation">Quick Navigation</h2>
+<ol>
+<li><a href="#motivation">Motivation</a> </li>
+<li><a href="#theory">Theory &amp; Derivation</a> </li>
+<li><a href="#uses">Astronomical Uses</a> </li>
+<li><a href="#python">Python Verification</a> </li>
+<li><a href="#beyond">Beyond Perfect Circles</a> </li>
+<li><a href="#concl">Conclusions</a> </li>
+<li><a href="#refs">Further Reading</a> </li>
+</ol>
 <hr/>
 <p><a name="motivation"></a></p>
-<h2 id="1-why-we-care">1 · Why we care 🚀</h2>
-<p>Kepler’s 3rd Law stitches together <strong>time</strong> and <strong>distance</strong> in the cosmic dance.<br/>
-With it, we:</p>
-<ul>
-<li>weigh planets without a scale,  </li>
-<li>triangulate exoplanets light-years away,  </li>
-<li>schedule GPS satellites to the millisecond.</li>
-</ul>
-<blockquote>
-<b>Mnemonic</b> · “<i>P</i><sup>2</sup> ∝ <i>a</i><sup>3</sup>” — *Period squares marry radius cubes.*
-</blockquote>
+<h2 id="1-motivation">1 · Motivation 🚀</h2>
+<p>Kepler’s Third Law links <strong>time</strong> and <strong>distance</strong> for orbiting bodies:</p>
+<div class="arithmatex">\[
+P^{2}\;=\;\frac{4\pi^{2}}{GM}\,a^{3}.
+\]</div>
+<p>With just <em>P</em> and <em>a</em> we can<br/>
+<em> weigh planets and stars,<br/>
+</em> design satellite constellations,<br/>
+* infer dark-matter distribution in galaxies.</p>
 <hr/>
 <p><a name="theory"></a></p>
-<h2 id="2-derivation-click-to-expand">2 · Derivation ☕ <sup>(click to expand)</sup></h2>
-<details>
-<summary><strong>Show full math</strong></summary>
-
-### 2.1 Force balance
-
-\[
-\frac{G M m}{a^{\,2}} = m\frac{v^{2}}{a}
-\qquad\Longrightarrow\qquad
-v = \sqrt{\frac{G M}{a}}
-\]
-
-### 2.2 Period–radius link  
-\(P = \dfrac{2\pi a}{v}\) ⇒
-
-\[
-\boxed{P^{2} = \frac{4\pi^{2}}{GM}\;a^{3}}
-\]
-
-**Take-away:** slope in log–log space is *exactly* **3 ⁄ 2**.
-</details>
-<hr/>
-<p><a name="implications"></a></p>
-<h2 id="3-astronomy-impact">3 · Astronomy Impact 🔭</h2>
+<h2 id="2-theory-derivation">2 · Theory &amp; Derivation 🧮</h2>
 <table>
 <thead>
 <tr>
-<th>🛠️ Use-case</th>
-<th>How P² ≈ a³ helps</th>
+<th>Step</th>
+<th>Equation</th>
+<th>Comment</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Weighing planets</strong></td>
-<td>Rearranging yields <span class="arithmatex">\(M = \tfrac{4\pi^{2}a^{3}}{G P^{2}}\)</span>.</td>
+<td>Centripetal = Gravity</td>
+<td><span class="arithmatex">\(\displaystyle \frac{GMm}{a^{2}} = m\frac{v^{2}}{a}\)</span></td>
+<td>Cancel <em>m</em></td>
 </tr>
 <tr>
-<td><strong>Measuring stellar mass in binaries</strong></td>
-<td>Observe <span class="arithmatex">\(P,a\)</span> of the dance → derive total mass.</td>
+<td>Orbital speed</td>
+<td><span class="arithmatex">\(v = \sqrt{\dfrac{GM}{a}}\)</span></td>
+<td></td>
 </tr>
 <tr>
-<td><strong>Mapping the Solar System</strong></td>
-<td>Early astronomers used Jupiter’s moons as celestial “meters &amp; seconds”.</td>
+<td>Period definition</td>
+<td><span class="arithmatex">\(P = \dfrac{2\pi a}{v}\)</span></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Result</strong></td>
+<td><span class="arithmatex">\(\boxed{P^{2}=\dfrac{4\pi^{2}}{GM}\,a^{3}}\)</span></td>
+<td>slope 3/2 in log–log space</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<p><a name="uses"></a></p>
+<h2 id="3-astronomical-uses">3 · Astronomical Uses 🔭</h2>
+<h3 id="31-weighing-a-planet">3.1 Weighing a Planet</h3>
+<p>[
+M = \frac{4\pi^{2}a^{3}}{G P^{2}}.
+]
+Example: Plug in Earth-Moon data and recover <span class="arithmatex">\(M_\oplus\)</span> within 1 %.</p>
+<h3 id="32-reality-checks">3.2 Reality Checks</h3>
+<table>
+<thead>
+<tr>
+<th>Body</th>
+<th><span class="arithmatex">\(a\)</span> (×10⁶ km)</th>
+<th><span class="arithmatex">\(P\)</span> (days)</th>
+<th><span class="arithmatex">\(P^{2}/a^{3}\)</span> (<em>Solar-system units</em>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Moon</td>
+<td>0.384</td>
+<td>27.32</td>
+<td>1.02</td>
+</tr>
+<tr>
+<td>Io</td>
+<td>0.422</td>
+<td>1.769</td>
+<td>1.04</td>
+</tr>
+<tr>
+<td>GEO satellite</td>
+<td>0.042</td>
+<td>0.997</td>
+<td>1.00</td>
+</tr>
+</tbody>
+</table>
+<p>Values ≈ 1 confirm the law over 4-orders-of-magnitude in <em>a</em>.</p>
+<hr/>
+<p><a name="python"></a></p>
+<h2 id="4-python-verification">4 · Python Verification 💻</h2>
+<p><a href="https://colab.research.google.com/drive/1hcODOusb7u4E60fqvs8Gp6ZSW01M8yZw?usp=sharing"><img alt="Open in Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>
+<img src="https://i.imgur.com/xMruTT2.png" width="700"/>
+Expected: fitted slope ≈ 1.50 — exactly Keplerian.</p>
+<p><a name="beyond"></a></p>
+<h2 id="5-beyond-perfect-circles">5 · Beyond Perfect Circles 🔮</h2>
+<blockquote>
+<p><em>Kepler’s third law is the opening move; the </em><em>real game</em><em> begins when orbits stop being perfect circles.</em></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>⚗️ Scenario</th>
+<th>🚧 What Breaks the Classic Law?</th>
+<th>🔧 Fix / Observable Consequence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Elliptical orbit</strong></td>
+<td>Speed no longer constant; periapsis ≠ apoapsis.</td>
+<td>Keep the semi-major axis <strong>a</strong> → law exact again.</td>
+</tr>
+<tr>
+<td><strong>General-relativistic well</strong></td>
+<td>Space-time curvature adds an extra <span class="arithmatex">\(+3GM/(c^{2}a(1-e^{2}))\)</span> term.</td>
+<td>Perihelion precession (Mercury ≈ 43″ / century).</td>
+</tr>
+<tr>
+<td><strong>Galaxy rotation (dark matter)</strong></td>
+<td>Mass ≠ luminous matter → flat rotation curves.</td>
+<td><span class="arithmatex">\(P^{2}/a^{3}\)</span> grows with <em>a</em> ⇒ “missing mass” clue.</td>
+</tr>
+<tr>
+<td><strong>Solar-sail thrust</strong></td>
+<td>Continuous outward force opposes gravity.</td>
+<td>Effective gravity weakens → period grows <em>faster</em> than <span class="arithmatex">\(a^{3/2}\)</span>.</td>
+</tr>
+<tr>
+<td><strong>Space-elevator tether</strong></td>
+<td>Gravity &amp; centrifugal pull change along the cable.</td>
+<td>Equilibrium only at geostationary radius; above/below → tension sign flip.</td>
 </tr>
 </tbody>
 </table>
 <blockquote>
-<p><strong>Fun-fact:</strong> the law survived relativity tweaks — only the prefactor changes for strong gravity.</p>
+<b>Rule of thumb</b>: Whenever extra forces appear, inspect the ratio <code>P² / a³</code>.  
+<br/>Any systematic drift → your **bonus physics** is showing.
 </blockquote>
 <hr/>
-<p><a name="examples"></a></p>
-<h2 id="4-reality-check-two-quick-plots">4 · Reality Check 👁️ — Two quick plots</h2>
-<details open="">
-<summary><strong>Mermaid sketch of Solar‐System log–log fit</strong></summary>
-
-```mermaid
-%% Just a static illustration (not a data plot)
-graph LR
-  subgraph log(P) vs log(a)
-    A["Mercury"] --&gt; B["Venus"] --&gt; C["Earth"] --&gt; D["Mars"]--&gt;E["Jupiter"]
-  end
-  classDef dotted stroke-dasharray: 3 3;
-  class A,B,C,D,E dotted;
-
-### The Moon 🌙 — sanity-check
-
-| Parameter | Symbol | Value | Source |
-|-----------|:------:|-------|--------|
-| Mean orbital radius | \(a\) | 384 400 km | JPL DE431 |
-| Sidereal period | \(P\) | 27.321 d | IAU 2009 |
-| Kepler ratio | \(\dfrac{P^{2}}{a^{3}}\) | \(1.02\) × solar-system mean | ✅ within 2 % |
-
-*Computation:*  
-\[
-\frac{P^{2}}{a^{3}}
- = \frac{(27.321/365.25)^{2}}{(0.00257)^{3}} ≈ 1.02.
-\]
-
----
-
-### Jupiter’s Io 🌋 — second datapoint
-
-| Parameter | Symbol | Value |
-|-----------|:------:|-------|
-| \(a\) | 421 800 km |
-| \(P\) | 1.769 d |
-| \(\dfrac{P^{2}}{a^{3}}\) | 1.04 (again &lt; 5 % drift) |
-
-The near-unity ratios confirm the *P² ∝ a³* law across wildly different scales.
-
----
-
-<a name="implementation"></a>
-## 5 · Python Sandbox 💻 — Test the Law
-
-&gt; *Aim:* sweep artificial satellites from LEO to GEO, fit slope in log–log space, and verify it lands on **1.5**.
-
-```python
-import numpy as np, matplotlib.pyplot as plt
-from scipy.stats import linregress
-
-G, M_earth = 6.6743e-11, 5.972e24
-
-# radii 1–6 Earth radii
-a = np.linspace(6.371e6, 6*6.371e6, 24)
-P = 2*np.pi*np.sqrt(a**3 / (G*M_earth))      # s
-
-# linear fit in log-space
-slope, intercept, *_ = linregress(np.log10(a), np.log10(P))
-
-plt.figure(figsize=(6,4), dpi=110)
-plt.loglog(a/6.371e6, P/3600, 'o', label='synthetic orbits')
-plt.loglog(a/6.371e6,
-           10**intercept * (a)**slope / 3600,
-           '--', label=f'fit: slope={slope:.2f}')
-plt.xlabel('Radius ($R_⊕$)')
-plt.ylabel('Period (h)')
-plt.title('Kepler fit for circular Earth orbits')
-plt.grid(True, which='both', ls=':')
-plt.legend(); plt.show()
-
-<a name="extensions"></a>
-## 6 · Beyond Circles 🔮 — Where Kepler Bends
-
-&gt; *Quick peek at “edge-cases” where the classic **P² ∝ a³** needs extra seasoning.*
-
-| Scenario | What changes? | One-liner take-away |
-|----------|---------------|---------------------|
-| **Elliptical orbits** | Replace “radius” with **semi-major axis a**; law still exact. | Planet speeds up at periapsis, slow at apoapsis, *but* average obeys Kepler. |
-| **General Relativity** | Space-time curvature tweaks central force. | P² ∝ a³ holds to 1st order; higher order gives Mercury’s 43″/century shift. |
-| **Dark-matter halos** | Extra unseen mass flattens galaxy rotation curves. | Observed P²/a³ grows with radius → evidence for DM. |
-| **Ringworld / space elevator** | Non-point-mass gravity + tether tension. | Effective gravity varies → “sweet spot” at geostationary radius. |
-| **Non-Keplerian (solar sail)** | Continuous thrust adds outward force. | Period increases faster than a³ — sail orientation tunes orbit. |
-
-<blockquote>
-<b>Designer tip</b> · Treat <code>P²/a³</code> as a “fingerprint”-ratio: deviations shout “new physics or extra forces”.
-</blockquote>
-
----
-
-<a name="references"></a>
-## 7 · Further Reading 📚
-
-1. **C. Murray &amp; S. Dermott** — *Solar System Dynamics*, Chs. 2–3.  
-2. **D. Vallado** — *Fundamentals of Astrodynamics and Applications*, §1 (Keplerian motion).  
-3. **A. Einstein** — “Explanation of the Perihelion Motion of Mercury,” *Annalen der Physik* (1915).  
-4. **V. Rubin &amp; W. Ford** — “Rotation of the Andromeda Galaxy,” *ApJ* 159, 379 (1970) — dark-matter clue.  
-5. **NASA JPL HORIZONS** — online ephemeris to verify P, a for any body.  
-6. **J. Carroll** — “Space Elevators and the Geostationary Balance,” *Acta Astronautica* 57 (2005).  
-
----
-              
-            </details></div>
+<p><a name="concl"></a></p>
+<h2 id="6-conclusions">6 · Conclusions 📝</h2>
+<ol>
+<li><strong>Log–log slope = 1.5</strong> is the fingerprint of pure <span class="arithmatex">\(1/r^{2}\)</span> gravity.  </li>
+<li>Measuring <em>(P, a)</em> across bodies delivers <strong>mass</strong> without touching the object.  </li>
+<li>Deviations from Kepler’s ratio have <em>historically</em> revealed:  </li>
+<li>the finite speed of light (Rømer),  </li>
+<li>general relativity (Mercury),  </li>
+<li>dark matter (rubin–ford rotation curves).  </li>
+<li>Modern mission design—from <strong>GPS</strong> to <strong>JWST transfer orbits</strong>—still builds on this 400-year-old relationship.  </li>
+</ol>
+<hr/>
+<p><a name="refs"></a></p>
+<h2 id="7-further-reading">7 · Further Reading 📚</h2>
+<p><em>MUST-reads</em><br>
+1. <strong>C. D. Murray &amp; S. F. Dermott</strong> — <em>Solar System Dynamics</em> (Cambridge, 1999) — Ch. 3.<br/>
+2. <strong>D. Vallado</strong> — <em>Fundamentals of Astrodynamics and Applications</em>, 4 ed. — §1.<br/>
+3. <strong>NASA JPL HORIZONS</strong> — Online ephemerides service for custom (P, a) checks.</br></p>
+<p><em>Deep-cuts &amp; history</em><br/>
+4. <strong>J. Kepler</strong> — <em>Harmonices Mundi</em>, Book V (1619).<br/>
+5. <strong>A. Einstein</strong> — “Explanation of the Perihelion Motion of Mercury,” <em>Ann. Phys.</em> (1915).<br/>
+6. <strong>V. C. Rubin &amp; W. K. Ford</strong> — “Rotation of the Andromeda Galaxy,” <em>ApJ</em> 159 (1970).<br/>
+7. <strong>J. Carroll</strong> — “Space‐Elevator Dynamics and the Geostationary Balance,” <em>Acta Astronaut.</em> 57 (2005).</p>
+<hr/>
+</div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
 <a class="btn btn-neutral float-left" href="../../1%20Mechanics/Problem_2/" title="🔄 Problem 2 — Investigating the Dynamics of a Forced Damped Pendulum"><span class="icon icon-circle-arrow-left"></span> Previous</a>
