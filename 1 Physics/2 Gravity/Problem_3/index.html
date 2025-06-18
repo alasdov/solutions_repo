@@ -221,8 +221,8 @@ Its path isn’t just a simple parabola but a showcase of gravitational dynamics
 <hr/>
 <p><a name="theory"></a></p>
 <h2 id="2-equations-insights">2 · Equations &amp; Insights 🔭</h2>
-<details style="border:1px solid #bbb; padding:10px; border-radius:5px; background:#f9f9f9;">
-<summary><strong>🔍 Click here to reveal the Governing Equations &amp; Key Formulas</strong></summary>
+<details open="" style="border:1px solid #bbb; padding:10px; border-radius:5px; background:#f9f9f9;">
+<summary><strong>🔍 Governing Equations &amp; Key Formulas</strong></summary>
 
 1. **Newton’s law of gravitation**  
    \[
@@ -257,24 +257,33 @@ Its path isn’t just a simple parabola but a showcase of gravitational dynamics
 <hr/>
 <p><a name="classifier"></a></p>
 <h2 id="3-conic-classifier">3 · Conic Classifier 🔍</h2>
-<p>Before diving into the simulation, it helps to know “which conic” you’re aiming for.  </p>
+<p>Before diving into the simulation, it helps to know “which conic” you’re aiming for.</p>
 <ol>
-<li><strong>Compute specific energy</strong><br/>
-   [
-     \varepsilon = \tfrac12\,v^2 - \tfrac{GM}{r}.
-   ]</li>
-<li><strong>Compute eccentricity</strong><br/>
-   [
-     \mathbf{e} = \frac{\mathbf{v}\times(\mathbf{r}\times\mathbf{v})}{GM} \;-\; \frac{\mathbf{r}}{r},
-     \quad e = |\mathbf{e}|.
-   ]</li>
-<li><strong>Classify the path</strong>:</li>
-<li>If <span class="arithmatex">\(\varepsilon&lt;0\)</span> and <span class="arithmatex">\(e&lt;1\)</span>, the trajectory is <strong>elliptical</strong> (bound).  </li>
-<li>If <span class="arithmatex">\(\varepsilon=0\)</span> and <span class="arithmatex">\(e=1\)</span>, it’s exactly <strong>parabolic</strong> (marginal escape).  </li>
-<li>If <span class="arithmatex">\(\varepsilon&gt;0\)</span> and <span class="arithmatex">\(e&gt;1\)</span>, you get a <strong>hyperbolic</strong> escape.</li>
+<li>
+<p>Compute specific energy<br/>
+<span class="arithmatex">\(<span class="arithmatex">\(\varepsilon = \frac{v^2}{2} \;-\; \frac{GM}{r}.\)</span>\)</span></p>
+</li>
+<li>
+<p>Compute eccentricity<br/>
+   $$
+   \mathbf{e}
+     = \frac{\mathbf{v}\times(\mathbf{r}\times\mathbf{v})}{GM}</p>
+<ul>
+<li>\frac{\mathbf{r}}{r},
+   \quad
+   e = |\mathbf{e}|.
+   $$</li>
+</ul>
+</li>
+<li>
+<p>Classify the path:</p>
+</li>
+<li>If <span class="arithmatex">\(\varepsilon&lt;0\)</span> and <span class="arithmatex">\(e&lt;1\)</span>, …  </li>
+<li>If <span class="arithmatex">\(\varepsilon=0\)</span> and <span class="arithmatex">\(e=1\)</span>, …  </li>
+<li>If <span class="arithmatex">\(\varepsilon&gt;0\)</span> and <span class="arithmatex">\(e&gt;1\)</span>, …</li>
 </ol>
 <p>The flowchart below then shows this decision process at a glance:</p>
-<p><img src="https://i.imgur.com/xqE2pB3.png" width="600"/></p>
+<p><img src="https://i.imgur.com/xqE2pB3.png" width="450"/></p>
 <p><a name="implementation"></a></p>
 <h2 id="4-code-playground">4 · Code Playground 💻</h2>
 <p><a href="https://colab.research.google.com/drive/1gnPgdtP5c-d5Qyq4MSk7X2K-EFL1byAn?usp=sharing"><img alt="Open in Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
