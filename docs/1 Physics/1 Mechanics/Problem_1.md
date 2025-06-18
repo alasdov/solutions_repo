@@ -99,3 +99,38 @@ Run or tweak the full code interactively in Google Colab:
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1uAEP93nZ4RhJKgKYPPJQxNHYy_3Xo81w?usp=sharing)
 
 ![Optimal-angle sketch](https://i.imgur.com/xKOHmlJ.png)
+
+<a name="limitations"></a>
+## 6 · Model Limitations & Possible Extensions
+
+| Assumption | Why It Matters | How to Relax / Extend |
+| :--- | :--- | :--- |
+| **No air resistance** | Real projectiles (balls, bullets, javelins) lose speed → range shortens, optimal angle shifts. | Add a drag term \(F_d = \frac{1}{2}\rho C_d A v^2\) and integrate ODEs numerically (`scipy.integrate.solve_ivp`). |
+| **Constant \(g\)** | Gravity weakens with altitude; negligible for football, critical for rocketry. | Use \(g(h) = g_0 \left(\dfrac{R_\oplus}{R_\oplus + h}\right)^2\). |
+| **Flat landing surface** | Many situations have uneven terrain (hills, cliffs, ski jumps). | Stop integration when \(y = y_{\text{terrain}}(x)\) from a DEM or analytic surface. |
+| **No wind** | Crosswinds and tail/head winds deflect and stretch the path. | Add a horizontal acceleration term \(a_x = \tfrac{F_{\text{wind}}}{m}\). |
+| **Point mass, no spin** | Back-spin/top-spin create Magnus lift; affects golf & baseball markedly. | Couple translational and rotational motion via lift force \(F_L \propto \omega \times v\). |
+
+> **Tip:** Start with air drag only (quadratic), then layer other effects one by one; this keeps the code modular and easy to debug.
+
+---
+
+<a name="conclusions"></a>
+## 7 · Conclusions
+
+1. **Maximum range on level ground occurs at ≈ 45 °** when drag and launch height are negligible.  
+2. **Range scales as \(v_0^2 / g\)**, so higher launch speeds and lower gravity (e.g., Moon) dramatically increase distance.  
+3. **Non-zero launch/landing height skews the curve**: optimal angle drops if you start high and rises if you must clear a cliff.  
+4. **Real-world design choices rarely use the textbook 45 °** because of drag, safety clearances, and target elevation.  
+5. **Numerical tools bridge the gap between ideal equations and messy reality**, letting engineers tune launch angle, speed, and spin for specific goals.
+
+---
+
+<a name="references"></a>
+## 8 · Further Reading
+
+1. J. B. Marion & S. T. Thornton — *Classical Dynamics of Particles and Systems*, Ch. 2.  
+2. D. Halliday, R. Resnick & J. Walker — *Fundamentals of Physics*, 11th ed., §4–5.  
+3. NASA Glenn Research Center — “Projectile Motion with Drag” (interactive tutorial).  
+4. S. Brennen — *Fundamentals of Multiphase Flow*, §0.6 “Motion with Quadratic Resistance”.  
+5. R. Cross & A. M. Nathan — “Dynamics of Baseball: Influence of Air Drag and Magnus Effect,” *Am. J. Phys.* 76 (10), 2008.
