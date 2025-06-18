@@ -2,6 +2,22 @@
 
 > *“The simplest pendulum holds the key to gravity’s pull.”*
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Default Audio Player</title>
+</head>
+<body>
+
+<audio controls>
+  <source src="https://files.catbox.moe/8f1ug5.wav" type="audio/wav">
+  Your browser does not support the audio element.
+</audio>
+
+</body>
+</html>
+
 ---
 
 ## 📋 Table of Contents
