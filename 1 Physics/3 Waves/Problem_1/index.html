@@ -66,6 +66,24 @@
 <ul class="current">
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#table-of-contents">💥 Table of Contents</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#1-motivation">1 · Motivation 🎯</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-theory-model">2 · Theory &amp; Model 📐</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#21-singlesource-wave">2.1 Single‐Source Wave</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#22-superposition">2.2 Superposition</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3-pattern-analysis">3 · Pattern Analysis 🔍</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#4-interpretation">4 · Interpretation 🧩</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#5-python-simulation">5 · Python Simulation 💻</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -171,8 +189,115 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-1">Problem 1</h1>
-</div>
+<!-- ╭────────────────────────────────────────────────────────╮
+     │   🌊 Waves · Problem 6 — Interference Patterns on Water Surface   │
+     ╰────────────────────────────────────────────────────────╯ -->
+<h1 id="problem-6-interference-patterns-on-a-water-surface">🌊 <strong>Problem 6: Interference Patterns on a Water Surface</strong></h1>
+<blockquote>
+<p><em>“When ripples collide, they weave a tapestry of peaks and troughs.”</em> </p>
+</blockquote>
+<hr/>
+<h2 id="table-of-contents">💥 Table of Contents</h2>
+<ol>
+<li><a href="#motivation">Motivation 🎯</a> </li>
+<li><a href="#theory">Theory &amp; Model 📐</a> </li>
+<li><a href="#analysis">Pattern Analysis 🔍</a> </li>
+<li><a href="#interpretation">Interpretation 🧩</a> </li>
+<li><a href="#implementation">Python Simulation 💻</a> </li>
+<li><a href="#limitations">Model Limits &amp; Extensions ⚙️</a> </li>
+<li><a href="#conclusions">Conclusions &amp; Insights 📝</a> </li>
+<li><a href="#references">Further Reading 📚</a> </li>
+</ol>
+<hr/>
+<p><a name="motivation"></a></p>
+<h2 id="1-motivation">1 · Motivation 🎯</h2>
+<p>Interference of waves on a water surface is a vivid demonstration of superposition.<br/>
+By placing multiple coherent sources at the vertices of a regular polygon, we can:<br/>
+- Visualize <strong>constructive</strong> vs <strong>destructive</strong> interference<br/>
+- Explore the role of <strong>phase</strong> and <strong>geometry</strong><br/>
+- Connect to real‐world applications (antenna arrays, optics, wave energy)</p>
+<hr/>
+<p><a name="theory"></a></p>
+<h2 id="2-theory-model">2 · Theory &amp; Model 📐</h2>
+<h3 id="21-singlesource-wave">2.1 Single‐Source Wave</h3>
+<p>A point source at <span class="arithmatex">\((x_i,y_i)\)</span> emits:
+$$
+\eta_i(x,y,t)
+= \frac{A}{\sqrt{r_i}}\;\cos!\bigl(k\,r_i - \omega\,t + \phi_i\bigr),
+\quad
+r_i = \sqrt{(x - x_i)^2 + (y - y_i)^2}.
+$$</p>
+<h3 id="22-superposition">2.2 Superposition</h3>
+<p>Multiple sources sum linearly:
+$$
+\eta_{\mathrm{sum}}(x,y,t)
+= \sum_{i=1}^{N} \eta_i(x,y,t).
+$$</p>
+<hr/>
+<p><a name="analysis"></a></p>
+<h2 id="3-pattern-analysis">3 · Pattern Analysis 🔍</h2>
+<ul>
+<li><strong>Constructive interference</strong>: phases align → high‐amplitude lobes  </li>
+<li><strong>Destructive interference</strong>: phases opposite → nodal lines  </li>
+<li><strong>Fringe spacing</strong> depends on wavelength <span class="arithmatex">\(\lambda = 2\pi/k\)</span> and source geometry  </li>
+<li><strong>Polygon symmetry</strong> yields <span class="arithmatex">\(N\)</span>-fold rotational symmetry in the pattern  </li>
+</ul>
+<hr/>
+<p><a name="interpretation"></a></p>
+<h2 id="4-interpretation">4 · Interpretation 🧩</h2>
+<ul>
+<li><strong>Bright lobes</strong> in the contour plot are water crests (<span class="arithmatex">\(\eta&gt;0\)</span>).  </li>
+<li><strong>Dark lobes</strong> are troughs (<span class="arithmatex">\(\eta&lt;0\)</span>).  </li>
+<li><strong>Zero‐crossing lines</strong> (nodes) trace destructive interference.  </li>
+<li>As <span class="arithmatex">\(N\)</span> increases, the pattern transitions from dipole‐like to sharply defined petals.  </li>
+</ul>
+<p>Applications:<br/>
+- Designing phased‐array antennas<br/>
+- Optical interference &amp; holography<br/>
+- Wave‐energy harvesting optimization  </p>
+<hr/>
+<p><a name="implementation"></a></p>
+<h2 id="5-python-simulation">5 · Python Simulation 💻</h2>
+<details open="" style="border:1px solid #ccc; padding:10px; background:#fafafa;">
+<summary><strong>Click to view simulation code</strong></summary>
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/15RYnexR7yrr13lTq7UTNdHPru4jkckyQ?usp=sharing)
+
+<img src="https://i.imgur.com/4ZelPE8.png" width="600"/>
+<a name="limitations"></a>
+
+## 6 · Model Limits &amp; Extensions ⚙️
+
+| Assumption            | Limitation                              | Possible Extension                             |
+|:----------------------|:----------------------------------------|:-----------------------------------------------|
+| **Equal source amplitude** | Real emitters may vary in strength      | Assign each source its own amplitude \(A_i\)   |
+| **No damping**        | Ignores energy loss over distance       | Multiply each wave by \(e^{-\alpha r_i}\)      |
+| **Static snapshot**   | Omits time evolution of interference    | Animate over \(t\) to see wave propagation     |
+| **Infinite 2D plane** | Boundaries and depth effects neglected  | Solve shallow‐water equations on a bounded domain |
+
+---
+
+<a name="conclusions"></a>
+## 7 · Conclusions &amp; Insights 📝
+
+- A regular \(N\)-gon of coherent sources yields an \(N\)-fold symmetric interference pattern.  
+- Constructive lobes (“petals”) occur where path-length differences are integer multiples of the wavelength.  
+- Destructive nodal lines trace loci of half-wavelength cancellation.  
+- Contour plots reveal both spatial symmetry and the underlying physics of superposition.  
+- Extending to time-series animations deepens insight into wave propagation and energy transfer.
+
+---
+
+<a name="references"></a>
+## 8 · Further Reading 📚
+
+1. Lord Rayleigh — *The Theory of Sound*, Vol. I, Ch. 4: Wave Interference.  
+2. Max Born &amp; Emil Wolf — *Principles of Optics*, 7th ed., §1.4: Interference and Diffraction.  
+3. Lawrence E. Kinsler et al. — *Fundamentals of Acoustics*, 4th ed., Ch. 9: Surface Waves.  
+4. Henrik Jensen et al. — *Computational Ocean Acoustics*, Ch. 6: Numerical Simulation of Surface Waves.  
+5. Tethys Research — “Wave Energy Converter Interference Study,” NASA Tech. Report (2018).
+              
+            </details></div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
 <a class="btn btn-neutral float-left" href="../../2%20Gravity/Problem_3/" title="Problem 3"><span class="icon icon-circle-arrow-left"></span> Previous</a>
