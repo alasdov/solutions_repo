@@ -84,6 +84,26 @@
 <ul class="current">
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#table-of-contents">📋 Table of Contents</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#1-motivation">1 · Motivation 🎯</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-theoretical-background">2 · Theoretical Background 🔭</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3-simulation-design">3 · Simulation Design 🔍</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#4-sampling-visualization">4 · Sampling &amp; Visualization 📈</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#5-parameter-exploration">5 · Parameter Exploration ⚙️</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#6-python-implementation">6 · Python Implementation 💻</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#8-results-interpretation">8 · Results &amp; Interpretation 🧩</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#9-conclusions">9 · Conclusions 📝</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#10-further-reading">10 · Further Reading 📚</a>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Problem_2/">Problem 2</a>
@@ -171,7 +191,117 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-1">Problem 1</h1>
+<!-- ╭───────────────────────────────────────────────────────────╮
+     │     📊 Statistics · Problem 1 — Exploring the CLT        │
+     ╰───────────────────────────────────────────────────────────╯ -->
+<h1 id="problem-1-exploring-the-central-limit-theorem-through-simulations">📊 <strong>Problem 1: Exploring the Central Limit Theorem through Simulations</strong></h1>
+<blockquote>
+<p><em>“Regardless of the original distribution, the mean of many samples whispers ‘normal.’”</em> </p>
+</blockquote>
+<hr/>
+<h2 id="table-of-contents">📋 Table of Contents</h2>
+<ol>
+<li><a href="#motivation">Motivation 🎯</a> </li>
+<li><a href="#theory">Theoretical Background 🔭</a> </li>
+<li><a href="#design">Simulation Design 🔍</a> </li>
+<li><a href="#visualization">Sampling &amp; Visualization 📈</a> </li>
+<li><a href="#parameters">Parameter Exploration ⚙️</a> </li>
+<li><a href="#implementation">Python Implementation 💻</a> </li>
+<li><a href="#limitations">Model Limitations &amp; Extensions 🔧</a> </li>
+<li><a href="#interpretation">Results &amp; Interpretation 🧩</a> </li>
+<li><a href="#conclusions">Conclusions 📝</a> </li>
+<li><a href="#references">Further Reading 📚</a> </li>
+</ol>
+<hr/>
+<p><a name="motivation"></a></p>
+<h2 id="1-motivation">1 · Motivation 🎯</h2>
+<p>The <strong>Central Limit Theorem</strong> (CLT) underpins statistical inference:  </p>
+<blockquote>
+<p><em>The distribution of the sample mean <span class="arithmatex">\(\bar X\)</span> tends toward normality as sample size <span class="arithmatex">\(n\)</span> grows, regardless of the parent distribution.</em><br/>
+Simulations make this abstract theorem tangible, showing how quickly “normal” emerges.</p>
+</blockquote>
+<hr/>
+<p><a name="theory"></a></p>
+<h2 id="2-theoretical-background">2 · Theoretical Background 🔭</h2>
+<ul>
+<li>For i.i.d. random variables <span class="arithmatex">\(X_1,\dots,X_n\)</span> with mean <span class="arithmatex">\(\mu\)</span> and variance <span class="arithmatex">\(\sigma^2\)</span>,<br/>
+  [
+    \bar X = \frac1n\sum_{i=1}^n X_i
+    \quad\Longrightarrow\quad
+    \frac{\bar X - \mu}{\sigma/\sqrt{n}}
+    \xrightarrow{d} \mathcal{N}(0,1)\quad\text{as }n\to\infty.
+  ]  </li>
+<li><strong>Implication:</strong> even a highly skewed or discrete population yields an approximately Gaussian <span class="arithmatex">\(\bar X\)</span> for moderate <span class="arithmatex">\(n\)</span>.</li>
+</ul>
+<hr/>
+<p><a name="design"></a></p>
+<h2 id="3-simulation-design">3 · Simulation Design 🔍</h2>
+<ol>
+<li><strong>Populations:</strong> </li>
+<li>Uniform on [0,1]  </li>
+<li>Exponential with rate λ=1  </li>
+<li>Binomial(n=10, p=0.3)  </li>
+<li><strong>Population size:</strong> generate 100 000 draws per distribution.  </li>
+<li><strong>Sample sizes:</strong> <span class="arithmatex">\(n \in \{5, 10, 30, 50\}\)</span>.  </li>
+<li><strong>Repetitions:</strong> for each <span class="arithmatex">\(n\)</span>, repeat sampling 2000 times and record <span class="arithmatex">\(\bar X\)</span>.</li>
+</ol>
+<hr/>
+<p><a name="visualization"></a></p>
+<h2 id="4-sampling-visualization">4 · Sampling &amp; Visualization 📈</h2>
+<p>For each population and each <span class="arithmatex">\(n\)</span>:<br/>
+- Compute the 2000 sample means.<br/>
+- Plot their histogram overlaid with the theoretical normal PDF<br/>
+<span class="arithmatex">\(\mathcal{N}(\mu,\,\sigma^2/n)\)</span>.</p>
+<hr/>
+<p><a name="parameters"></a></p>
+<h2 id="5-parameter-exploration">5 · Parameter Exploration ⚙️</h2>
+<ul>
+<li><strong>Effect of <span class="arithmatex">\(n\)</span>:</strong> larger <span class="arithmatex">\(n\)</span> → tighter, more symmetric histograms.  </li>
+<li><strong>Effect of variance:</strong> high-variance populations (exponential) converge more slowly.  </li>
+<li><strong>Skewness:</strong> binomial (discrete, bounded) shows faster “normalization” than exponential.</li>
+</ul>
+<hr/>
+<p><a name="implementation"></a></p>
+<h2 id="6-python-implementation">6 · Python Implementation 💻</h2>
+<p><a href="https://colab.research.google.com/drive/1qtuoE05v44tcGhbwzsDE3kAASEYv_lUU?usp=sharing"><img alt="Open in Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
+<p><img src="https://i.imgur.com/Nec5baF.gif" width="600"/></p>
+<p><a name="interpretation"></a></p>
+<h2 id="8-results-interpretation">8 · Results &amp; Interpretation 🧩</h2>
+<ul>
+<li><strong>Uniform[0,1]</strong> </li>
+<li>At <span class="arithmatex">\(n=5\)</span> the sampling distribution is already mildly bell‐shaped.  </li>
+<li>By <span class="arithmatex">\(n=30\)</span>–50 the histogram and overlaid Normal(<span class="arithmatex">\(\mu=0.5,\;\sigma/\sqrt{n}\)</span>) PDF are nearly indistinguishable.  </li>
+<li><strong>Exponential(λ=1)</strong> </li>
+<li>For <span class="arithmatex">\(n=5\)</span>, the mean distribution retains clear right‐skew.  </li>
+<li>Convergence accelerates: <span class="arithmatex">\(n=30\)</span> shows only slight skew, <span class="arithmatex">\(n=50\)</span> closely follows the theoretical Normal(<span class="arithmatex">\(\mu=1,\;\sigma/\sqrt{n}\)</span>).  </li>
+<li><strong>Binomial(n=10,p=0.3)</strong> </li>
+<li>Discreteness visible at <span class="arithmatex">\(n=5\)</span>, but by <span class="arithmatex">\(n=10\)</span> the “bars” align well with the continuous Normal(<span class="arithmatex">\(\mu=3,\;\sigma/\sqrt{n}\)</span>).  </li>
+<li>At <span class="arithmatex">\(n=30\)</span>–50 the binomial sampling distribution is effectively Gaussian.  </li>
+<li><strong>Scale &amp; spread</strong> </li>
+<li>Empirical standard deviation of <span class="arithmatex">\(\bar X\)</span> matches <span class="arithmatex">\(\sigma/\sqrt{n}\)</span> within Monte Carlo error.  </li>
+<li><strong>Skew reduction</strong> </li>
+<li>Observed skewness of <span class="arithmatex">\(\bar X\)</span> decreases roughly as <span class="arithmatex">\(O(1/\sqrt{n})\)</span>, confirming theoretical rates.</li>
+</ul>
+<hr/>
+<p><a name="conclusions"></a></p>
+<h2 id="9-conclusions">9 · Conclusions 📝</h2>
+<ol>
+<li><strong>The CLT is robust</strong>: regardless of original shape (uniform, skewed, or discrete), <span class="arithmatex">\(\bar X\)</span> approaches normality.  </li>
+<li><strong>Moderate <span class="arithmatex">\(n\)</span></strong> (≈30) suffices for practical normality in most cases—heavily skewed distributions need larger <span class="arithmatex">\(n\)</span>.  </li>
+<li><strong>Theoretical predictions</strong> for mean and variance of <span class="arithmatex">\(\bar X\)</span> hold quantitatively in simulation.  </li>
+<li><strong>Simulations complement theory</strong>, providing intuition about convergence speed and finite‐sample behavior.  </li>
+<li><strong>Applications</strong>: justifies use of confidence intervals and hypothesis tests even when data deviate from normality.</li>
+</ol>
+<hr/>
+<p><a name="references"></a></p>
+<h2 id="10-further-reading">10 · Further Reading 📚</h2>
+<ol>
+<li>W. Feller — <em>An Introduction to Probability Theory and Its Applications</em>, Vol. 2, Ch. 8–10.  </li>
+<li>L. Wasserman — <em>All of Statistics: A Concise Course in Statistical Inference</em>, §2.3.  </li>
+<li>G. Casella &amp; R. L. Berger — <em>Statistical Inference</em>, §7.1–7.2.  </li>
+<li>D. S. Sivia &amp; J. Skilling — <em>Data Analysis: A Bayesian Tutorial</em>, App. on sampling distributions.  </li>
+<li>SciPy Documentation — <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.norm.html"><code>scipy.stats.norm</code></a> (Normal distribution utilities).  </li>
+</ol>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
