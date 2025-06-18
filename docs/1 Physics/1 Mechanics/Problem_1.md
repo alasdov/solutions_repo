@@ -98,7 +98,7 @@ Run or tweak the full code interactively in Google Colab:
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1uAEP93nZ4RhJKgKYPPJQxNHYy_3Xo81w?usp=sharing)
 
-![Optimal-angle sketch](https://i.imgur.com/xKOHmlJ.png)
+<img src="https://i.imgur.com/xKOHmlJ.png" width="350">
 
 <a name="limitations"></a>
 ## 6 · Model Limitations & Possible Extensions
