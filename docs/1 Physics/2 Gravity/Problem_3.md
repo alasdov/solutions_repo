@@ -72,8 +72,50 @@
 <a name="classifier"></a>
 ## 3 · Conic Classifier 🔍
 
-```mermaid
-flowchart LR
-    A["ε < 0"] -->|e < 1| Elliptical
-    B["ε = 0"] -->|e = 1| Parabolic
-    C["ε > 0"] -->|e > 1| Hyperbolic
+<a name="implementation"></a>
+## 4 · Code Playground 💻
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1gnPgdtP5c-d5Qyq4MSk7X2K-EFL1byAn?usp=sharing)
+
+<img src="https://i.imgur.com/8s36wPD.png" width="600">
+
+<a name="limitations"></a>
+
+<a name="limitations"></a>
+## 5 · Pro Tips & Limits ⚙️
+
+**Build complexity step-by-step:**
+1. **Atmospheric Drag & Heating**  
+   - Add a quadratic drag force  
+     \(\displaystyle F_{d} = \tfrac12\,\rho\,C_{d}\,A\,v^{2}\)  
+   - Model thermal ablation to estimate reentry heating  
+
+2. **3D Motion & Earth’s Rotation**  
+   - Include Coriolis acceleration and \(J_{2}\) oblateness terms  
+   - Simulate inclined release trajectories  
+
+3. **Multi-Body Perturbations**  
+   - Add the Moon’s and Sun’s gravity  
+   - Switch to patched-conic or full N-body integration  
+
+---
+
+<a name="conclusions"></a>
+## 6 · Wrap-up 📝
+
+- **Specific energy** \(\varepsilon\) and **eccentricity** \(e\) dictate the trajectory type:  
+  \(\varepsilon<0\) → ellipse, \(\varepsilon=0\) → parabola, \(\varepsilon>0\) → hyperbola.  
+- **Small changes** in release velocity or angle can flip between bound orbit, reentry, or escape.  
+- **Numerical integration** unifies all conic sections in one simulation framework.  
+- **Next steps:** layer in drag, rotation, and third-body forces for mission-grade realism.  
+
+---
+
+<a name="references"></a>
+## 7 · Dive Deeper 📚
+
+1. Bate, Mueller & White — *Fundamentals of Astrodynamics*, Ch. 2 (Conic Sections).  
+2. Vallado — *Fundamentals of Astrodynamics and Applications*, §3 (Orbit Propagation).  
+3. Montenbruck & Gill — *Satellite Orbits: Models, Methods and Applications*, Ch. 4.  
+4. Wertz — *Space Mission Analysis and Design*, Vol. 1, Ch. 5 (Trajectory Theory).  
+5. NASA TP-2006-214224 — “Reentry Aerodynamics and Heat Transfer.”  
