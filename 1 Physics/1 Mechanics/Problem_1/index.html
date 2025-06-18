@@ -68,6 +68,12 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#5-python-implementation-interactive-notebook">5 · Python Implementation — Interactive Notebook</a>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#6-model-limitations-possible-extensions">6 · Model Limitations &amp; Possible Extensions</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#7-conclusions">7 · Conclusions</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#8-further-reading">8 · Further Reading</a>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Problem_2/">Problem 2</a>
@@ -295,6 +301,67 @@ t_{\text{flight}}
 <p>Run or tweak the full code interactively in Google Colab:</p>
 <p><a href="https://colab.research.google.com/drive/1uAEP93nZ4RhJKgKYPPJQxNHYy_3Xo81w?usp=sharing"><img alt="Open in Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
 <p><img alt="Optimal-angle sketch" src="https://i.imgur.com/xKOHmlJ.png"/></p>
+<p><a name="limitations"></a></p>
+<h2 id="6-model-limitations-possible-extensions">6 · Model Limitations &amp; Possible Extensions</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Assumption</th>
+<th style="text-align: left;">Why It Matters</th>
+<th style="text-align: left;">How to Relax / Extend</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>No air resistance</strong></td>
+<td style="text-align: left;">Real projectiles (balls, bullets, javelins) lose speed → range shortens, optimal angle shifts.</td>
+<td style="text-align: left;">Add a drag term <span class="arithmatex">\(F_d = \frac{1}{2}\rho C_d A v^2\)</span> and integrate ODEs numerically (<code>scipy.integrate.solve_ivp</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Constant <span class="arithmatex">\(g\)</span></strong></td>
+<td style="text-align: left;">Gravity weakens with altitude; negligible for football, critical for rocketry.</td>
+<td style="text-align: left;">Use <span class="arithmatex">\(g(h) = g_0 \left(\dfrac{R_\oplus}{R_\oplus + h}\right)^2\)</span>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Flat landing surface</strong></td>
+<td style="text-align: left;">Many situations have uneven terrain (hills, cliffs, ski jumps).</td>
+<td style="text-align: left;">Stop integration when <span class="arithmatex">\(y = y_{\text{terrain}}(x)\)</span> from a DEM or analytic surface.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>No wind</strong></td>
+<td style="text-align: left;">Crosswinds and tail/head winds deflect and stretch the path.</td>
+<td style="text-align: left;">Add a horizontal acceleration term <span class="arithmatex">\(a_x = \tfrac{F_{\text{wind}}}{m}\)</span>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Point mass, no spin</strong></td>
+<td style="text-align: left;">Back-spin/top-spin create Magnus lift; affects golf &amp; baseball markedly.</td>
+<td style="text-align: left;">Couple translational and rotational motion via lift force <span class="arithmatex">\(F_L \propto \omega \times v\)</span>.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Tip:</strong> Start with air drag only (quadratic), then layer other effects one by one; this keeps the code modular and easy to debug.</p>
+</blockquote>
+<hr/>
+<p><a name="conclusions"></a></p>
+<h2 id="7-conclusions">7 · Conclusions</h2>
+<ol>
+<li><strong>Maximum range on level ground occurs at ≈ 45 °</strong> when drag and launch height are negligible.  </li>
+<li><strong>Range scales as <span class="arithmatex">\(v_0^2 / g\)</span></strong>, so higher launch speeds and lower gravity (e.g., Moon) dramatically increase distance.  </li>
+<li><strong>Non-zero launch/landing height skews the curve</strong>: optimal angle drops if you start high and rises if you must clear a cliff.  </li>
+<li><strong>Real-world design choices rarely use the textbook 45 °</strong> because of drag, safety clearances, and target elevation.  </li>
+<li><strong>Numerical tools bridge the gap between ideal equations and messy reality</strong>, letting engineers tune launch angle, speed, and spin for specific goals.</li>
+</ol>
+<hr/>
+<p><a name="references"></a></p>
+<h2 id="8-further-reading">8 · Further Reading</h2>
+<ol>
+<li>J. B. Marion &amp; S. T. Thornton — <em>Classical Dynamics of Particles and Systems</em>, Ch. 2.  </li>
+<li>D. Halliday, R. Resnick &amp; J. Walker — <em>Fundamentals of Physics</em>, 11th ed., §4–5.  </li>
+<li>NASA Glenn Research Center — “Projectile Motion with Drag” (interactive tutorial).  </li>
+<li>S. Brennen — <em>Fundamentals of Multiphase Flow</em>, §0.6 “Motion with Quadratic Resistance”.  </li>
+<li>R. Cross &amp; A. M. Nathan — “Dynamics of Baseball: Influence of Air Drag and Magnus Effect,” <em>Am. J. Phys.</em> 76 (10), 2008.</li>
+</ol>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
