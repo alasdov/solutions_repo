@@ -7,12 +7,12 @@
     body {
       font-family: Arial, sans-serif;
       padding: 20px;
-      background: #f4f4f4;
+      background: #f9f9f9;
       color: #333;
     }
 
     .player-container {
-      background: white;
+      background: #fff;
       padding: 20px;
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -21,29 +21,24 @@
       text-align: center;
     }
 
-    .controls {
-      margin-top: 15px;
-    }
-
-    button {
+    .controls button {
       margin: 5px;
       padding: 10px 15px;
       font-size: 14px;
       border: none;
-      border-radius: 8px;
-      background-color: #007BFF;
+      border-radius: 6px;
+      background-color: #007bff;
       color: white;
       cursor: pointer;
-      transition: background 0.2s;
     }
 
-    button:hover {
+    .controls button:hover {
       background-color: #0056b3;
     }
 
     input[type="range"] {
       width: 100%;
-      margin-top: 10px;
+      margin-top: 15px;
     }
 
     label {
@@ -55,11 +50,11 @@
 <body>
 
 <div class="player-container">
-  <h2>🎧 Voice Playback</h2>
-  
+  <h2>🔊 Voice Playback</h2>
+
   <audio id="voicePlayer">
-    <source src="https://drive.google.com/uc?export=download&id=1KIjhwaA5nWiDFDr84e1arqzoIcdJbJ6e" type="audio/mp4">
-    Your browser does not support audio playback.
+    <source src="https://files.catbox.moe/kcg4ws.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
   </audio>
 
   <div class="controls">
@@ -69,7 +64,7 @@
     <button onclick="document.getElementById('voicePlayer').currentTime += 5">⏩ Forward 5s</button>
   </div>
 
-  <label for="volume">🔊 Volume:</label>
+  <label for="volume">Volume:</label>
   <input type="range" id="volume" min="0" max="1" step="0.05" value="1"
          onchange="document.getElementById('voicePlayer').volume = this.value">
 </div>
