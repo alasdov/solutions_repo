@@ -261,29 +261,29 @@ Its path isn’t just a simple parabola but a showcase of gravitational dynamics
 <ol>
 <li>
 <p>Compute specific energy<br/>
-<span class="arithmatex">\(<span class="arithmatex">\(\varepsilon = \frac{v^2}{2} \;-\; \frac{GM}{r}.\)</span>\)</span></p>
+   $$
+   \varepsilon = \frac{v^2}{2} \;-\; \frac{G\,M}{r}.
+   $$</p>
 </li>
 <li>
 <p>Compute eccentricity<br/>
    $$
    \mathbf{e}
-     = \frac{\mathbf{v}\times(\mathbf{r}\times\mathbf{v})}{GM}</p>
-<ul>
-<li>\frac{\mathbf{r}}{r},
+     = \frac{\mathbf{v}\times(\mathbf{r}\times\mathbf{v})}{G\,M}
+       \;-\; \frac{\mathbf{r}}{r},
    \quad
-   e = |\mathbf{e}|.
-   $$</li>
-</ul>
+   e = \lVert \mathbf{e} \rVert.
+   $$</p>
 </li>
 <li>
-<p>Classify the path:</p>
+<p>Classify the path:  </p>
 </li>
-<li>If <span class="arithmatex">\(\varepsilon&lt;0\)</span> and <span class="arithmatex">\(e&lt;1\)</span>, …  </li>
-<li>If <span class="arithmatex">\(\varepsilon=0\)</span> and <span class="arithmatex">\(e=1\)</span>, …  </li>
-<li>If <span class="arithmatex">\(\varepsilon&gt;0\)</span> and <span class="arithmatex">\(e&gt;1\)</span>, …</li>
+<li>If <span class="arithmatex">\(\varepsilon &lt; 0\)</span> and <span class="arithmatex">\(e &lt; 1\)</span>, the trajectory is <strong>elliptical</strong> (bound).  </li>
+<li>If <span class="arithmatex">\(\varepsilon = 0\)</span> and <span class="arithmatex">\(e = 1\)</span>, the trajectory is <strong>parabolic</strong> (marginal escape).  </li>
+<li>If <span class="arithmatex">\(\varepsilon &gt; 0\)</span> and <span class="arithmatex">\(e &gt; 1\)</span>, the trajectory is <strong>hyperbolic</strong> (escape).  </li>
 </ol>
 <p>The flowchart below then shows this decision process at a glance:</p>
-<p><img src="https://i.imgur.com/xqE2pB3.png" width="450"/></p>
+<p><img src="https://i.imgur.com/xqE2pB3.png" width="300"/></p>
 <p><a name="implementation"></a></p>
 <h2 id="4-code-playground">4 · Code Playground 💻</h2>
 <p><a href="https://colab.research.google.com/drive/1gnPgdtP5c-d5Qyq4MSk7X2K-EFL1byAn?usp=sharing"><img alt="Open in Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
