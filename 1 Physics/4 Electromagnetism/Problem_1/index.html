@@ -72,6 +72,22 @@
 <ul class="current">
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#table-of-contents">📋 Table of Contents</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#1-motivation">1 · Motivation 🎯</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-theory-equations">2 · Theory &amp; Equations 🔭</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#21-equation-of-motion">2.1 Equation of Motion</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#22-key-relations">2.2 Key Relations</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3-scenarios-parameter-study">3 · Scenarios &amp; Parameter Study 🔍</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#4-python-implementation">4 · Python Implementation 💻</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -171,7 +187,97 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-1">Problem 1</h1>
+<!-- ╭──────────────────────────────────────────────────────╮
+     │  🔌 Electromagnetism · Problem 1 — Lorentz Force Simulation │
+     ╰──────────────────────────────────────────────────────╯ -->
+<h1 id="problem-1-simulating-the-effects-of-the-lorentz-force">🔌 <strong>Problem 1: Simulating the Effects of the Lorentz Force</strong></h1>
+<blockquote>
+<p><em>“Charge in motion under E and B fields reveals nature’s most elegant spirals and drifts.”</em> </p>
+</blockquote>
+<hr/>
+<h2 id="table-of-contents">📋 Table of Contents</h2>
+<ol>
+<li><a href="#motivation">Motivation 🎯</a> </li>
+<li><a href="#theory">Theory &amp; Equations 🔭</a> </li>
+<li><a href="#scenarios">Scenarios &amp; Parameter Study 🔍</a> </li>
+<li><a href="#implementation">Python Implementation 💻</a> </li>
+<li><a href="#limitations">Model Limitations &amp; Extensions ⚙️</a> </li>
+<li><a href="#interpretation">Results &amp; Interpretation 🧩</a> </li>
+<li><a href="#conclusions">Conclusions 📝</a> </li>
+<li><a href="#references">Further Reading 📚</a> </li>
+</ol>
+<hr/>
+<p><a name="motivation"></a></p>
+<h2 id="1-motivation">1 · Motivation 🎯</h2>
+<p>The <strong>Lorentz force</strong>,
+[
+\mathbf{F} = q\,\bigl(\mathbf{E} + \mathbf{v}\times\mathbf{B}\bigr),
+]
+governs charged‐particle dynamics in fields.<br/>
+Simulating these trajectories lets us:</p>
+<ul>
+<li>Understand <strong>cyclotron</strong> and <strong>helix</strong> motion in uniform <span class="arithmatex">\(\mathbf{B}\)</span>.  </li>
+<li>Explore <strong><span class="arithmatex">\(\mathbf{E}\times\mathbf{B}\)</span> drift</strong> and <strong>magnetic mirroring</strong>.  </li>
+<li>Apply to real devices: <strong>cyclotrons</strong>, <strong>mass spectrometers</strong>, <strong>magnetic traps</strong>.</li>
+</ul>
+<hr/>
+<p><a name="theory"></a></p>
+<h2 id="2-theory-equations">2 · Theory &amp; Equations 🔭</h2>
+<h3 id="21-equation-of-motion">2.1 Equation of Motion</h3>
+<div class="arithmatex">\[
+m\frac{d\mathbf{v}}{dt}
+ = q\bigl(\mathbf{E} + \mathbf{v}\times\mathbf{B}\bigr),
+\quad
+\frac{d\mathbf{r}}{dt} = \mathbf{v}.
+\]</div>
+<h3 id="22-key-relations">2.2 Key Relations</h3>
+<ul>
+<li><strong>Cyclotron frequency</strong>: <span class="arithmatex">\(\displaystyle \omega_c = \frac{qB}{m}\)</span>.  </li>
+<li><strong>Larmor radius</strong>: <span class="arithmatex">\(\displaystyle r_L = \frac{v_\perp}{\omega_c}\)</span>.  </li>
+<li><strong><span class="arithmatex">\(\mathbf{E}\times\mathbf{B}\)</span> drift</strong>: <span class="arithmatex">\(\displaystyle \mathbf{v}_d = \frac{\mathbf{E}\times\mathbf{B}}{B^2}.\)</span></li>
+</ul>
+<hr/>
+<p><a name="scenarios"></a></p>
+<h2 id="3-scenarios-parameter-study">3 · Scenarios &amp; Parameter Study 🔍</h2>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th><span class="arithmatex">\(\mathbf{E}\)</span></th>
+<th><span class="arithmatex">\(\mathbf{B}\)</span></th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Uniform B only</strong></td>
+<td><span class="arithmatex">\(\mathbf{0}\)</span></td>
+<td>constant along <span class="arithmatex">\(\hat z\)</span></td>
+<td>circular &amp; helical motion</td>
+</tr>
+<tr>
+<td><strong>Uniform E + B</strong></td>
+<td>along <span class="arithmatex">\(\hat x\)</span></td>
+<td>along <span class="arithmatex">\(\hat z\)</span></td>
+<td><span class="arithmatex">\(\mathbf{E}\times\mathbf{B}\)</span> drift</td>
+</tr>
+<tr>
+<td><strong>Crossed fields</strong></td>
+<td>at angle to <span class="arithmatex">\(\mathbf{B}\)</span></td>
+<td>constant</td>
+<td>drift plus gyration</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Parameters to vary</strong>:<br/>
+- Field strength <span class="arithmatex">\(|\mathbf{E}|\)</span>, <span class="arithmatex">\(|\mathbf{B}|\)</span><br/>
+- Initial velocity <span class="arithmatex">\(\mathbf{v}_0\)</span> (parallel vs perpendicular)<br/>
+- Charge <span class="arithmatex">\(q\)</span> and mass <span class="arithmatex">\(m\)</span></p>
+<hr/>
+<p><a name="implementation"></a></p>
+<h2 id="4-python-implementation">4 · Python Implementation 💻</h2>
+<p><a href="https://colab.research.google.com/drive/1WR2jmQMNRYqvzfILJa0BtHhbyFR1IbeX?usp=sharing"><img alt="Open in Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
+<p><img src="https://i.imgur.com/A2rLSc1.png" width="600"/></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
