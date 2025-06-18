@@ -65,9 +65,9 @@ Equivalent resistance A→D = 6.200 Ω
 ### Example 1: Simple Series Chain  
 **Circuit:** A — 1 Ω — B — 2 Ω — C — 3 Ω — D  
 **Analytical:**  
-\[
+$$
 R_{\rm eq} = 1 + 2 + 3 = 6\;\Omega
-\]  
+$$  
 **Code Verify:**
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1_G7BLZLi6sFVG969m2lMs-Hz7gMtXsVB?usp=sharing)
