@@ -2,7 +2,7 @@
      │   🌊 Waves · Problem 6 — Interference Patterns on Water Surface   │
      ╰────────────────────────────────────────────────────────╯ -->
 
-# 🌊 **Problem 6: Interference Patterns on a Water Surface**
+# 🌊 **Problem 1: Interference Patterns on a Water Surface**
 
 > *“When ripples collide, they weave a tapestry of peaks and troughs.”*  
 
@@ -108,8 +108,14 @@ Applications:
 <a name="references"></a>
 ## 8 · Further Reading 📚
 
-1. Lord Rayleigh — *The Theory of Sound*, Vol. I, Ch. 4: Wave Interference.  
-2. Max Born & Emil Wolf — *Principles of Optics*, 7th ed., §1.4: Interference and Diffraction.  
-3. Lawrence E. Kinsler et al. — *Fundamentals of Acoustics*, 4th ed., Ch. 9: Surface Waves.  
-4. Henrik Jensen et al. — *Computational Ocean Acoustics*, Ch. 6: Numerical Simulation of Surface Waves.  
-5. Tethys Research — “Wave Energy Converter Interference Study,” NASA Tech. Report (2018).  
+1. **Lord Rayleigh** — *The Theory of Sound*, Vol. I, Ch. 4: Wave Interference.  
+   [Archive.org PDF](https://archive.org/download/theoryofsound02raylrich/theoryofsound02raylrich.pdf) :contentReference[oaicite:0]{index=0}
+2. **Max Born & Emil Wolf** — *Principles of Optics*, 7th ed., § 1.4: Interference and Diffraction.  
+   [Perso.crans PDF](https://perso.crans.org/sylvainrey/Biblio%20Physique/Physique/Optique/%5BMax%20Born%5D%20Principles%20of%20Optics%20-%20Electromagnetic%20Theory%20of%20Propagation%2C%20Interference%20and%20Diffraction%20of%20Light.pdf) :contentReference[oaicite:1]{index=1}
+3. **Lawrence E. Kinsler et al.** — *Fundamentals of Acoustics*, 4th ed., Ch. 9: Surface Waves.  
+   [Univ. of Illinois PDF](https://jontalle.web.engr.illinois.edu/Public/BOOKS/KinslerFreyCoopSanders.00.pdf) :contentReference[oaicite:2]{index=2}
+4. **Henrik Jensen et al.** — *Computational Ocean Acoustics*, Ch. 6: Numerical Simulation of Surface Waves.  
+   [Google Books](https://books.google.com/books/about/Computational_Ocean_Acoustics.html?id=eYyD6kTE8lsC) :contentReference[oaicite:3]{index=3}
+5. **Tethys Research** — “Wave Energy Converter Interference Study,” NASA Tech. Report (2018).  
+   [Tethys Engineering: Coupling Methodology for Studying the Far Field Effects of Wave Energy Converter Arrays](https://tethys-engineering.pnnl.gov/technology/wave?page=48) :contentReference[oaicite:4]{index=4}
+

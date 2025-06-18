@@ -121,7 +121,13 @@ Run or tweak in Google Colab:
 ## 7 · Further Reading 📚
 
 1. **Bate, Mueller & White** — *Fundamentals of Astrodynamics*, Ch. 3.  
+   [Google Books](https://books.google.com/books/about/Fundamentals_of_Astrodynamics.html?id=UtJK8cetqGkC) :contentReference[oaicite:0]{index=0}
 2. **Vallado** — *Fundamentals of Astrodynamics and Applications*, §§ 2–3.  
+   [Amazon](https://www.amazon.com/Fundamentals-Astrodynamics-Applications-Technology-Library/dp/1881883183) :contentReference[oaicite:1]{index=1}
 3. **Prussing & Conway** — *Orbital Mechanics*, Ch. 4 (Cosmic Velocities & Gravity Assists).  
+   [Oxford University Press](https://global.oup.com/ushe/product/orbital-mechanics-9780197788974) :contentReference[oaicite:2]{index=2}
 4. **NASA Technical Report** — “Atmospheric Drag Effects on Launch Vehicles.”  
+   [NASA Technical Reports Server](https://ntrs.nasa.gov/citations/20200002975) :contentReference[oaicite:3]{index=3}
 5. **MathWorld** — Eric W. Weisstein, “Escape Velocity.”  
+   [MathWorld](https://scienceworld.wolfram.com/physics/EscapeVelocity.html) :contentReference[oaicite:4]{index=4}
+

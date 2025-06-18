@@ -112,7 +112,7 @@ Graphs confirm numerical and theoretical curves coincide when centered correctly
 <a name="conclusions"></a>
 ## 7 · Conclusions 📝
 
-1. **Lorentz force** produces rich dynamics: circular, helical, and drifting orbits.  
-2. **Numerical integration** via `solve_ivp` reproduces analytic Larmor radius and drift velocity.  
-3. **Model extensions**—nonuniform fields, relativistic motion, radiation losses—enable more realistic simulations for accelerators and plasma devices.  
-4. **Takeaway**: combining theory and computation gives both quantitative accuracy and intuitive insight into charged‐particle motion.  
+1. **[Lorentz force](https://en.wikipedia.org/wiki/Lorentz_force)** produces rich dynamics: circular, helical, and drifting orbits. :contentReference[oaicite:0]{index=0}
+2. **Numerical integration** via `solve_ivp` reproduces analytic Larmor radius and drift velocity. ([scipy.integrate.solve_ivp documentation](https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html)) :contentReference[oaicite:1]{index=1}
+3. **Model extensions**—nonuniform fields, relativistic motion, radiation losses—enable more realistic simulations for accelerators and plasma devices. ([Charged particle motion](https://en.wikipedia.org/wiki/Charged_particle)) :contentReference[oaicite:2]{index=2}
+4. **Takeaway**: combining theory and computation gives both quantitative accuracy and intuitive insight into charged‐particle motion. ([Computational physics](https://en.wikipedia.org/wiki/Computational_physics)) :contentReference[oaicite:3]{index=3}

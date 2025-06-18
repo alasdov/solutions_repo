@@ -176,8 +176,13 @@ This illustrates how the fraction of crossings relates to the theoretical probab
 <a name="references"></a>
 ## 8 · Further Reading 📚
 
-1. Hammersley & Handscomb — *Monte Carlo Methods*, Ch. 1–2.  
-2. Owen — *Monte Carlo Theory, Methods and Examples*, §3.4 (variance reduction).  
-3. Robert & Casella — *Monte Carlo Statistical Methods*, Ch. 5 (Buffon’s Needle).  
-4. Glasserman — *Monte Carlo Methods in Financial Engineering*, Ch. 2 (convergence analysis).  
-5. Niederreiter — *Random Number Generation and Quasi-Monte Carlo Methods*, for low‐discrepancy sequences.  
+1. **Hammersley & Handscomb** — *Monte Carlo Methods*, Ch. 1–2.  
+   [PDF (Hammersley & Handscomb)](https://www.cs.fsu.edu/~mascagni/Hammersley-Handscomb.pdf) :contentReference[oaicite:0]{index=0}
+2. **A. Owen** — *Monte Carlo Theory, Methods and Examples*, § 3.4: Variance Reduction.  
+   [Online (Art Owen)](https://artowen.su.domains/mc/) :contentReference[oaicite:1]{index=1}
+3. **Christian P. Robert & George Casella** — *Monte Carlo Statistical Methods*, Ch. 5: Buffon’s Needle.  
+   [PDF (Robert & Casella)](https://mcube.lab.nycu.edu.tw/~cfung/docs/books/robert2004monte_carlo_statistical_methods.pdf) :contentReference[oaicite:2]{index=2}
+4. **P. Glasserman** — *Monte Carlo Methods in Financial Engineering*, Ch. 2: Convergence Analysis.  
+   [PDF (Glasserman)](https://www.bauer.uh.edu/spirrong/Monte_Carlo_Methods_In_Financial_Enginee.pdf) :contentReference[oaicite:3]{index=3}
+5. **Harald Niederreiter** — *Random Number Generation and Quasi-Monte Carlo Methods*, low-discrepancy sequences.  
+   [SIAM Publication](https://epubs.siam.org/doi/book/10.1137/1.9781611970081) :contentReference[oaicite:4]{index=4}

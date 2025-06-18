@@ -115,14 +115,21 @@ Expected: fitted slope ≈ 1.50 — exactly Keplerian.
 
 *MUST-reads*  
 1. **C. D. Murray & S. F. Dermott** — *Solar System Dynamics* (Cambridge, 1999) — Ch. 3.  
-2. **D. Vallado** — *Fundamentals of Astrodynamics and Applications*, 4 ed. — §1.  
-3. **NASA JPL HORIZONS** — Online ephemerides service for custom (P, a) checks.
+   [Cambridge University Press](https://www.cambridge.org/core/books/solar-system-dynamics/108745217E4A18190CBA340ED5E477A2) :contentReference[oaicite:0]{index=0}
+2. **D. Vallado** — *Fundamentals of Astrodynamics and Applications*, 4th ed. — § 1.  
+   [Amazon](https://www.amazon.com/Fundamentals-Astrodynamics-Applications-Technology-Library/dp/1881883183) :contentReference[oaicite:1]{index=1}
+3. **NASA JPL HORIZONS** — Online ephemerides service for custom (P, a) checks.  
+   [JPL Horizons](https://ssd.jpl.nasa.gov/horizons/) :contentReference[oaicite:2]{index=2}
 
 *Deep-cuts & history*  
 4. **J. Kepler** — *Harmonices Mundi*, Book V (1619).  
-5. **A. Einstein** — “Explanation of the Perihelion Motion of Mercury,” *Ann. Phys.* (1915).  
-6. **V. C. Rubin & W. K. Ford** — “Rotation of the Andromeda Galaxy,” *ApJ* 159 (1970).  
-7. **J. Carroll** — “Space‐Elevator Dynamics and the Geostationary Balance,” *Acta Astronaut.* 57 (2005).
+   [Smithsonian Libraries](https://library.si.edu/digital-library/book/ioanniskepplerih00kepl) :contentReference[oaicite:3]{index=3}
+5. **A. Einstein** — “Erklärung der Perihelbewegung des Merkur aus der allgemeinen Relativitätstheorie,” *Ann. Phys.* (1915).  
+   [PDF (Deutsch)](https://www.kritik-relativitaetstheorie.de/Anhaenge/Einstein-Perihelbewegung-Merkur.pdf) :contentReference[oaicite:4]{index=4}
+6. **V. C. Rubin & W. K. Ford** — “Rotation of the Andromeda Galaxy,” *Astrophys. J.* 159 (1970).  
+   [NASA ADS](https://ui.adsabs.harvard.edu/abs/1970ApJ...159..379R) :contentReference[oaicite:5]{index=5}
+7. **J. Carroll** — “Space-Elevator Dynamics and the Geostationary Balance,” *Acta Astronautica* 57 (2005).  
+   [Acta Astronautica Vol. 57 (Elsevier)](https://www.sciencedirect.com/journal/acta-astronautica/vol/57) (subscription)
 
 ---
 

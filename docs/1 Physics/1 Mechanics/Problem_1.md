@@ -129,8 +129,13 @@ Run or tweak the full code interactively in Google Colab:
 <a name="references"></a>
 ## 8 · Further Reading
 
-1. J. B. Marion & S. T. Thornton — *Classical Dynamics of Particles and Systems*, Ch. 2.  
-2. D. Halliday, R. Resnick & J. Walker — *Fundamentals of Physics*, 11th ed., §4–5.  
-3. NASA Glenn Research Center — “Projectile Motion with Drag” (interactive tutorial).  
-4. S. Brennen — *Fundamentals of Multiphase Flow*, §0.6 “Motion with Quadratic Resistance”.  
-5. R. Cross & A. M. Nathan — “Dynamics of Baseball: Influence of Air Drag and Magnus Effect,” *Am. J. Phys.* 76 (10), 2008.
+- **J. B. Marion & S. T. Thornton**, *Classical Dynamics of Particles and Systems*, Ch. 2.  
+  [Google Books](https://books.google.com/books/about/Classical_Dynamics_of_Particles_and_Syst.html?id=HOqLQgAACAAJ) :contentReference[oaicite:0]{index=0}
+- **D. Halliday, R. Resnick & J. Walker**, *Fundamentals of Physics*, 11th ed., §§ 4–5.  
+  [Wikipedia](https://en.wikipedia.org/wiki/Fundamentals_of_Physics) :contentReference[oaicite:1]{index=1}
+- **NASA Glenn Research Center**, “Projectile Motion with Drag” (interactive tutorial).  
+  [Ballistic Flight Equations](https://www1.grc.nasa.gov/beginners-guide-to-aeronautics/ballistic-flight-equations/) :contentReference[oaicite:2]{index=2}
+- **S. Brennen**, *Fundamentals of Multiphase Flow*, § 0.6 “Motion with Quadratic Resistance”.  
+  [Cambridge University Press](https://www.cambridge.org/core/books/fundamentals-of-multiphase-flow/FC7E6D7E54AC9D1C178EDF88D6A75FFF) :contentReference[oaicite:3]{index=3}
+- **R. Cross & A. M. Nathan**, “The effect of spin on the flight of a baseball,” *Am. J. Phys.* 76 (2), 119–124 (2008).  
+  [AIP Publishing](https://pubs.aip.org/aapt/ajp/article/76/2/119/1057105/The-effect-of-spin-on-the-flight-of-a-baseball) :contentReference[oaicite:4]{index=4}
