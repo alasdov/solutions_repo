@@ -76,3 +76,43 @@ m\frac{d\mathbf{v}}{dt}
 
 <img src="https://i.imgur.com/A2rLSc1.png" width="600">
 
+<a name="limitations"></a>
+## 5 · Model Limitations & Extensions ⚙️
+
+| Assumption             | Impact                                    | Possible Extension                                                                 |
+|:-----------------------|:------------------------------------------|:-----------------------------------------------------------------------------------|
+| **Uniform fields**     | Real devices have spatially varying E, B  | Load 𝑬(𝐫), 𝐁(𝐫) field maps from data or analytic models                            |
+| **Nonrelativistic**    | Fails when v → c                          | Integrate relativistic form: \(\displaystyle \frac{d(\gamma m\mathbf v)}{dt}=q(\mathbf E+\mathbf v\times\mathbf B)\) |
+| **No radiation loss**  | Charged particles emit synchrotron light  | Add radiation‐reaction term (Larmor formula)                                       |
+| **Point‐particle**     | Neglects finite size and spin effects     | Include magnetic moment torque or Stern–Gerlach force                              |
+| **No collisions**      | Ignores scattering with neutrals/ions     | Add drag or stochastic collisions (Monte Carlo)                                    |
+
+> **Pro tip:** build your model incrementally—start with uniform B only, then add E, then nonuniformity, then relativistic corrections.
+
+---
+
+<a name="interpretation"></a>
+## 6 · Results & Interpretation 🧩
+
+- **Pure B‐field** → _cyclotron_ motion:  
+  - Projection in \(xy\) plane is a circle of radius \(r_L = v_\perp/\omega_c\).  
+  - Center offset at \((0,-r_L)\) when starting at origin with \(v_x>0\).  
+- **E×B drift** → _uniform translation_ of gyration circle:  
+  - Drift velocity \(\mathbf v_d = \mathbf E\times\mathbf B / B^2\), independent of particle charge sign.  
+- **Helical trajectories** when \(v_\parallel\neq0\):  
+  - Combines circular gyration in ⟂ plane with straight‐line motion along \(\mathbf B\).  
+- **Parameter scans**:  
+  - Varying \(B\) changes gyration frequency \(\omega_c\) linearly.  
+  - Varying \(E\) controls drift speed linearly.  
+
+Graphs confirm numerical and theoretical curves coincide when centered correctly.
+
+---
+
+<a name="conclusions"></a>
+## 7 · Conclusions 📝
+
+1. **Lorentz force** produces rich dynamics: circular, helical, and drifting orbits.  
+2. **Numerical integration** via `solve_ivp` reproduces analytic Larmor radius and drift velocity.  
+3. **Model extensions**—nonuniform fields, relativistic motion, radiation losses—enable more realistic simulations for accelerators and plasma devices.  
+4. **Takeaway**: combining theory and computation gives both quantitative accuracy and intuitive insight into charged‐particle motion.  
