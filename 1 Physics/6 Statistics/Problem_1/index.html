@@ -224,14 +224,21 @@ Simulations make this abstract theorem tangible, showing how quickly “normal�
 <p><a name="theory"></a></p>
 <h2 id="2-theoretical-background">2 · Theoretical Background 🔭</h2>
 <ul>
-<li>For i.i.d. random variables <span class="arithmatex">\(X_1,\dots,X_n\)</span> with mean <span class="arithmatex">\(\mu\)</span> and variance <span class="arithmatex">\(\sigma^2\)</span>,<br/>
-  [
-    \bar X = \frac1n\sum_{i=1}^n X_i
-    \quad\Longrightarrow\quad
-    \frac{\bar X - \mu}{\sigma/\sqrt{n}}
-    \xrightarrow{d} \mathcal{N}(0,1)\quad\text{as }n\to\infty.
-  ]  </li>
-<li><strong>Implication:</strong> even a highly skewed or discrete population yields an approximately Gaussian <span class="arithmatex">\(\bar X\)</span> for moderate <span class="arithmatex">\(n\)</span>.</li>
+<li>
+<p>For i.i.d. random variables <span class="arithmatex">\(X_1,\dots,X_n\)</span> with mean <span class="arithmatex">\(\mu\)</span> and variance <span class="arithmatex">\(\sigma^2\)</span>:<br/>
+  $$
+  \bar X = \frac{1}{n}\sum_{i=1}^n X_i,
+  $$
+  $$
+  \frac{\bar X - \mu}{\sigma/\sqrt{n}}
+    \;\xrightarrow{d}\;
+    \mathcal{N}(0,1)
+    \quad\text{as }n\to\infty.
+  $$</p>
+</li>
+<li>
+<p><strong>Implication:</strong> even a highly skewed or discrete population yields an approximately Gaussian <span class="arithmatex">\(\bar X\)</span> for moderate <span class="arithmatex">\(n\)</span>.  </p>
+</li>
 </ul>
 <hr/>
 <p><a name="design"></a></p>
@@ -264,7 +271,7 @@ Simulations make this abstract theorem tangible, showing how quickly “normal�
 <p><a name="implementation"></a></p>
 <h2 id="6-python-implementation">6 · Python Implementation 💻</h2>
 <p><a href="https://colab.research.google.com/drive/1qtuoE05v44tcGhbwzsDE3kAASEYv_lUU?usp=sharing"><img alt="Open in Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
-<p><img src="https://i.imgur.com/Nec5baF.gif" width="600"/></p>
+<p><img src="https://i.imgur.com/Nec5baF.gif" width="800"/></p>
 <p><a name="interpretation"></a></p>
 <h2 id="8-results-interpretation">8 · Results &amp; Interpretation 🧩</h2>
 <ul>
