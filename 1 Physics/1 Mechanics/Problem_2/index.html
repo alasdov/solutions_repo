@@ -70,6 +70,12 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#5-python-implementation-interactive-notebook">5 · Python Implementation — Interactive Notebook</a>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#6-model-limitations-possible-extensions">6 · Model Limitations &amp; Possible Extensions</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#7-conclusions">7 · Conclusions</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#8-further-reading">8 · Further Reading</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -303,8 +309,69 @@ with phase lag<br/>
 <p><a name="implementation"></a></p>
 <h2 id="5-python-implementation-interactive-notebook">5 · Python Implementation — Interactive Notebook</h2>
 <p>Run or tweak the full simulation in Google Colab:</p>
-<p>[<img alt="Open in Colab" src="https://colab.research.google.com/drive/17Yx0rQYcFZwqm67f8Gf-BKdRw7pbXefR?usp=sharing"/></p>
-<p><img src="https://i.imgur.com/TwQpBJR.png" width="350"/></p>
+<p><a href="https://colab.research.google.com/drive/17Yx0rQYcFZwqm67f8Gf-BKdRw7pbXefR?usp=sharing"><img alt="Open in Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a>
+<img src="https://i.imgur.com/TwQpBJR.png" width="700"/></p>
+<p><a name="limitations"></a></p>
+<h2 id="6-model-limitations-possible-extensions">6 · Model Limitations &amp; Possible Extensions</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Assumption</th>
+<th style="text-align: left;">Why It Matters</th>
+<th style="text-align: left;">How to Relax / Extend</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Viscous damping</strong> <span class="arithmatex">\(F_d \propto \dot\theta\)</span></td>
+<td style="text-align: left;">Real friction can be dry (Coulomb) or turbulent <span class="arithmatex">\( \propto \dot\theta^{2} \)</span>.</td>
+<td style="text-align: left;">Replace damping term with ( -k_1\dot\theta - k_2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Pure sinusoidal drive</strong></td>
+<td style="text-align: left;">Many systems experience broadband or stochastic forcing.</td>
+<td style="text-align: left;">Use composite signals or add noise: <span class="arithmatex">\( A[\cos(\omega_d t)+\xi(t)] \)</span>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Rigid rod, point mass</strong></td>
+<td style="text-align: left;">Large-angle motion may stretch or bend the rod.</td>
+<td style="text-align: left;">Model elastic rod or add torsional spring DOF.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Constant parameters</strong></td>
+<td style="text-align: left;">Temperature, wear, or control feedback can change γ, A, ω<sub>d</sub> in time.</td>
+<td style="text-align: left;">Let parameters be time-dependent or governed by another ODE.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Planar motion</strong></td>
+<td style="text-align: left;">Real pendula can precess (spherical pendulum).</td>
+<td style="text-align: left;">Extend to 3-D: two angles (θ, φ) and coupled equations.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Tip:</strong> start by adding only quadratic air drag; once that works, introduce further complexity step-by-step.</p>
+</blockquote>
+<hr/>
+<p><a name="conclusions"></a></p>
+<h2 id="7-conclusions">7 · Conclusions</h2>
+<ol>
+<li><strong>Linear regime</strong> reproduces the textbook resonance curve of an RLC circuit.  </li>
+<li><strong>Non-linear sine term</strong> triggers frequency locking, period-doubling, and deterministic chaos.  </li>
+<li><strong>Parameter sweeps</strong> (A, ω<sub>d</sub>, γ) reveal rich structures: Arnold tongues, Feigenbaum cascade.  </li>
+<li><strong>Engineering leverage:</strong> designers tune damping (γ) to suppress vibrations, or driving amplitude (A) to harvest energy.  </li>
+<li><strong>Numerical tools</strong> make once-intractable chaotic dynamics tangible and measurable.</li>
+</ol>
+<hr/>
+<p><a name="references"></a></p>
+<h2 id="8-further-reading">8 · Further Reading</h2>
+<ol>
+<li>S. H. Strogatz — <em>Nonlinear Dynamics and Chaos</em>, Ch. 5.  </li>
+<li>P. Holmes &amp; J. Guckenheimer — <em>Nonlinear Oscillations, Dynamical Systems, and Bifurcations</em>.  </li>
+<li>L. D. Landau &amp; E. M. Lifshitz — <em>Mechanics</em>, §27 “Oscillations with Damping and Forcing”.  </li>
+<li>S. Lepri — <em>Thermodynamics of Driven Systems</em>, §2.  </li>
+<li>M. J. Feigenbaum — “Quantitative Universality for a Class of Nonlinear Transformations,” <em>J. Stat. Phys.</em> 19 (1978) 25–52.</li>
+</ol>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
