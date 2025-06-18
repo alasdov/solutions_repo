@@ -12,7 +12,7 @@
 <body>
 
 <audio controls>
-  <source src="https://files.catbox.moe/5zi95m.wav" type="audio/wav">
+  <source src="https://files.catbox.moe/r4lox6.wav" type="audio/wav">
   Your browser does not support the audio element.
 </audio>
 
