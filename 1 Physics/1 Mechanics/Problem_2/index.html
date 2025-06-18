@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 2 - Physics and Mathematics</title>
+<title>🔄 Problem 2 — Investigating the Dynamics of a Forced Damped Pendulum - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 2";
+        var mkdocs_page_name = "\ud83d\udd04 Problem 2 \u2014 Investigating the Dynamics of a Forced Damped Pendulum";
         var mkdocs_page_input_path = "1 Physics/1 Mechanics/Problem_2.md";
         var mkdocs_page_url = null;
       </script>
@@ -48,8 +48,28 @@
 <ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../Problem_1/">🏹 Problem 1 — Investigating the Range as a Function of the Angle of Projection</a>
 </li>
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 2</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">🔄 Problem 2 — Investigating the Dynamics of a Forced Damped Pendulum</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#table-of-contents">Table of Contents</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#1-motivation">1 · Motivation</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-theoretical-foundation">2 · Theoretical Foundation</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#21-governing-equation">2.1 Governing Equation</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#22-small-angle-approximation-1">2.2 Small-Angle Approximation (|θ| ≪ 1)</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#23-resonance">2.3 Resonance</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3-dynamics-parameter-study">3 · Dynamics &amp; Parameter Study</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#4-practical-applications">4 · Practical Applications</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#5-python-implementation-interactive-notebook">5 · Python Implementation — Interactive Notebook</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -163,7 +183,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">1 Mechanics</li>
-<li class="breadcrumb-item active">Problem 2</li>
+<li class="breadcrumb-item active">🔄 Problem 2 — Investigating the Dynamics of a Forced Damped Pendulum</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -171,7 +191,120 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-2">Problem 2</h1>
+<h1 id="problem-2-investigating-the-dynamics-of-a-forced-damped-pendulum">🔄 Problem 2 — Investigating the Dynamics of a Forced Damped Pendulum</h1>
+<blockquote>
+<p><em>“Chaos often breeds life, when order breeds habit.”</em><br/>
+— Henry Adams  </p>
+</blockquote>
+<hr/>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#motivation">Motivation</a> </li>
+<li><a href="#theory">Theoretical Foundation</a> </li>
+<li><a href="#dynamics">Dynamics &amp; Parameter Study</a> </li>
+<li><a href="#applications">Practical Applications</a> </li>
+<li><a href="#implementation">Python Implementation</a> </li>
+<li><a href="#limitations">Model Limitations &amp; Possible Extensions</a> </li>
+<li><a href="#conclusions">Conclusions</a> </li>
+<li><a href="#references">Further Reading</a> </li>
+</ol>
+<hr/>
+<p><a name="motivation"></a></p>
+<h2 id="1-motivation">1 · Motivation</h2>
+<p>The <em>forced damped pendulum</em> fuses three key effects—restoring torque, viscous damping, and periodic driving.<br/>
+By tuning the driving amplitude <strong>F</strong> and frequency <strong>ω<sub>d</sub></strong>, one observes:</p>
+<ul>
+<li><strong>Linear resonance</strong> (small angles).  </li>
+<li><strong>Beats &amp; quasiperiodicity</strong>.  </li>
+<li><strong>Deterministic chaos</strong> (period-doubling route).  </li>
+</ul>
+<p>These behaviours underpin engineering challenges (vibration isolation, power harvesting) and inspire analogies in climate science and electronics.</p>
+<hr/>
+<p><a name="theory"></a></p>
+<h2 id="2-theoretical-foundation">2 · Theoretical Foundation</h2>
+<h3 id="21-governing-equation">2.1 Governing Equation</h3>
+<p>For a pendulum of length <em>L</em>, mass <em>m</em>, damping γ, and periodic torque <strong>F cos (ω<sub>d</sub>t)</strong>:</p>
+<div class="arithmatex">\[
+\boxed{\;
+\ddot{\theta} + 2\gamma\,\dot{\theta} + \frac{g}{L}\sin\theta
+  \;=\; \frac{F}{mL}\cos(\omega_{d} t)
+\;}
+\]</div>
+<p>Define<br/>
+<span class="arithmatex">\( \omega_0 = \sqrt{g/L} \)</span>, <span class="arithmatex">\(A=\dfrac{F}{mL}\)</span>.</p>
+<h3 id="22-small-angle-approximation-1">2.2 Small-Angle Approximation (|θ| ≪ 1)</h3>
+<p>Replace <span class="arithmatex">\(\sin\theta \approx \theta\)</span>:</p>
+<div class="arithmatex">\[
+\ddot{\theta} + 2\gamma\,\dot{\theta} + \omega_0^{2}\,\theta
+  = A\cos(\omega_{d} t).
+\]</div>
+<p>This linear ODE has steady-state solution</p>
+<p>[
+\theta_{\text{ss}}(t)=
+ \frac{A}{\sqrt{(\omega_0^{2}-\omega_d^{2})^{2}+4\gamma^{2}\omega_d^{2}}}
+ \cos!\bigl(\omega_d t-\phi\bigr),
+]
+with phase lag<br/>
+<span class="arithmatex">\(\tan\phi=\dfrac{2\gamma\omega_d}{\omega_0^{2}-\omega_d^{2}}\)</span>.</p>
+<h3 id="23-resonance">2.3 Resonance</h3>
+<ul>
+<li><strong>Amplitude peak</strong> at<br/>
+<span class="arithmatex">\(\displaystyle \omega_{d,\text{res}}=\sqrt{\omega_0^{2}-2\gamma^{2}}\)</span>.</li>
+<li><strong>Quality factor</strong> <span class="arithmatex">\(Q=\omega_0/(2\gamma)\)</span> governs sharpness.</li>
+</ul>
+<p>Beyond small angles, non-linearity shifts and bends the resonance curve (“backbone curve”).</p>
+<hr/>
+<p><a name="dynamics"></a></p>
+<h2 id="3-dynamics-parameter-study">3 · Dynamics &amp; Parameter Study</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Effect on Motion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>γ (damping)</strong></td>
+<td>High γ → overdamped decay; moderate γ → sharp resonance; low γ → sustained large oscillations and chaos when driven.</td>
+</tr>
+<tr>
+<td><strong>A (driving amplitude)</strong></td>
+<td>Small A → linear response; large A → period-doubling, intermittent chaos.</td>
+</tr>
+<tr>
+<td><strong>ω<sub>d</sub> (drive freq.)</strong></td>
+<td>Near ω₀: resonance; irrational ratio ω<sub>d</sub>/ω₀ → quasi-periodicity; wide scan reveals Feigenbaum cascade.</td>
+</tr>
+<tr>
+<td><strong>Initial θ, <span class="arithmatex">\(\dot θ\)</span></strong></td>
+<td>Sensitive dependence in chaotic regime; tiny changes → divergent long-time trajectories.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key visual diagnostics</strong></p>
+<ol>
+<li><strong>Time series θ(t).</strong> </li>
+<li><strong>Phase portrait (θ vs <span class="arithmatex">\(\dot θ\)</span>).</strong> </li>
+<li><strong>Poincaré section</strong> (stroboscopic map, one point per drive period).  </li>
+<li><strong>Bifurcation diagram</strong>: peak θ vs ω<sub>d</sub> or A.  </li>
+</ol>
+<hr/>
+<p><a name="applications"></a></p>
+<h2 id="4-practical-applications">4 · Practical Applications</h2>
+<ul>
+<li><strong>Rotary energy harvesters</strong> (pendulum converts building sway → electricity).  </li>
+<li><strong>Suspension bridges &amp; skyscrapers</strong> (tuned mass dampers = driven pendula).  </li>
+<li><strong>Driven RLC circuits</strong> (mathematically identical to forced pendulum).  </li>
+<li><strong>Biomechanics</strong> — modelling human gait under rhythmic forcing.  </li>
+<li><strong>Clocks &amp; metronomes</strong> — synchronisation and limit-cycle locking.</li>
+</ul>
+<hr/>
+<p><a name="implementation"></a></p>
+<h2 id="5-python-implementation-interactive-notebook">5 · Python Implementation — Interactive Notebook</h2>
+<p>Run or tweak the full simulation in Google Colab:</p>
+<p>[<img alt="Open in Colab" src="https://colab.research.google.com/drive/17Yx0rQYcFZwqm67f8Gf-BKdRw7pbXefR?usp=sharing"/></p>
+<p><img src="https://i.imgur.com/TwQpBJR.png" width="350"/></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
