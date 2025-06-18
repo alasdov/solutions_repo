@@ -51,9 +51,7 @@ With just *P* and *a* we can
 ## 3 · Astronomical Uses 🔭
 
 ### 3.1 Weighing a Planet
-\[
-M = \frac{4\pi^{2}a^{3}}{G P^{2}}.
-\]
+$$M = \frac{4\pi^{2}a^{3}}{G P^{2}}.$$
 Example: Plug in Earth-Moon data and recover \(M_\oplus\) within 1 %.
 
 ### 3.2 Reality Checks
