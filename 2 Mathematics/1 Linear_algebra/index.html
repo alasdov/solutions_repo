@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../img/favicon.ico" rel="shortcut icon"/>
-<title>Linear Algebra - Physics and Mathematics</title>
+<title>1 Linear algebra - Physics and Mathematics</title>
 <link href="../../css/theme.css" rel="stylesheet"/>
 <link href="../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Linear Algebra";
+        var mkdocs_page_name = "1 Linear algebra";
         var mkdocs_page_input_path = "2 Mathematics/1 Linear_algebra.md";
         var mkdocs_page_url = null;
       </script>
@@ -97,9 +97,7 @@
 </ul>
 <p class="caption"><span class="caption-text">2 Mathematics</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal current" href="#">Linear Algebra</a>
-<ul class="current">
-</ul>
+<li class="toctree-l1 current"><a class="reference internal current" href="#">1 Linear algebra</a>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../2%20Analytic_geometry/">Analytic geometry</a>
 </li>
@@ -162,7 +160,7 @@
 <ul class="wy-breadcrumbs">
 <li><a aria-label="Docs" class="icon icon-home" href="../.."></a></li>
 <li class="breadcrumb-item">2 Mathematics</li>
-<li class="breadcrumb-item active">Linear Algebra</li>
+<li class="breadcrumb-item active">1 Linear algebra</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -170,7 +168,79 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="linear-algebra">Linear Algebra</h1>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Voice Playback</title>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    .player-container {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .controls {
+      margin-top: 15px;
+    }
+
+    button {
+      margin: 5px;
+      padding: 10px 15px;
+      font-size: 14px;
+      border: none;
+      border-radius: 8px;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+<div class="player-container">
+<h2>🎧 Voice Playback</h2>
+<audio id="voicePlayer">
+<source src="https://drive.google.com/uc?export=download&amp;id=1KIjhwaA5nWiDFDr84e1arqzoIcdJbJ6e" type="audio/mp4"/>
+    Your browser does not support audio playback.
+  </audio>
+<div class="controls">
+<button onclick="document.getElementById('voicePlayer').play()">▶️ Play</button>
+<button onclick="document.getElementById('voicePlayer').pause()">⏸️ Pause</button>
+<button onclick="document.getElementById('voicePlayer').currentTime -= 5">⏪ Back 5s</button>
+<button onclick="document.getElementById('voicePlayer').currentTime += 5">⏩ Forward 5s</button>
+</div>
+<label for="volume">🔊 Volume:</label>
+<input id="volume" max="1" min="0" onchange="document.getElementById('voicePlayer').volume = this.value" step="0.05" type="range" value="1"/>
+</div>
+</body>
+</html>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
