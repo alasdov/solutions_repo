@@ -98,6 +98,14 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#6-python-implementation">6 · Python Implementation 💻</a>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#7-model-limitations-extensions">7 · Model Limitations &amp; Extensions 🔧</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#limitations">🔍 Limitations</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#possible-extensions">🚀 Possible Extensions</a>
+</li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#8-results-interpretation">8 · Results &amp; Interpretation 🧩</a>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#9-conclusions">9 · Conclusions 📝</a>
@@ -273,6 +281,52 @@ Simulations make this abstract theorem tangible, showing how quickly “normal�
 <p><a href="https://colab.research.google.com/drive/1qtuoE05v44tcGhbwzsDE3kAASEYv_lUU?usp=sharing"><img alt="Open in Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
 <p><img src="https://i.imgur.com/Nec5baF.gif" width="1100"/></p>
 <p><a name="interpretation"></a></p>
+<hr/>
+<p><a name="limitations"></a></p>
+<h2 id="7-model-limitations-extensions">7 · Model Limitations &amp; Extensions 🔧</h2>
+<h3 id="limitations">🔍 Limitations</h3>
+<ul>
+<li>
+<p><strong>Finite sample effects:</strong><br/>
+  The CLT is asymptotic — for small <span class="arithmatex">\(n\)</span>, sampling distributions may still deviate noticeably from normality, especially with skewed or heavy-tailed populations.</p>
+</li>
+<li>
+<p><strong>Independence assumption:</strong><br/>
+  The classical CLT assumes i.i.d. samples. Correlated data (e.g., time series) violate this and can yield biased convergence.</p>
+</li>
+<li>
+<p><strong>Discrete vs. continuous effects:</strong><br/>
+  Discrete distributions like binomial can produce visibly jagged histograms even for moderate <span class="arithmatex">\(n\)</span>, requiring smoothing or larger sample sizes.</p>
+</li>
+<li>
+<p><strong>Monte Carlo noise:</strong><br/>
+  Finite repetitions (e.g., 2000) may yield minor randomness-induced deviations in histograms and convergence plots.</p>
+</li>
+</ul>
+<h3 id="possible-extensions">🚀 Possible Extensions</h3>
+<ul>
+<li>
+<p><strong>Multivariate CLT:</strong><br/>
+  Extend the simulation to vector-valued variables, demonstrating how sample means converge jointly to a multivariate normal distribution.</p>
+</li>
+<li>
+<p><strong>Berry–Esseen bounds:</strong><br/>
+  Quantify how fast convergence occurs by comparing empirical skewness and kurtosis with theoretical error bounds.</p>
+</li>
+<li>
+<p><strong>Bootstrap comparison:</strong><br/>
+  Compare sampling distributions from CLT to bootstrapped estimates of the mean — useful in small sample contexts.</p>
+</li>
+<li>
+<p><strong>Real-world data:</strong><br/>
+  Apply the sampling method to real datasets (e.g., income data, biological measures) to observe deviations from theoretical expectations.</p>
+</li>
+<li>
+<p><strong>Animated convergence:</strong><br/>
+  Generate an animated GIF or slider visualization showing histograms evolving with <span class="arithmatex">\(n\)</span>, to better visualize "normality emerging".</p>
+</li>
+</ul>
+<hr/>
 <h2 id="8-results-interpretation">8 · Results &amp; Interpretation 🧩</h2>
 <ul>
 <li><strong>Uniform[0,1]</strong> </li>
