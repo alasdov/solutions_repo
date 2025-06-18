@@ -75,25 +75,27 @@
 Before diving into the simulation, it helps to know “which conic” you’re aiming for.
 
 1. Compute specific energy  
-   $$\varepsilon = \frac{v^2}{2} \;-\; \frac{GM}{r}.$$
+   $$
+   \varepsilon = \frac{v^2}{2} \;-\; \frac{G\,M}{r}.
+   $$
 
 2. Compute eccentricity  
    $$
    \mathbf{e}
-     = \frac{\mathbf{v}\times(\mathbf{r}\times\mathbf{v})}{GM}
-       - \frac{\mathbf{r}}{r},
+     = \frac{\mathbf{v}\times(\mathbf{r}\times\mathbf{v})}{G\,M}
+       \;-\; \frac{\mathbf{r}}{r},
    \quad
-   e = \|\mathbf{e}\|.
+   e = \lVert \mathbf{e} \rVert.
    $$
 
-3. Classify the path:
-   - If \(\varepsilon<0\) and \(e<1\), …  
-   - If \(\varepsilon=0\) and \(e=1\), …  
-   - If \(\varepsilon>0\) and \(e>1\), …
+3. Classify the path:  
+   - If $\varepsilon < 0$ and $e < 1$, the trajectory is **elliptical** (bound).  
+   - If $\varepsilon = 0$ and $e = 1$, the trajectory is **parabolic** (marginal escape).  
+   - If $\varepsilon > 0$ and $e > 1$, the trajectory is **hyperbolic** (escape).  
 
 The flowchart below then shows this decision process at a glance:
 
-<img src="https://i.imgur.com/xqE2pB3.png" width="450">
+<img src="https://i.imgur.com/xqE2pB3.png" width="300">
 
 <a name="implementation"></a>
 ## 4 · Code Playground 💻
