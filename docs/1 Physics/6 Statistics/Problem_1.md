@@ -85,6 +85,43 @@ For each population and each \(n\):
 <img src="https://i.imgur.com/Nec5baF.gif" width="1100">
 
 <a name="interpretation"></a>
+
+---
+
+<a name="limitations"></a>
+## 7 · Model Limitations & Extensions 🔧
+
+### 🔍 Limitations
+- **Finite sample effects:**  
+  The CLT is asymptotic — for small \(n\), sampling distributions may still deviate noticeably from normality, especially with skewed or heavy-tailed populations.
+
+- **Independence assumption:**  
+  The classical CLT assumes i.i.d. samples. Correlated data (e.g., time series) violate this and can yield biased convergence.
+
+- **Discrete vs. continuous effects:**  
+  Discrete distributions like binomial can produce visibly jagged histograms even for moderate \(n\), requiring smoothing or larger sample sizes.
+
+- **Monte Carlo noise:**  
+  Finite repetitions (e.g., 2000) may yield minor randomness-induced deviations in histograms and convergence plots.
+
+### 🚀 Possible Extensions
+- **Multivariate CLT:**  
+  Extend the simulation to vector-valued variables, demonstrating how sample means converge jointly to a multivariate normal distribution.
+
+- **Berry–Esseen bounds:**  
+  Quantify how fast convergence occurs by comparing empirical skewness and kurtosis with theoretical error bounds.
+
+- **Bootstrap comparison:**  
+  Compare sampling distributions from CLT to bootstrapped estimates of the mean — useful in small sample contexts.
+
+- **Real-world data:**  
+  Apply the sampling method to real datasets (e.g., income data, biological measures) to observe deviations from theoretical expectations.
+
+- **Animated convergence:**  
+  Generate an animated GIF or slider visualization showing histograms evolving with \(n\), to better visualize "normality emerging".
+
+---
+
 ## 8 · Results & Interpretation 🧩
 
 - **Uniform[0,1]**  
