@@ -34,20 +34,32 @@ Understanding these speeds is critical for satellite deployment, interplanetary 
 <a name="theory"></a>
 ## 2 · Theoretical Foundation 🔭
 
-### 2.1 Definitions  
-For a body of mass *M* and radius *R*:
-\[
+### 2.1 Definitions
+
+For a body of mass \(M\) and radius \(R\):
+
+$$
 \boxed{
 \begin{aligned}
-v_{1} &= \sqrt{\frac{G\,M}{R}} &&\text{(circular orbit speed)}\\[6pt]
-v_{2} &= \sqrt{\frac{2\,G\,M}{R}} &&\text{(escape speed to infinity)}\\[6pt]
-v_{3} &= \sqrt{v_{2}^{2} + v_{\rm orb}^{2}}
-        = \sqrt{\frac{2GM}{R} \;+\;\frac{GM_{\odot}}{r_{\rm orb}}}
-        &&\text{(escape Sun from surface)}
+v_{1} &= \sqrt{\frac{G\,M}{R}}
+       &&\text{(circular orbit speed)} \\[6pt]
+v_{2} &= \sqrt{\frac{2\,G\,M}{R}}
+       &&\text{(escape speed to infinity)} \\[6pt]
+v_{3} &= \sqrt{\,v_{2}^{2} \;+\; v_{\mathrm{orb}}^{2}\,}
+       = \sqrt{\frac{2\,G\,M}{R} + \frac{G\,M_{\odot}}{r_{\mathrm{orb}}}}
+       &&\text{(escape Sun from surface)}
 \end{aligned}
 }
-\]
-where \(v_{\rm orb}=\sqrt{\dfrac{G M_{\odot}}{r_{\rm orb}}}\) is the orbital speed of the planet around its star (e.g., Earth around Sun).
+$$
+
+where
+
+$$
+v_{\mathrm{orb}} = \sqrt{\frac{G\,M_{\odot}}{r_{\mathrm{orb}}}}
+$$
+
+is the orbital speed of the planet around its star (e.g., Earth around the Sun).  
+
 
 ### 2.2 Physical Meaning
 - **v₁**: minimum speed for a circular orbit just above the surface.  
