@@ -245,13 +245,17 @@ By tuning the driving amplitude <strong>F</strong> and frequency <strong>ω<sub>
   = A\cos(\omega_{d} t).
 \]</div>
 <p>This linear ODE has steady-state solution</p>
-<p>[
-\theta_{\text{ss}}(t)=
- \frac{A}{\sqrt{(\omega_0^{2}-\omega_d^{2})^{2}+4\gamma^{2}\omega_d^{2}}}
- \cos!\bigl(\omega_d t-\phi\bigr),
-]
-with phase lag<br/>
-<span class="arithmatex">\(\tan\phi=\dfrac{2\gamma\omega_d}{\omega_0^{2}-\omega_d^{2}}\)</span>.</p>
+<div class="arithmatex">\[
+\ddot\theta + 2\gamma\,\dot\theta + \omega_0^2\,\theta = A\cos(\omega_d t)
+\]</div>
+<div class="arithmatex">\[
+\theta_{\mathrm{ss}}(t)
+= \frac{A}{\sqrt{\bigl(\omega_0^{2}-\omega_d^{2}\bigr)^{2} + 4\,\gamma^{2}\,\omega_d^{2}}}
+\;\cos\!\bigl(\omega_d t - \phi\bigr)
+\]</div>
+<div class="arithmatex">\[
+\tan\phi = \frac{2\,\gamma\,\omega_d}{\omega_0^{2} - \omega_d^{2}}
+\]</div>
 <h3 id="23-resonance">2.3 Resonance</h3>
 <ul>
 <li><strong>Amplitude peak</strong> at<br/>
