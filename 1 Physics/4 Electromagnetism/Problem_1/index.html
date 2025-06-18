@@ -88,6 +88,12 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#4-python-implementation">4 · Python Implementation 💻</a>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#5-model-limitations-extensions">5 · Model Limitations &amp; Extensions ⚙️</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#6-results-interpretation">6 · Results &amp; Interpretation 🧩</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#7-conclusions">7 · Conclusions 📝</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -278,6 +284,72 @@ m\frac{d\mathbf{v}}{dt}
 <h2 id="4-python-implementation">4 · Python Implementation 💻</h2>
 <p><a href="https://colab.research.google.com/drive/1WR2jmQMNRYqvzfILJa0BtHhbyFR1IbeX?usp=sharing"><img alt="Open in Colab" src="https://colab.research.google.com/assets/colab-badge.svg"/></a></p>
 <p><img src="https://i.imgur.com/A2rLSc1.png" width="600"/></p>
+<p><a name="limitations"></a></p>
+<h2 id="5-model-limitations-extensions">5 · Model Limitations &amp; Extensions ⚙️</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Assumption</th>
+<th style="text-align: left;">Impact</th>
+<th style="text-align: left;">Possible Extension</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Uniform fields</strong></td>
+<td style="text-align: left;">Real devices have spatially varying E, B</td>
+<td style="text-align: left;">Load 𝑬(𝐫), 𝐁(𝐫) field maps from data or analytic models</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Nonrelativistic</strong></td>
+<td style="text-align: left;">Fails when v → c</td>
+<td style="text-align: left;">Integrate relativistic form: <span class="arithmatex">\(\displaystyle \frac{d(\gamma m\mathbf v)}{dt}=q(\mathbf E+\mathbf v\times\mathbf B)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>No radiation loss</strong></td>
+<td style="text-align: left;">Charged particles emit synchrotron light</td>
+<td style="text-align: left;">Add radiation‐reaction term (Larmor formula)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Point‐particle</strong></td>
+<td style="text-align: left;">Neglects finite size and spin effects</td>
+<td style="text-align: left;">Include magnetic moment torque or Stern–Gerlach force</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>No collisions</strong></td>
+<td style="text-align: left;">Ignores scattering with neutrals/ions</td>
+<td style="text-align: left;">Add drag or stochastic collisions (Monte Carlo)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Pro tip:</strong> build your model incrementally—start with uniform B only, then add E, then nonuniformity, then relativistic corrections.</p>
+</blockquote>
+<hr/>
+<p><a name="interpretation"></a></p>
+<h2 id="6-results-interpretation">6 · Results &amp; Interpretation 🧩</h2>
+<ul>
+<li><strong>Pure B‐field</strong> → <em>cyclotron</em> motion:  </li>
+<li>Projection in <span class="arithmatex">\(xy\)</span> plane is a circle of radius <span class="arithmatex">\(r_L = v_\perp/\omega_c\)</span>.  </li>
+<li>Center offset at <span class="arithmatex">\((0,-r_L)\)</span> when starting at origin with <span class="arithmatex">\(v_x&gt;0\)</span>.  </li>
+<li><strong>E×B drift</strong> → <em>uniform translation</em> of gyration circle:  </li>
+<li>Drift velocity <span class="arithmatex">\(\mathbf v_d = \mathbf E\times\mathbf B / B^2\)</span>, independent of particle charge sign.  </li>
+<li><strong>Helical trajectories</strong> when <span class="arithmatex">\(v_\parallel\neq0\)</span>:  </li>
+<li>Combines circular gyration in ⟂ plane with straight‐line motion along <span class="arithmatex">\(\mathbf B\)</span>.  </li>
+<li><strong>Parameter scans</strong>:  </li>
+<li>Varying <span class="arithmatex">\(B\)</span> changes gyration frequency <span class="arithmatex">\(\omega_c\)</span> linearly.  </li>
+<li>Varying <span class="arithmatex">\(E\)</span> controls drift speed linearly.  </li>
+</ul>
+<p>Graphs confirm numerical and theoretical curves coincide when centered correctly.</p>
+<hr/>
+<p><a name="conclusions"></a></p>
+<h2 id="7-conclusions">7 · Conclusions 📝</h2>
+<ol>
+<li><strong>Lorentz force</strong> produces rich dynamics: circular, helical, and drifting orbits.  </li>
+<li><strong>Numerical integration</strong> via <code>solve_ivp</code> reproduces analytic Larmor radius and drift velocity.  </li>
+<li><strong>Model extensions</strong>—nonuniform fields, relativistic motion, radiation losses—enable more realistic simulations for accelerators and plasma devices.  </li>
+<li><strong>Takeaway</strong>: combining theory and computation gives both quantitative accuracy and intuitive insight into charged‐particle motion.  </li>
+</ol>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
