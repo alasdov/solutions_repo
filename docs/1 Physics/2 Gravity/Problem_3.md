@@ -34,8 +34,8 @@
 <a name="theory"></a>
 ## 2 · Equations & Insights 🔭
 
-<details style="border:1px solid #bbb; padding:10px; border-radius:5px; background:#f9f9f9;">
-<summary><strong>🔍 Click here to reveal the Governing Equations & Key Formulas</strong></summary>
+<details open style="border:1px solid #bbb; padding:10px; border-radius:5px; background:#f9f9f9;">
+<summary><strong>🔍 Governing Equations & Key Formulas</strong></summary>
 
 1. **Newton’s law of gravitation**  
    \[
@@ -62,7 +62,6 @@
    \]
 </details>
 
-
 > **🔑 Key insight:**  
 > - \(\varepsilon<0\) ⇒ bound (ellipse)  
 > - \(\varepsilon=0\) ⇒ parabolic (escape)  
@@ -73,25 +72,28 @@
 <a name="classifier"></a>
 ## 3 · Conic Classifier 🔍
 
-Before diving into the simulation, it helps to know “which conic” you’re aiming for.  
+Before diving into the simulation, it helps to know “which conic” you’re aiming for.
 
-1. **Compute specific energy**  
-   \[
-     \varepsilon = \tfrac12\,v^2 - \tfrac{GM}{r}.
-   \]
-2. **Compute eccentricity**  
-   \[
-     \mathbf{e} = \frac{\mathbf{v}\times(\mathbf{r}\times\mathbf{v})}{GM} \;-\; \frac{\mathbf{r}}{r},
-     \quad e = \|\mathbf{e}\|.
-   \]
-3. **Classify the path**:
-   - If \(\varepsilon<0\) and \(e<1\), the trajectory is **elliptical** (bound).  
-   - If \(\varepsilon=0\) and \(e=1\), it’s exactly **parabolic** (marginal escape).  
-   - If \(\varepsilon>0\) and \(e>1\), you get a **hyperbolic** escape.
+1. Compute specific energy  
+   $$\varepsilon = \frac{v^2}{2} \;-\; \frac{GM}{r}.$$
+
+2. Compute eccentricity  
+   $$
+   \mathbf{e}
+     = \frac{\mathbf{v}\times(\mathbf{r}\times\mathbf{v})}{GM}
+       - \frac{\mathbf{r}}{r},
+   \quad
+   e = \|\mathbf{e}\|.
+   $$
+
+3. Classify the path:
+   - If \(\varepsilon<0\) and \(e<1\), …  
+   - If \(\varepsilon=0\) and \(e=1\), …  
+   - If \(\varepsilon>0\) and \(e>1\), …
 
 The flowchart below then shows this decision process at a glance:
 
-<img src="https://i.imgur.com/xqE2pB3.png" width="600">
+<img src="https://i.imgur.com/xqE2pB3.png" width="450">
 
 <a name="implementation"></a>
 ## 4 · Code Playground 💻
